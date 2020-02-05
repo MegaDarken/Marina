@@ -5,7 +5,13 @@
 
 using namespace std;
 
+//Constants
 const char ExitMenuCharacter = '4';
+
+const int MaximumBoatLength = 15;//As defined in brief
+const int MarinaLengthMeters = 150;//As defined in brief
+const int PoundsPerMeterPerMonth = 10;
+
 
 //Menu Methods
 void showMenu(void)
