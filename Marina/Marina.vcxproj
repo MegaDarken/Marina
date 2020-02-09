@@ -19,10 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Booking.h" />
+    <ClInclude Include="MotorBoat.h" />
+    <ClInclude Include="NarrowBoat.h" />
+    <ClInclude Include="SailingBoat.h" />
     <ClInclude Include="Watercraft.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Booking.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="MotorBoat.cpp" />
+    <ClCompile Include="NarrowBoat.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="SailingBoat.cpp" />
     <ClCompile Include="Watercraft.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

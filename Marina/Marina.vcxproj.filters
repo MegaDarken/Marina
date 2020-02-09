@@ -18,12 +18,39 @@
     <ClInclude Include="Watercraft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Booking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NarrowBoat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SailingBoat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MotorBoat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Watercraft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Booking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NarrowBoat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SailingBoat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MotorBoat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
