@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Booking.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="MotorBoat.h" />
     <ClInclude Include="NarrowBoat.h" />
     <ClInclude Include="SailingBoat.h" />
