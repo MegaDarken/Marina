@@ -23,12 +23,13 @@ void showMenu(void)
 	cout << "1) record a new booking" << endl;
 	cout << "2) delete a record" << endl;
 	cout << "3) display all records (and available marina space)" << endl;
-	cout << "4) exit the program" << endl;
+
+	cout << ExitMenuCharacter << ") exit the program" << endl;
 };
 
 void runMenu(void)
 {
-	char userInput;
+	char userInput = ' ';
 
 	//Loop until exiting
 
@@ -61,7 +62,7 @@ void runMenu(void)
 
 int main(void)
 {
-
+	runMenu();//Menu is displayed to the user and traverced
 
 	//Pausing Before Closing
 	system("pause");
