@@ -13,6 +13,13 @@ Watercraft::Watercraft(int lengthValue, int berthValue)
 	this->berth = berthValue;
 }
 
+//Copy
+Watercraft::Watercraft(Watercraft &object)
+{
+	this->uniqueID = object.uniqueID;
+	this->length = object.length;
+	this->berth = object.berth;
+}
 
 Watercraft::~Watercraft()
 {

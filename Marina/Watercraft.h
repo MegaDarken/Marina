@@ -10,6 +10,7 @@ private:
 public:
 	Watercraft();
 	Watercraft(int, int);
+	Watercraft(Watercraft &obj);//Copy Constructor
 	~Watercraft();
 
 	//Getters and Setters
@@ -20,6 +21,8 @@ public:
 	//Equality Operators
 	bool operator==(const Watercraft &t);
 	bool operator!=(const Watercraft &t);
+
+	
 };
 //Polymorphism is able to be used to Inherit to Specific types of Craft/Boat (narrow, sailing, or motor)
 
