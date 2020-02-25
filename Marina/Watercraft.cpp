@@ -41,11 +41,16 @@ int Watercraft::getBerth()
 	return berth;
 }
 
+//Boolian Operators
 bool Watercraft::operator==(const Watercraft &current)
 {
-	bool result = true;
+	bool result = true;//Returned Value
 
 	if (this->uniqueID != current.uniqueID) { result = false; }
+
+	if (this->ownerName != current.ownerName) { result = false; }
+	if (this->boatName != current.boatName) { result = false; }
+
 	if (this->length != current.length) { result = false; }
 	if (this->berth != current.berth) { result = false; }
 

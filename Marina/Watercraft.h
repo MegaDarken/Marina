@@ -2,7 +2,11 @@
 class Watercraft
 {
 private:
-	unsigned uniqueID;//Unique Identifier
+	unsigned uniqueID;//Unique Identifier (For integrity)
+
+	//Names
+	char* ownerName;
+	char* boatName;
 
 	int length;
 	int berth;
@@ -11,10 +15,14 @@ public:
 	Watercraft();
 	Watercraft(int, int);
 	Watercraft(Watercraft &obj);//Copy Constructor
-	~Watercraft();
+	~Watercraft();//Descructor
 
 	//Getters and Setters
 	unsigned getUniqueID();
+
+	char* getOwnerName();
+	char* getBoatName();
+
 	int getLength();
 	int getBerth();
 
