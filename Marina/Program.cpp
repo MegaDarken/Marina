@@ -47,6 +47,10 @@ void runMenu(void)
 		switch (userInput)
 		{
 		default:
+			cout << "Invalid Input, Please try again..." << endl;
+			break;
+		case ExitMenuCharacter:
+			cout << "Exiting...";
 			break;
 		case 1:
 			break;
@@ -65,7 +69,10 @@ int main(void)
 	runMenu();//Menu is displayed to the user and traverced
 
 	//Pausing Before Closing
-	system("pause");
+
+	//cout << "Press any key..."
+	//char exitChar = ' ';
+	//cin >> exitChar;//system("pause");//Windows
 
 	return 0;
 }
