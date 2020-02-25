@@ -53,26 +53,28 @@ void List::InsertEntry(Watercraft currentCraft)
 
 }
 
-//void List::RemoveEntry(Watercraft currentCraft)
-//{
-//	currentEntry = rootEntry;//From the start
-//
-//	if (currentEntry->value == currentCraft)
-//	{
-//		//Move rootEntry to next
-//		rootEntry = rootEntry->nextEntry;
-//	}
-//	else
-//	{
-//	//While the next Entry does not contain the object; Continue
-//	while (currentEntry->nextEntry->value != currentCraft || currentEntry != NULL)
-//	{
-//		currentEntry = currentEntry->nextEntry;//Move to next entry
-//	}
-//
-//	if (currentEntry->nextEntry->nextEntry != NULL)
-//	{
-//		currentEntry->nextEntry == NULL;
-//	}
-//	}
-//}
+void List::RemoveEntry(Watercraft currentCraft)
+{
+	currentEntry = rootEntry;//From the start
+
+	if (currentEntry->value == currentCraft)
+	{
+		//Move rootEntry to next
+		rootEntry = rootEntry->nextEntry;
+	}
+	else
+	{
+	//While the next Entry does not contain the object; Continue
+	while (currentEntry->nextEntry->value != currentCraft || currentEntry != NULL)
+	{
+		currentEntry = currentEntry->nextEntry;//Move to next entry
+	}
+
+	if (currentEntry->nextEntry->nextEntry != NULL)
+	{
+		currentEntry->nextEntry == NULL;
+	}
+
+	delete currentEntry->nextEntry;
+	}
+}
