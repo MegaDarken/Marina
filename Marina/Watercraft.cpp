@@ -64,3 +64,4 @@ bool Watercraft::operator!=(const Watercraft &current)
 
 	return result;
 }
+
