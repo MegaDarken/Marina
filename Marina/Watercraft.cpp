@@ -59,13 +59,16 @@ bool Watercraft::operator==(const Watercraft &current)
 
 bool Watercraft::operator!=(const Watercraft &current)
 {
-	bool result = true;
+	bool result = false;
 
-	if (this->uniqueID == current.uniqueID &&
-		this->length == current.length &&
-		this->draft == current.draft) {
-		result = false;
-	}
+	if (this->uniqueID != current.uniqueID) { result = true; }
+
+	if (this->ownerName != current.ownerName) { result = true; }
+	if (this->boatName != current.boatName) { result = true; }
+
+	if (this->length != current.length) { result = true; }
+    if (this->draft != current.draft) { result = true; }
+	
 
 	return result;
 }
