@@ -57,24 +57,30 @@ void List::RemoveEntry(Watercraft currentCraft)
 {
 	currentEntry = rootEntry;//From the start
 
+	//for root node
 	if (currentEntry->value == currentCraft)
 	{
 		//Move rootEntry to next
 		rootEntry = rootEntry->nextEntry;
 	}
-	else
+	
 	{
 	//While the next Entry does not contain the object; Continue
-	while (currentEntry->nextEntry->value != currentCraft || currentEntry != NULL)
+	while (currentEntry->nextEntry != nullptr)//currentEntry->nextEntry->value != currentCraft ||
 	{
 		currentEntry = currentEntry->nextEntry;//Move to next entry
+
+		//If the next entry is the one to be removed
+		if (currentEntry->nextEntry->value == currentCraft)
+		{
+			ListEntry* chosenEntry = currentEntry->nextEntry;
+
+			//skip over the entry
+			currentEntry->nextEntry = chosenEntry->nextEntry;
+
+			delete chosenEntry;
+		}
 	}
 
-	if (currentEntry->nextEntry->nextEntry != NULL)
-	{
-		currentEntry->nextEntry == NULL;
-	}
-
-	delete currentEntry->nextEntry;
 	}
 }
