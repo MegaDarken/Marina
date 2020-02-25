@@ -5,7 +5,7 @@
 struct ListEntry
 {
 	Watercraft value;
-	ListEntry* nextEntry;
+	ListEntry* nextEntry = NULL;
 };
 
 class List
@@ -39,8 +39,8 @@ void List::InsertEntry(Watercraft currentCraft)
 {
 	currentEntry = rootEntry;//From the start
 
-	//While the current Entry does not already have a craft
-	while (currentEntry != NULL)
+	//While the next Entry does not already have a craft
+	while (currentEntry->nextEntry != nullptr)
 	{
 		currentEntry = currentEntry->nextEntry;//Move to next entry
 	}
