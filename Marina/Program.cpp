@@ -53,10 +53,16 @@ void runMenu(void)
 			cout << "Exiting...";
 			break;
 		case 1:
+			//Recording new booking
+
 			break;
 		case 2:
+			//Deleting a record
+
 			break;
 		case 3:
+			//Displaying all records
+
 			break;
 		}
 	}
