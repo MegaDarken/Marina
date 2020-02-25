@@ -9,7 +9,7 @@ private:
 	char* boatName;
 
 	int length;
-	int berth;
+	int draft;
 
 public:
 	Watercraft();
@@ -24,7 +24,7 @@ public:
 	char* getBoatName();
 
 	int getLength();
-	int getBerth();
+	int getDraft();
 
 	//Equality Operators
 	bool operator==(const Watercraft &t);
