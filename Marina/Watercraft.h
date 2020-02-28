@@ -13,7 +13,7 @@ private:
 
 public:
 	Watercraft();
-	Watercraft(int, int);
+	Watercraft(char ownerName[], char boatName[], int length, int draft);
 	Watercraft(Watercraft &obj);//Copy Constructor
 	~Watercraft();//Descructor
 

@@ -3,12 +3,16 @@
 // Constants
 //Default Values
 
+
 Watercraft::Watercraft()
 {
 }
 
-Watercraft::Watercraft(int lengthValue, int draftValue)
+Watercraft::Watercraft(char ownerName[], char boatName[], int lengthValue, int draftValue)
 {
+	this->ownerName = ownerName;
+	this->boatName = boatName;
+	
 	this->length = lengthValue;
 	this->draft = draftValue;
 }
