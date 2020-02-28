@@ -1,7 +1,14 @@
 //This is the "Program.cpp" file
 //Include(s) 
+#ifndef MARNIA_H
 #include <iostream>
 #include <cstdlib>
+#include <vector>
+
+#include "List.h"
+#include "Booking.h"
+#include "Watercraft.h"
+#endif // !MARNIA_H
 
 using namespace std;
 
