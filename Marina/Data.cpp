@@ -36,13 +36,19 @@ List* HoldingBayCraftList = new List();
 
 
 //Save To Files
-void saveBookingRecords(char* fileName)
+void saveBookingRecords(const char* fileName)
 {
     //Open file
     ofstream currentFile;
     currentFile.open(fileName);
 
     //Input data
+    for (size_t index = 0; index < bookingRecords.size(); index++)
+    {
+        //cast object into file
+        currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
+    }
+    
 
     //Close file
     currentFile.close();
@@ -50,17 +56,21 @@ void saveBookingRecords(char* fileName)
 
 void saveBookingRecords()
 {
-    //saveBookingRecords(defaultRecordsFileName);
+    saveBookingRecords(defaultRecordsFileName);
 }
 
 //Load From Files
-void loadBookingRecords(char* fileName)
+void loadBookingRecords(const char* fileName)
 {
     //Open file
-    ofstream currentFile;
+    ifstream currentFile;
     currentFile.open(fileName);
 
     //Input data
+    while (!currentFile.eof())
+    {
+        currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));
+    }
 
     //Close file
     currentFile.close();
@@ -68,7 +78,7 @@ void loadBookingRecords(char* fileName)
 
 void loadBookingRecords()
 {
-    //loadBookingRecords(defaultRecordsFileName);
+    loadBookingRecords(defaultRecordsFileName);
 }
 
 //--Data (Boat) Deletion--
