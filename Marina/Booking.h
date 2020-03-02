@@ -27,6 +27,7 @@ public:
 	Watercraft* getBookedCraft();
 
 	char* getAsString();
+	void getAsString(char* outputString);
 
 	//Methods
 	bool validLength();

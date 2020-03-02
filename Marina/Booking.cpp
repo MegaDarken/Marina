@@ -64,6 +64,17 @@ char* Booking::getAsString()
 	return outputString;
 }
 
+ void Booking::getAsString(char* outputString)
+{
+	//char* outputString;
+
+	//Add parts to string
+	strcat(outputString, bookedCraft->getOwnerName);
+	strcat(outputString, bookedCraft->getBoatName);
+
+	//return outputString;
+}
+
 bool Booking::validLength()
 {
 	return (bookedCraft->getLength <= MaximumBoatLength);
