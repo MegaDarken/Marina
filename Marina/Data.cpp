@@ -3,6 +3,7 @@
 
 #ifndef MARNIA_H
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
 #include <vector>
 
@@ -15,7 +16,7 @@
 
 using namespace std;
 
-
+const char* defaultRecordsFileName = "bookingRecords.txt";
 
 
 //List of Records
@@ -35,10 +36,39 @@ List* HoldingBayCraftList = new List();
 
 
 //Save To Files
+void saveBookingRecords(char* fileName)
+{
+    //Open file
+    ofstream currentFile;
+    currentFile.open(fileName);
 
+    //Input data
+
+    //Close file
+    currentFile.close();
+}
+
+void saveBookingRecords()
+{
+    //saveBookingRecords(defaultRecordsFileName);
+}
 
 //Load From Files
+void loadBookingRecords(char* fileName)
+{
+    //Open file
+    ofstream currentFile;
+    currentFile.open(fileName);
 
+    //Input data
 
+    //Close file
+    currentFile.close();
+}
+
+void loadBookingRecords()
+{
+    //loadBookingRecords(defaultRecordsFileName);
+}
 
 //--Data (Boat) Deletion--
