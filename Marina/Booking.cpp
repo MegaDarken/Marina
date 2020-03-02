@@ -58,8 +58,8 @@ char* Booking::getAsString()
 	char* outputString;
 
 	//Add parts to string
-	outputString << bookedCraft->getOwnerName;
-	outputString << bookedCraft->getBoatName;
+	strcat(outputString, bookedCraft->getOwnerName);
+	strcat(outputString, bookedCraft->getBoatName);
 
 	return outputString;
 }
