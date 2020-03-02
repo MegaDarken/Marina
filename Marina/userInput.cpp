@@ -20,6 +20,9 @@ void userInput::viewRecords(std::vector<Booking> &bookingRecords)
 	//for each of the vector's elements
 	for (size_t index = 0; index < bookingRecords.size(); index++)
 	{
+		//clear array
+		outputArray = new char[];
+
 		//get record as string
 		bookingRecords[index].getAsString(outputArray);
 
@@ -28,4 +31,7 @@ void userInput::viewRecords(std::vector<Booking> &bookingRecords)
 	}
 
 	//Remove the single char array from memory
+	delete outputArray;
+
+	return;
 }
