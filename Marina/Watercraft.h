@@ -11,6 +11,8 @@ private:
 	int length;
 	int draft;
 
+	static int IdCounter;
+	int generateNextId();
 public:
 	Watercraft();
 	Watercraft(char ownerName[], char boatName[], int length, int draft);

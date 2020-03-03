@@ -4,12 +4,35 @@
 //Default Values
 
 
+const int defaultLength = 15;
+const int defaultDraft = 5;
+
+int Watercraft::generateNextId()
+{
+	if (IdCounter == std::NULL)
+	{
+		IdCounter = 0;
+	}
+	//Increment
+	IdCounter++;
+
+	return IdCounter;
+}
+
+//Constructors
 Watercraft::Watercraft()
 {
+	this->uniqueID = generateNextId();
+
+
+	this->length = defaultLength;
+	this->draft = defaultDraft;
 }
 
 Watercraft::Watercraft(char ownerName[], char boatName[], int lengthValue, int draftValue)
 {
+	this->uniqueID = generateNextId();
+
 	this->ownerName = ownerName;
 	this->boatName = boatName;
 	
@@ -21,6 +44,8 @@ Watercraft::Watercraft(char ownerName[], char boatName[], int lengthValue, int d
 Watercraft::Watercraft(Watercraft &object)
 {
 	this->uniqueID = object.uniqueID;
+	this->ownerName = object.ownerName;
+	this->boatName = object.boatName;
 	this->length = object.length;
 	this->draft = object.draft;
 }
@@ -33,6 +58,16 @@ Watercraft::~Watercraft()
 unsigned Watercraft::getUniqueID()
 {
 	return uniqueID;
+}
+
+char* Watercraft::getOwnerName()
+{
+	return this->ownerName;
+}
+
+char* Watercraft::getBoatName()
+{
+	return this->boatName;
 }
 
 int Watercraft::getLength()
