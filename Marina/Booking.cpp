@@ -13,6 +13,7 @@ const int MaximumBoatLength = 15;//As defined in brief
 const int MaximumBoatDraft = 5;
 const int PoundsPerMeterPerMonth = 10;
 
+const char splitChar = ';';
 
 Booking::Booking()
 {
@@ -33,6 +34,16 @@ Booking::Booking(int cost, Watercraft*)
 
 Booking::Booking(char ownerName[], char boatName[], int length, int draft)
 {
+	//Create watercraft
+	this->bookedCraft = new Watercraft(ownerName, boatName, length, draft);
+
+	//Calculate cost
+}
+
+Booking::Booking(int cost, char ownerName[], char boatName[], int length, int draft)
+{
+	this->totalCost = cost;
+
 	//Create watercraft
 	this->bookedCraft = new Watercraft(ownerName, boatName, length, draft);
 
@@ -69,8 +80,13 @@ char* Booking::getAsString()
 	//char* outputString;
 
 	//Add parts to string
+	strcat(outputString, (char*)totalCost);
+
 	strcat(outputString, bookedCraft->getOwnerName);
 	strcat(outputString, bookedCraft->getBoatName);
+
+	strcat(outputString, (char*)bookedCraft->getLength);
+	strcat(outputString, (char*)bookedCraft->getDraft);
 
 	//return outputString;
 }

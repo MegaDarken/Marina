@@ -20,6 +20,7 @@ public:
 	Booking(Watercraft* bookedCraft);//Where cost is calculated from the craft
 	Booking(int cost, Watercraft*);
 	Booking(char ownerName[], char boatName[], int length, int draft);//New craft is created
+	Booking(int cost, char ownerName[], char boatName[], int length, int draft);
 	~Booking();
 
 	//Getters and Setters
