@@ -38,17 +38,29 @@ List* HoldingBayCraftList = new List();
 //Save To Files
 void saveBookingRecords(const char* fileName)
 {
+    //output char array
+    char* outputArray;
+
     //Open file
     ofstream currentFile;
-    currentFile.open(fileName);
+    currentFile.open(fileName, ios::out);
 
-    //Input data
-    for (size_t index = 0; index < bookingRecords.size(); index++)
+    //ensure file is open
+    if (inFile.is_open() == false)
+        cout << "Error opening file\n" << endl;
+    else
     {
-        //cast object into file
-        currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
+        //Input data
+        for (size_t index = 0; index < bookingRecords.size(); index++)
+        {
+            //cast object into file
+            //currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
+
+            bookingRecords[index].getAsString(outputArray);
+
+            currentFile.write(outputArray, sizeof(outputArray));
+        }
     }
-    
 
     //Close file
     currentFile.close();
@@ -62,18 +74,47 @@ void saveBookingRecords()
 //Load From Files
 void loadBookingRecords(const char* fileName)
 {
+    //Temp Variables
+    int cost;
+    char* ownerName;
+    char* craftName;
+    int length;
+    int draft;
+
     //Open file
     ifstream currentFile;
     currentFile.open(fileName);
 
-    //Input data
-    while (!currentFile.eof())
+    //Ensure file is open
+    if (inFile.is_open() == false)
+        cout << "Error opening file\n" << endl;
+    else
     {
-        currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));
+        //Input data
+        while (!currentFile.eof())
+        {
+            //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
+            currentFile.read((char*)cost, sizeof(int));
+
+            currentFile.read((char*)ownerName, sizeof(char*));
+            currentFile.read((char*)craftName, sizeof(char*));
+
+            currentFile.read((char*)length, sizeof(int));
+            currentFile.read((char*)draft, sizeof(int));
+
+            bookingRecords.push_back(new Booking(cost, ownerName, craftName, length, draft));
+        }
     }
 
     //Close file
     currentFile.close();
+
+    //Delete Vars
+    //delete cost;
+    delete ownerName;
+    delete craftName;
+    //delete length;
+    //delete draft;
 }
 
 void loadBookingRecords()
