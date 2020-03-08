@@ -46,7 +46,7 @@ void saveBookingRecords(const char* fileName)
     currentFile.open(fileName, ios::out);
 
     //ensure file is open
-    if (inFile.is_open() == false)
+    if (currentFile.is_open() == false)
         cout << "Error opening file\n" << endl;
     else
     {
@@ -86,7 +86,7 @@ void loadBookingRecords(const char* fileName)
     currentFile.open(fileName);
 
     //Ensure file is open
-    if (inFile.is_open() == false)
+    if (currentFile.is_open() == false)
         cout << "Error opening file\n" << endl;
     else
     {
