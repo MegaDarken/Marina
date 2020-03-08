@@ -1,13 +1,27 @@
 #include "userInput.h"
 
-void userInput::userRecordBooking()
+void userInput::userRecordBooking(std::vector<Booking>& bookingRecords)
 {
-	//
+	//Show user records
+	viewRecords(bookingRecords);
+
+	//Initalise Variables
+
+	//Promt user for booking details
+
+	//Collect inputs
+
+	//Construct Object
+
+	//Push to vector
 
 }
 
-void userInput::userRecordDelete()
+void userInput::userRecordDelete(std::vector<Booking>& bookingRecords)
 {
+	//Show user records
+	viewRecords(bookingRecords);
+
 	//
 
 }

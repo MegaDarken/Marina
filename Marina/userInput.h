@@ -20,10 +20,10 @@ public:
 	//Menu
 
 	//1) record a new booking
-	static void userRecordBooking();
+	static void userRecordBooking(std::vector<Booking>& bookingRecords);
 
 	//2) delete a record
-	static void userRecordDelete();
+	static void userRecordDelete(std::vector<Booking>& bookingRecords);
 
 	//3) display all records (and available marina space)
 	static void viewRecords(std::vector<Booking> &bookingRecords);
