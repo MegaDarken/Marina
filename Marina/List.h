@@ -2,40 +2,40 @@
 #include "Watercraft.h"
 
 //This header file contains the structure of a Linked List of watercraft 
-struct ListEntry
+struct WatercraftListEntry
 {
 	Watercraft value;
-	ListEntry* nextEntry = NULL;
+	WatercraftListEntry* nextEntry = NULL;
 };
 
-class List
+class WatercraftList
 {
 private:
-	ListEntry* rootEntry; //All other entries are based upon this. List Removed if changed.
+	WatercraftListEntry* rootEntry; //All other entries are based upon this. List Removed if changed.
 
-	ListEntry* currentEntry; //Pointer for current node
+	WatercraftListEntry* currentEntry; //Pointer for current node
 
 public:
-	List();
-	~List();
+	WatercraftList();
+	~WatercraftList();
 
 	void InsertEntry(Watercraft);
 	void RemoveEntry(Watercraft);
 };
 
-List::List()
+WatercraftList::WatercraftList()
 {
-	rootEntry = new ListEntry;//Start of the list's sequence
+	rootEntry = new WatercraftListEntry;//Start of the list's sequence
 
 
 	currentEntry = rootEntry;
 }
 
-List::~List()
+WatercraftList::~WatercraftList()
 {
 }
 
-void List::InsertEntry(Watercraft currentCraft)
+void WatercraftList::InsertEntry(Watercraft currentCraft)
 {
 	currentEntry = rootEntry;//From the start
 
@@ -46,14 +46,14 @@ void List::InsertEntry(Watercraft currentCraft)
 	}
 
 	//Once at an Empty Entry
-	currentEntry = new ListEntry;//Make Next Entry
+	currentEntry = new WatercraftListEntry;//Make Next Entry
 	currentEntry->value = currentCraft;//Insert Value
 	
 
 
 }
 
-void List::RemoveEntry(Watercraft currentCraft)
+void WatercraftList::RemoveEntry(Watercraft currentCraft)
 {
 	currentEntry = rootEntry;//From the start
 
@@ -73,7 +73,7 @@ void List::RemoveEntry(Watercraft currentCraft)
 		//If the next entry is the one to be removed
 		if (currentEntry->nextEntry->value == currentCraft)
 		{
-			ListEntry* chosenEntry = currentEntry->nextEntry;
+			WatercraftListEntry* chosenEntry = currentEntry->nextEntry;
 
 			//skip over the entry
 			currentEntry->nextEntry = chosenEntry->nextEntry;
