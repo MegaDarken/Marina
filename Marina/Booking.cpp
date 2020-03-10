@@ -15,6 +15,27 @@ const int PoundsPerMeterPerMonth = 10;
 
 const char splitChar = ';';
 
+
+//Conversion
+void intToChar(int input, char* output)
+{
+	int iterations = log10(input);
+	int charIndex = 0;
+
+	for (int i = iterations; i > 0; i--)
+	{
+		int currentDigit = input;
+		int currentPower = pow(10, iterations);
+
+		currentDigit = currentDigit % (currentPower * 10);
+		currentDigit = currentDigit / currentPower;
+
+		output[charIndex] = ('0' + currentDigit);
+		charIndex++;
+	}
+}
+
+//Constructor
 Booking::Booking()
 {
 }
@@ -69,25 +90,31 @@ char* Booking::getAsString()
 	char* outputString;
 
 	//Add parts to string
-	strcat(outputString, bookedCraft->getOwnerName);
-	strcat(outputString, bookedCraft->getBoatName);
+	strcat(outputString, this->bookedCraft->getOwnerName());
+	strcat(outputString, this->bookedCraft->getBoatName());
 
 	return outputString;
 }
 
  void Booking::getAsString(char* outputString)
 {
-	//char* outputString;
+	char* tempString;
 
 	//Add parts to string
-	strcat(outputString, (char*)totalCost);
+	intToChar(this->totalCost, tempString);
+	strcat(outputString, tempString);
 
-	strcat(outputString, bookedCraft->getOwnerName);
-	strcat(outputString, bookedCraft->getBoatName);
+	strcat(outputString, this->bookedCraft->getOwnerName);
+	strcat(outputString, this->bookedCraft->getBoatName);
 
-	strcat(outputString, (char*)bookedCraft->getLength);
-	strcat(outputString, (char*)bookedCraft->getDraft);
+	intToChar(this->bookedCraft->getLength, tempString);
+	strcat(outputString, tempString);
+	intToChar(bookedCraft->getDraft, tempString);
+	strcat(outputString, tempString);
+	//strcat(outputString, (char*)this->bookedCraft->getLength);
+	//strcat(outputString, (char*)this->bookedCraft->getDraft);
 
+	delete tempString;
 	//return outputString;
 }
 
