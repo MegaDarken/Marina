@@ -42,13 +42,19 @@ Booking::Booking()
 
 Booking::Booking(Watercraft* bookedCraft)
 {
+	//Examine if boat can fit
+
 	this->bookedCraft = bookedCraft;
 
 	//Calculate Cost
+	int cost = bookedCraft->getLength();
+	cost = cost * PoundsPerMeterPerMonth;
 }
 
-Booking::Booking(int cost, Watercraft*)
+Booking::Booking(int cost, Watercraft* bookedCraft)
 {
+	//Examine if boat can fit
+
 	this->totalCost = cost;
 	this->bookedCraft = bookedCraft;
 }
@@ -63,6 +69,9 @@ Booking::Booking(char ownerName[], char boatName[], int length, int draft)
 
 Booking::Booking(int cost, std::string ownerName, std::string boatName, int length, int draft)
 {
+	//Examine if boat can fit
+
+
 	this->totalCost = cost;
 
 	//Create watercraft
