@@ -17,7 +17,7 @@ const char splitChar = ';';
 
 
 //Conversion
-void intToChar(int input, char* output)
+void intToChar(int input, std::string output)
 {
 	int iterations = log10(input);
 	int charIndex = 0;
@@ -61,7 +61,7 @@ Booking::Booking(char ownerName[], char boatName[], int length, int draft)
 	//Calculate cost
 }
 
-Booking::Booking(int cost, char ownerName[], char boatName[], int length, int draft)
+Booking::Booking(int cost, std::string ownerName, std::string boatName, int length, int draft)
 {
 	this->totalCost = cost;
 
@@ -85,36 +85,36 @@ Watercraft* Booking::getBookedCraft()
 	return bookedCraft;
 }
 
-char* Booking::getAsString()
+std::string Booking::getAsString()
 {
-	char* outputString;
+	std::string outputString;
 
 	//Add parts to string
-	strcat(outputString, this->bookedCraft->getOwnerName());
-	strcat(outputString, this->bookedCraft->getBoatName());
+	outputString += this->bookedCraft->getOwnerName();
+	outputString += this->bookedCraft->getBoatName();
 
 	return outputString;
 }
 
- void Booking::getAsString(char* outputString)
+ void Booking::getAsString(std::string outputString)
 {
 	char* tempString;
 
 	//Add parts to string
 	intToChar(this->totalCost, tempString);
-	strcat(outputString, tempString);
+	outputString += tempString;
 
-	strcat(outputString, this->bookedCraft->getOwnerName());
-	strcat(outputString, this->bookedCraft->getBoatName());
+	outputString += this->bookedCraft->getOwnerName();
+	outputString += this->bookedCraft->getBoatName();
 
 	intToChar(this->bookedCraft->getLength(), tempString);
-	strcat(outputString, tempString);
+	outputString += tempString;
 	intToChar(this->bookedCraft->getDraft(), tempString);
-	strcat(outputString, tempString);
+	outputString += tempString;
 	//strcat(outputString, (char*)this->bookedCraft->getLength);
 	//strcat(outputString, (char*)this->bookedCraft->getDraft);
 
-	delete tempString;
+	//delete tempString;
 	//return outputString;
 }
 

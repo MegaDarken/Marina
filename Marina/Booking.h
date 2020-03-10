@@ -20,15 +20,15 @@ public:
 	Booking(Watercraft* bookedCraft);//Where cost is calculated from the craft
 	Booking(int cost, Watercraft*);
 	Booking(char ownerName[], char boatName[], int length, int draft);//New craft is created
-	Booking(int cost, char ownerName[], char boatName[], int length, int draft);
+	Booking(int cost, std::string ownerName, std::string boatName, int length, int draft);
 	~Booking();
 
 	//Getters and Setters
 	int getTotalCost();
 	Watercraft* getBookedCraft();
 
-	char* getAsString();
-	void getAsString(char* outputString);
+	std::string getAsString();
+	void getAsString(std::string outputString);
 
 	//Methods
 	bool validLength();
