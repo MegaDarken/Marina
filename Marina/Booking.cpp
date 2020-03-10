@@ -104,12 +104,12 @@ char* Booking::getAsString()
 	intToChar(this->totalCost, tempString);
 	strcat(outputString, tempString);
 
-	strcat(outputString, this->bookedCraft->getOwnerName);
-	strcat(outputString, this->bookedCraft->getBoatName);
+	strcat(outputString, this->bookedCraft->getOwnerName());
+	strcat(outputString, this->bookedCraft->getBoatName());
 
-	intToChar(this->bookedCraft->getLength, tempString);
+	intToChar(this->bookedCraft->getLength(), tempString);
 	strcat(outputString, tempString);
-	intToChar(bookedCraft->getDraft, tempString);
+	intToChar(this->bookedCraft->getDraft(), tempString);
 	strcat(outputString, tempString);
 	//strcat(outputString, (char*)this->bookedCraft->getLength);
 	//strcat(outputString, (char*)this->bookedCraft->getDraft);
@@ -120,11 +120,11 @@ char* Booking::getAsString()
 
 bool Booking::validLength()
 {
-	return (bookedCraft->getLength <= MaximumBoatLength);
+	return (bookedCraft->getLength() <= MaximumBoatLength);
 }
 
 bool Booking::validDraft()
 {
-	return (bookedCraft->getDraft <= MaximumBoatDraft);
+	return (bookedCraft->getDraft() <= MaximumBoatDraft);
 }
 
