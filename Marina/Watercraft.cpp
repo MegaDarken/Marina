@@ -9,7 +9,7 @@ const int defaultDraft = 5;
 
 int Watercraft::generateNextId()
 {
-	if (IdCounter == std::NULL)
+	if (IdCounter == NULL)
 	{
 		IdCounter = 0;
 	}
@@ -29,7 +29,7 @@ Watercraft::Watercraft()
 	this->draft = defaultDraft;
 }
 
-Watercraft::Watercraft(char ownerName[], char boatName[], int lengthValue, int draftValue)
+Watercraft::Watercraft(std::string ownerName, std::string boatName, int lengthValue, int draftValue)
 {
 	this->uniqueID = generateNextId();
 
@@ -60,12 +60,12 @@ unsigned Watercraft::getUniqueID()
 	return uniqueID;
 }
 
-char* Watercraft::getOwnerName()
+std::string Watercraft::getOwnerName()
 {
 	return this->ownerName;
 }
 
-char* Watercraft::getBoatName()
+std::string Watercraft::getBoatName()
 {
 	return this->boatName;
 }

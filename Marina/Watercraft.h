@@ -1,12 +1,23 @@
 #pragma once
+//Include(s) 
+#ifndef MARNIA_H
+#include <iostream>
+#include <cstdlib>
+#include <vector>
+
+#include "List.h"
+#include "Booking.h"
+#include "Watercraft.h"
+#endif // !MARNIA_H
+
 class Watercraft
 {
 private:
 	unsigned uniqueID;//Unique Identifier (For integrity)
 
 	//Names
-	char* ownerName;
-	char* boatName;
+	std::string ownerName;
+	std::string boatName;
 
 	int length;
 	int draft;
@@ -15,15 +26,15 @@ private:
 	int generateNextId();
 public:
 	Watercraft();
-	Watercraft(char ownerName[], char boatName[], int length, int draft);
+	Watercraft(std::string ownerName, std::string boatName, int length, int draft);
 	Watercraft(Watercraft &obj);//Copy Constructor
 	~Watercraft();//Descructor
 
 	//Getters and Setters
 	unsigned getUniqueID();
 
-	char* getOwnerName();
-	char* getBoatName();
+	std::string getOwnerName();
+	std::string getBoatName();
 
 	int getLength();
 	int getDraft();
