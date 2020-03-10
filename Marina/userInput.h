@@ -17,6 +17,9 @@ private:
 
 
 public:
+	//Common utility
+	static void  takeInput(const char* prompt, char* out);
+
 	//Menu
 
 	//1) record a new booking
