@@ -13,7 +13,7 @@ private:
 
 	int totalCost;//Cost
 
-	Watercraft* bookedCraft;//Watercraft pointer
+	Watercraft* bookedCraft = nullptr;//Watercraft pointer
 
 public:
 	Booking();
