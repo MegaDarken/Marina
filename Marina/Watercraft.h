@@ -12,7 +12,7 @@
 
 class Watercraft
 {
-private:
+protected:
 	unsigned uniqueID;//Unique Identifier (For integrity)
 
 	//Names
