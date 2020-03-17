@@ -66,5 +66,20 @@ void BookingList::RemoveEntry(Booking currentBooking)
 
 Booking* BookingList::GetEntry(int entryIndex)
 {
+	//check index is within bounds
+	if (entryIndex < 0 || entryIndex > entryCount)
+	{
+		return NULL;
+	}
 
+	BookingListEntry* currentEntry = rootEntry;//From the start
+
+	for (int i = 0; i < entryIndex; i++)
+	{
+		currentEntry = currentEntry->nextEntry;//Move to next entry
+	}
+
+	return &(currentEntry->value);//return entry's value
+
+	delete currentEntry;//Used after return
 }
