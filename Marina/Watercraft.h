@@ -12,6 +12,8 @@
 
 class Watercraft
 {
+	const std::string CraftType = "Watercraft";//For type identification
+
 protected:
 	unsigned uniqueID;//Unique Identifier (For integrity)
 
@@ -43,7 +45,7 @@ public:
 	bool operator==(const Watercraft &t);
 	bool operator!=(const Watercraft &t);
 
-	
+	//std::string GetCraftType();
 };
 //Polymorphism is able to be used to Inherit to Specific types of Craft/Boat (narrow, sailing, or motor)
 
