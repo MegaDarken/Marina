@@ -42,8 +42,12 @@ void userInput::userRecordDelete(std::vector<Booking>& bookingRecords)
 
 	//Select Entry
 
+	
 
 	//Remove from vector
+
+
+	//Remove Boat from marina?
 
 
 	//Remove from memory
