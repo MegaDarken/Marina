@@ -69,3 +69,15 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 	}
 }
 
+Watercraft* WatercraftList::GetEntry(int entryIndex)
+{
+	//check index is within bounds
+	if (entryIndex < 0 || entryIndex > entryCount)
+	{
+		return NULL;
+	}
+
+	//from start
+
+}
+

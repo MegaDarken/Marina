@@ -24,7 +24,7 @@ public:
 	void InsertEntry(Watercraft);
 	void RemoveEntry(Watercraft);
 
-	//Watercraft* GetEntry(int);
+	Watercraft* GetEntry(int);
 };
 
 //This header file contains the structure of a Linked List of bookings
@@ -50,5 +50,6 @@ public:
 	void InsertEntry(Booking);
 	void RemoveEntry(Booking);
 
-	//Booking* GetEntry(int);
+	Booking* GetEntry(int);
+	int GetCount();
 };

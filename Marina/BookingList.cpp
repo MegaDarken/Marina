@@ -5,7 +5,7 @@ BookingList::BookingList()
 {
 	rootEntry = new BookingListEntry;//Start of the list's sequence
 
-	endEntry = rootEntry->nextEntry;
+	endEntry = rootEntry;
 	//currentEntry = rootEntry;
 }
 
@@ -19,8 +19,8 @@ BookingList::~BookingList()
 void BookingList::InsertEntry(Booking currentBooking)
 {
 	//Once at an Empty Entry
-	endEntry = new BookingListEntry;//Make Next Entry
 	endEntry->value = Booking(currentBooking);//Insert Value
+	endEntry->nextEntry = new BookingListEntry;//Make Next Entry
 
 	//move end to next
 	endEntry = endEntry->nextEntry;
@@ -62,4 +62,9 @@ void BookingList::RemoveEntry(Booking currentBooking)
 		}
 
 	}
+}
+
+Booking* BookingList::GetEntry(int entryIndex)
+{
+
 }
