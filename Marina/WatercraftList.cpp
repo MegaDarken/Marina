@@ -78,6 +78,7 @@ Watercraft* WatercraftList::GetEntry(int entryIndex)
 	}
 
 	currentEntry = rootEntry;//From the start
+
 	for (int i = 0; i < entryIndex; i++)
 	{
 		currentEntry = currentEntry->nextEntry;//Move to next entry
@@ -86,3 +87,7 @@ Watercraft* WatercraftList::GetEntry(int entryIndex)
 	return &(currentEntry->value);//return entry's value
 }
 
+int WatercraftList::GetCount()
+{
+	return entryCount;
+}

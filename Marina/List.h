@@ -25,6 +25,7 @@ public:
 	void RemoveEntry(Watercraft);
 
 	Watercraft* GetEntry(int);
+	int GetCount();
 };
 
 //This header file contains the structure of a Linked List of bookings

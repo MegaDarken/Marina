@@ -83,3 +83,8 @@ Booking* BookingList::GetEntry(int entryIndex)
 
 	delete currentEntry;//Used after return
 }
+
+int BookingList::GetCount()
+{
+	return entryCount;
+}
