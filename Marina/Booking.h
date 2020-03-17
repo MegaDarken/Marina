@@ -18,7 +18,7 @@ private:
 public:
 	Booking();
 	Booking(Watercraft* bookedCraft);//Where cost is calculated from the craft
-	Booking(int cost, Watercraft*);
+	Booking(int cost, Watercraft* bookedCraft);
 	Booking(char ownerName[], char boatName[], int length, int draft);//New craft is created
 	Booking(int cost, std::string ownerName, std::string boatName, int length, int draft);
 	~Booking();
