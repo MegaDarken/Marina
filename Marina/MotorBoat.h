@@ -5,6 +5,7 @@ class MotorBoat :
 {
 public:
 	MotorBoat();
+	MotorBoat(std::string ownerName, std::string boatName, int length, int draft);
 	~MotorBoat();
 };
 

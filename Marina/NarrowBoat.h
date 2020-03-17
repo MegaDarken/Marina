@@ -5,6 +5,7 @@ class NarrowBoat :
 {
 public:
 	NarrowBoat();
+	NarrowBoat(std::string ownerName, std::string boatName, int length, int draft);
 	~NarrowBoat();
 };
 
