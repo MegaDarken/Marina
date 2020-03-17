@@ -26,11 +26,11 @@ vector<Booking> bookingRecords;
 
 //Marina Area
  //First List
-List* MarinaCraftList = new List();
+WatercraftList* MarinaCraftList = new WatercraftList();
 
 //Holding Bay
  //Second List
-List* HoldingBayCraftList = new List();
+WatercraftList* HoldingBayCraftList = new WatercraftList();
 
 //External File Storage (I/O)
 
