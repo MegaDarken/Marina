@@ -60,12 +60,12 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 				currentEntry->nextEntry = chosenEntry->nextEntry;
 
 				delete chosenEntry;
+
+				//De-increment Count
+				entryCount--;
 			}
 		}
 
 	}
-
-	//De-increment Count
-	entryCount--;
 }
 
