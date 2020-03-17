@@ -8,6 +8,8 @@ WatercraftList::WatercraftList()
 
 
 	currentEntry = rootEntry;
+
+	entryCount = 0;
 }
 
 WatercraftList::~WatercraftList()
@@ -26,10 +28,10 @@ void WatercraftList::InsertEntry(Watercraft currentCraft)
 
 	//Once at an Empty Entry
 	currentEntry = new WatercraftListEntry;//Make Next Entry
-	currentEntry->value = currentCraft;//Insert Value
+	currentEntry->value = Watercraft(currentCraft);//Insert Value
 
-
-
+	//Increment Count
+	entryCount++;
 }
 
 void WatercraftList::RemoveEntry(Watercraft currentCraft)
@@ -62,5 +64,8 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 		}
 
 	}
+
+	//De-increment Count
+	entryCount--;
 }
 

@@ -15,12 +15,16 @@ private:
 
 	WatercraftListEntry* currentEntry; //Pointer for current node
 
+	int entryCount;
+
 public:
 	WatercraftList();
 	~WatercraftList();
 
 	void InsertEntry(Watercraft);
 	void RemoveEntry(Watercraft);
+
+	//Watercraft* GetEntry(int);
 };
 
 //This header file contains the structure of a Linked List of bookings
@@ -37,10 +41,14 @@ private:
 	BookingListEntry* endEntry;
 	//BookingListEntry* currentEntry; //Pointer for current node
 
+	int entryCount;
+
 public:
 	BookingList();
 	~BookingList();
 
 	void InsertEntry(Booking);
 	void RemoveEntry(Booking);
+
+	//Booking* GetEntry(int);
 };

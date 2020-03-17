@@ -24,6 +24,9 @@ void BookingList::InsertEntry(Booking currentBooking)
 
 	//move end to next
 	endEntry = endEntry->nextEntry;
+
+	//Increment Count
+	entryCount++;
 }
 
 void BookingList::RemoveEntry(Booking currentBooking)
@@ -52,6 +55,9 @@ void BookingList::RemoveEntry(Booking currentBooking)
 				currentEntry->nextEntry = chosenEntry->nextEntry;
 
 				delete chosenEntry;
+
+				//De-increment Count
+				entryCount--;
 			}
 		}
 
