@@ -1,12 +1,17 @@
-
+#ifndef MARNIA_H
 #include "List.h"
+#include "Booking.h"
+#include "Watercraft.h"
+#endif // !MARNIA_H
 
 BookingList::BookingList()
 {
 	rootEntry = new BookingListEntry;//Start of the list's sequence
 
 	endEntry = rootEntry;
-	//currentEntry = rootEntry;
+	currentEntry = rootEntry;
+
+	entryCount = 0;
 }
 
 BookingList::~BookingList()
@@ -19,7 +24,7 @@ BookingList::~BookingList()
 void BookingList::InsertEntry(Booking currentBooking)
 {
 	//Once at an Empty Entry
-	endEntry->value = Booking(currentBooking);//Insert Value
+	endEntry->value = new Booking(currentBooking);//Insert Value
 	endEntry->nextEntry = new BookingListEntry;//Make Next Entry
 
 	//move end to next
@@ -31,7 +36,9 @@ void BookingList::InsertEntry(Booking currentBooking)
 
 void BookingList::RemoveEntry(Booking currentBooking)
 {
-	BookingListEntry* currentEntry = rootEntry;//From the start
+	currentEntry = rootEntry;//From the start
+
+
 
 	//for root node
 	if (currentEntry->value.getBookedCraft() == currentBooking.getBookedCraft())
@@ -40,7 +47,7 @@ void BookingList::RemoveEntry(Booking currentBooking)
 		rootEntry = rootEntry->nextEntry;
 	}
 
-	{
+	//{
 		//While the next Entry does not contain the object; Continue
 		while (currentEntry->nextEntry != nullptr)//currentEntry->nextEntry->value != currentCraft ||
 		{
@@ -61,7 +68,10 @@ void BookingList::RemoveEntry(Booking currentBooking)
 			}
 		}
 
-	}
+	//}
+
+	//Clean up memory
+	//delete currentEntry;
 }
 
 Booking* BookingList::GetEntry(int entryIndex)
@@ -79,7 +89,7 @@ Booking* BookingList::GetEntry(int entryIndex)
 		currentEntry = currentEntry->nextEntry;//Move to next entry
 	}
 
-	return &(currentEntry->value);//return entry's value
+	return (currentEntry->value);//return entry's value
 
 	delete currentEntry;//Used after return
 }

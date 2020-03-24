@@ -1,5 +1,7 @@
 #pragma once
+
 #include "Booking.h"
+#include "Watercraft.h"
 
 //This header file contains the structure of a Linked List of watercraft 
 struct WatercraftListEntry
@@ -40,7 +42,7 @@ class BookingList
 private:
 	BookingListEntry* rootEntry; //All other entries are based upon this. List Removed if changed.
 	BookingListEntry* endEntry;
-	//BookingListEntry* currentEntry; //Pointer for current node
+	BookingListEntry* currentEntry; //Pointer for current node
 
 	int entryCount;
 
