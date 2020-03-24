@@ -21,8 +21,15 @@ using namespace std;
 //namespace marina
 //{
     //Constants
+
+//Default values
     const char* defaultRecordsFileName = "bookingRecords.txt";
 
+    const int defaultLoadCost = 0;
+    //char* ownerName = new char;
+    //char* craftName = new char;
+    const int defaultLoadLength = 0;
+    const int defaultLoadDraft = 0;
 
     //List of Records
     BookingList* Data::bookingRecords = new BookingList();
@@ -82,11 +89,11 @@ using namespace std;
     void Data::loadBookingRecords(const char* fileName)
     {
         //Temp Variables
-        int cost;
-        char* ownerName;
-        char* craftName;
-        int length;
-        int draft;
+        int cost = defaultLoadCost;
+        char* ownerName = new char;
+        char* craftName = new char;
+        int length = defaultLoadLength;
+        int draft = defaultLoadDraft;
 
         Booking* currentBooking;
 
