@@ -53,7 +53,7 @@ using namespace std;
     void Data::saveBookingRecords(const char* fileName)
     {
         //output char array
-        char* outputArray;
+        char* outputArray = new char;
 
         //Open file
         ofstream currentFile;
@@ -95,7 +95,7 @@ using namespace std;
         int length = defaultLoadLength;
         int draft = defaultLoadDraft;
 
-        Booking* currentBooking;
+        Booking* currentBooking = new Booking();
 
         //Open file
         ifstream currentFile;
