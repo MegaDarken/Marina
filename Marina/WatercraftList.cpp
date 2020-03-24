@@ -28,7 +28,7 @@ void WatercraftList::InsertEntry(Watercraft currentCraft)
 
 	//Once at an Empty Entry
 	currentEntry = new WatercraftListEntry;//Make Next Entry
-	currentEntry->value = Watercraft(currentCraft);//Insert Value
+	currentEntry->value = new Watercraft(currentCraft);//Insert Value
 
 	//Increment Count
 	entryCount++;
@@ -39,7 +39,7 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 	currentEntry = rootEntry;//From the start
 
 	//for root node
-	if (currentEntry->value == currentCraft)
+	if (currentEntry->value == &currentCraft)
 	{
 		//Move rootEntry to next
 		rootEntry = rootEntry->nextEntry;
@@ -52,7 +52,7 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 			currentEntry = currentEntry->nextEntry;//Move to next entry
 
 			//If the next entry is the one to be removed
-			if (currentEntry->nextEntry->value == currentCraft)
+			if (currentEntry->nextEntry->value == &currentCraft)
 			{
 				WatercraftListEntry* chosenEntry = currentEntry->nextEntry;
 
@@ -84,7 +84,7 @@ Watercraft* WatercraftList::GetEntry(int entryIndex)
 		currentEntry = currentEntry->nextEntry;//Move to next entry
 	}
 
-	return &(currentEntry->value);//return entry's value
+	return (currentEntry->value);//return entry's value
 }
 
 int WatercraftList::GetCount()
