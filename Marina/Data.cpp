@@ -20,7 +20,21 @@ using namespace std;
 
 //namespace marina
 //{
-    
+    //Constants
+    const char* defaultRecordsFileName = "bookingRecords.txt";
+
+
+    //List of Records
+    BookingList* Data::bookingRecords = new BookingList();
+
+    //Marina Area
+     //First List
+    WatercraftList* Data::MarinaCraftList = new WatercraftList();
+
+    //Holding Bay
+     //Second List
+    WatercraftList* Data::HoldingBayCraftList = new WatercraftList();
+
     //Timer(s)
 
 
@@ -49,7 +63,7 @@ using namespace std;
                 //cast object into file
                 //currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
 
-                bookingRecords->GetEntry(index).getAsString(outputArray);
+                bookingRecords->GetEntry(index);//->GetEntry(index).getAsString(outputArray);
 
                 currentFile.write(outputArray, sizeof(outputArray));
             }

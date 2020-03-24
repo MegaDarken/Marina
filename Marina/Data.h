@@ -1,35 +1,33 @@
 #pragma once
 
 
-static class Data
+class Data
 {
 public:
 	//Data();
 	//~Data();
 
-	void saveBookingRecords();
-	void saveBookingRecords(const char*);
+	static void saveBookingRecords();
+	static void saveBookingRecords(const char*);
 
-	void loadBookingRecords();
-	void loadBookingRecords(const char*);
+	static void loadBookingRecords();
+	static void loadBookingRecords(const char*);
 
 
 private:
-	//Constants
-	const char* defaultRecordsFileName = "bookingRecords.txt";
 
 	//List of Records
-	BookingList* bookingRecords = new BookingList();
+	static BookingList* bookingRecords;
 
 	//Boat Data Storage
 
 	//Marina Area
 	 //First List
-	//WatercraftList* Data::MarinaCraftList = new WatercraftList();
+	static WatercraftList* MarinaCraftList;
 
 	//Holding Bay
 	 //Second List
-	//WatercraftList* HoldingBayCraftList = new WatercraftList();
+	static WatercraftList* HoldingBayCraftList;
 };
 
 //Data::Data()
