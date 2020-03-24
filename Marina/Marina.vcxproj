@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Booking.h" />
+    <ClInclude Include="Data.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="MotorBoat.h" />
     <ClInclude Include="NarrowBoat.h" />
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Booking.cpp" />
+    <ClCompile Include="BookingList.cpp" />
     <ClCompile Include="Data.cpp" />
     <ClCompile Include="MotorBoat.cpp" />
     <ClCompile Include="NarrowBoat.cpp" />
@@ -36,6 +38,7 @@
     <ClCompile Include="SailingBoat.cpp" />
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="Watercraft.cpp" />
+    <ClCompile Include="WatercraftList.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
