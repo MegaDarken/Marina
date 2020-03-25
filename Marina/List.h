@@ -42,7 +42,7 @@ class BookingList
 private:
 	BookingListEntry* rootEntry; //All other entries are based upon this. List Removed if changed.
 	BookingListEntry* endEntry;
-	BookingListEntry* currentEntry; //Pointer for current node
+	//BookingListEntry* currentEntry; //Pointer for current node
 
 	int entryCount;
 

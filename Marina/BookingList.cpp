@@ -9,7 +9,7 @@ BookingList::BookingList()
 	rootEntry = new BookingListEntry;//Start of the list's sequence
 
 	endEntry = rootEntry;
-	currentEntry = rootEntry;
+	//currentEntry = rootEntry;
 
 	entryCount = 0;
 }
