@@ -36,12 +36,12 @@ void BookingList::InsertEntry(Booking currentBooking)
 
 void BookingList::RemoveEntry(Booking currentBooking)
 {
-	currentEntry = rootEntry;//From the start
+	BookingListEntry* currentEntry = rootEntry;//From the start
 
-
+	Booking* checkingBooking = currentEntry->value;
 
 	//for root node
-	if (currentEntry->value.getBookedCraft() == currentBooking.getBookedCraft())
+	if (checkingBooking->getBookedCraft() == currentBooking.getBookedCraft())
 	{
 		//Move rootEntry to next
 		rootEntry = rootEntry->nextEntry;
@@ -53,8 +53,10 @@ void BookingList::RemoveEntry(Booking currentBooking)
 		{
 			currentEntry = currentEntry->nextEntry;//Move to next entry
 
+			checkingBooking = currentEntry->nextEntry->value;
+
 			//If the next entry is the one to be removed
-			if (currentEntry->nextEntry->value.getBookedCraft() == currentBooking.getBookedCraft())
+			if (checkingBooking->getBookedCraft() == currentBooking.getBookedCraft())
 			{
 				BookingListEntry* chosenEntry = currentEntry->nextEntry;
 
