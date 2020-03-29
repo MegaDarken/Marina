@@ -46,6 +46,24 @@ using namespace std;
 
 
 
+    //Display
+    void Data::showBookingRecords()
+    {
+        Booking* currentBooking = nullptr;//pointer setup
+
+        //for each index in the length of the records.
+        for (int index = 0; index < bookingRecords->GetCount(); index++)
+        {
+            currentBooking = bookingRecords->GetEntry(index);//Get next booking
+
+            //Print Out Booking
+            cout << currentBooking->getAsString << endl;
+        }
+
+        //Cleanup data
+        delete currentBooking;
+    }
+
     //External File Storage (I/O)
 
 

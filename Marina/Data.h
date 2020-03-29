@@ -7,6 +7,10 @@ public:
 	//Data();
 	//~Data();
 
+	//Display
+	static void showBookingRecords();
+
+	//File I/O
 	static void saveBookingRecords();
 	static void saveBookingRecords(const char*);
 
