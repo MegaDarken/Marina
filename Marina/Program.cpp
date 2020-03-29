@@ -13,6 +13,8 @@
 #include "Watercraft.h"
 #endif // !MARNIA_H
 
+#include "Data.h"
+
 using namespace std;
 
 //Constants
@@ -59,17 +61,20 @@ void runMenu(void)
 		case ExitMenuCharacter:
 			cout << "Exiting...";
 			break;
-		case 1:
+		case '1':
+			cout << "Recording new booking..." << endl;
 			//Recording new booking
 
 			break;
-		case 2:
+		case '2':
+			cout << "Deleting a record..." << endl;
 			//Deleting a record
 
 			break;
-		case 3:
+		case '3':
+			cout << "Displaying all records..." << endl;
 			//Displaying all records
-
+			//Data::showBookingRecords();
 			break;
 		}
 	}
