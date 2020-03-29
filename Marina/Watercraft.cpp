@@ -8,7 +8,7 @@ const int defaultLength = 15;
 const int defaultDraft = 5;
 
 //Initalise Static 
-int Watercraft::craftIdCounter = 0;
+int  Watercraft::craftIdCounter = 0;
 
 int Watercraft::generateNextId()
 {
