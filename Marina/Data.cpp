@@ -57,7 +57,7 @@ using namespace std;
             currentBooking = bookingRecords->GetEntry(index);//Get next booking
 
             //Print Out Booking
-            cout << currentBooking->getAsString << endl;
+            cout << (currentBooking->getAsString()) << endl;
         }
 
         //Cleanup data
