@@ -21,7 +21,7 @@ protected:
 	int length;
 	int draft;
 
-	static int IdCounter;
+	static int craftIdCounter;
 	int generateNextId();
 public:
 	Watercraft();

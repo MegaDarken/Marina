@@ -7,16 +7,19 @@
 const int defaultLength = 15;
 const int defaultDraft = 5;
 
+//Initalise Static 
+int Watercraft::craftIdCounter = 0;
+
 int Watercraft::generateNextId()
 {
-	if (IdCounter == NULL)
+	/*if (craftIdCounter == NULL)
 	{
-		IdCounter = 0;
-	}
+		craftIdCounter = 0;
+	}*/
 	//Increment
-	IdCounter++;
+	craftIdCounter++;
 
-	return IdCounter;
+	return craftIdCounter;
 }
 
 //Constructors
