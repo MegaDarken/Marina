@@ -14,6 +14,7 @@
 #endif // !MARNIA_H
 
 #include "Data.h"
+#include "userInput.h"
 
 using namespace std;
 
@@ -64,12 +65,12 @@ void runMenu(void)
 		case '1':
 			cout << "Recording new booking..." << endl;
 			//Recording new booking
-
+			userInput::userRecordBooking(*Data::getBookingRecords());
 			break;
 		case '2':
 			cout << "Deleting a record..." << endl;
 			//Deleting a record
-
+			userInput::userRecordDelete(*Data::getBookingRecords());
 			break;
 		case '3':
 			cout << "Displaying all records..." << endl;
