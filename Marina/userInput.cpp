@@ -13,7 +13,7 @@ void userInput::takeInput(const char* prompt, char* returnedInput)
 }
 
 //Handle booking
-void userInput::userRecordBooking(std::vector<Booking>& bookingRecords)
+void userInput::userRecordBooking(BookingList& bookingRecords)
 {
 	//Show user records
 	viewRecords(bookingRecords);
@@ -35,7 +35,7 @@ void userInput::userRecordBooking(std::vector<Booking>& bookingRecords)
 
 }
 
-void userInput::userRecordDelete(std::vector<Booking>& bookingRecords)
+void userInput::userRecordDelete(BookingList& bookingRecords)
 {
 	//Show user records
 	viewRecords(bookingRecords);
@@ -54,19 +54,19 @@ void userInput::userRecordDelete(std::vector<Booking>& bookingRecords)
 
 }
 
-void userInput::viewRecords(std::vector<Booking> &bookingRecords)
+void userInput::viewRecords(BookingList& bookingRecords)
 {
 	//Instantiate output char array
 	char* outputArray = new char;
 
 	//for each of the vector's elements
-	for (size_t index = 0; index < bookingRecords.size(); index++)
+	for (size_t index = 0; index < bookingRecords.GetCount(); index++)
 	{
 		//clear array
 		outputArray = new char;
 
 		//get record as string
-		bookingRecords[index].getAsString(outputArray);
+		bookingRecords.GetEntry(index)->getAsString(outputArray);
 
 		//print record as string
 		std::cout << outputArray << std::endl;
