@@ -46,6 +46,12 @@ using namespace std;
 
 
 
+    //Accessor(s)
+    BookingList Data::getBookingRecords()
+    {
+        return bookingRecords;
+    }
+
     //Display
     void Data::showBookingRecords()
     {
