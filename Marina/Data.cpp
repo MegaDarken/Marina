@@ -47,7 +47,7 @@ using namespace std;
 
 
     //Accessor(s)
-    BookingList Data::getBookingRecords()
+    BookingList* Data::getBookingRecords()
     {
         return bookingRecords;
     }

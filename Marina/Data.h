@@ -8,7 +8,7 @@ public:
 	//~Data();
 
 	//Accessor
-	static BookingList getBookingRecords();
+	static BookingList* getBookingRecords();
 
 	//Display
 	static void showBookingRecords();
