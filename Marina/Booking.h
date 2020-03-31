@@ -33,5 +33,9 @@ public:
 	//Methods
 	bool validLength();
 	bool validDraft();
+
+	//Equality Operators
+	bool operator==(const Booking& t);
+	bool operator!=(const Booking& t);
 };
 

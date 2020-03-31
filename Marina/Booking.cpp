@@ -130,3 +130,22 @@ bool Booking::validDraft()
 	return (bookedCraft->getDraft() <= MaximumBoatDraft);
 }
 
+bool Booking::operator==(const Booking& current)
+{
+	bool result = true;
+
+	if (this->bookedCraft != current.bookedCraft) { result = false; }
+	if (this->totalCost != current.totalCost) { result = false; }
+
+	return result;
+}
+
+bool Booking::operator==(const Booking& current)
+{
+	bool result = false;
+
+	if (this->bookedCraft != current.bookedCraft) { result = true; }
+	if (this->totalCost != current.totalCost) { result = true; }
+
+	return result;
+}
