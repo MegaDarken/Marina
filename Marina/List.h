@@ -55,4 +55,6 @@ public:
 
 	Booking* GetEntry(int);
 	int GetCount();
+
+	bool Contains(Booking);
 };

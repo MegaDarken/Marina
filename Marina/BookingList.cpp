@@ -100,3 +100,19 @@ int BookingList::GetCount()
 {
 	return entryCount;
 }
+
+bool BookingList::Contains(Booking currentBooking)
+{
+	//bool matchFound = false;
+	BookingListEntry* currentEntry = rootEntry;//From the start
+
+	while (currentEntry->nextEntry != nullptr)
+	{
+		if (*(currentEntry->value) == currentBooking)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
