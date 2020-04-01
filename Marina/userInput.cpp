@@ -12,46 +12,70 @@ void userInput::takeInput(const char* prompt, char* returnedInput)
 	std::cin.getline(returnedInput,12); //returnedInput;
 }
 
+void userInput::takeInput(const char* prompt, std::string* returnedInput)
+{
+	takeInput(prompt, (char*)returnedInput);
+}
+
+void userInput::takeInput(const std::string* prompt, std::string* returnedInput)
+{
+	takeInput((char*)prompt, (char*)returnedInput);
+}
+
 //Handle booking
 void userInput::userRecordBooking(BookingList& bookingRecords)
 {
 	//Show user records
 	viewRecords(bookingRecords);
 
-	//Initalise Variables
-	char* ownerName = new char();
+	//Initalise Object
+	Booking* newBooking = new Booking(new Watercraft());
 
 	//Promt user for booking details
-	takeInput("", ownerName);//Collect inputs
-	std::cout << ownerName;
+	takeInput("Owner's Name:", newBooking->getBookedCraft()->getOwnerName());//Collect inputs
+	takeInput("Boat Name:", newBooking->getBookedCraft()->getBoatName());
+	//std::cout << ownerName;
 
-	//Construct Object
+	//Show 
+	newBooking->getAsString();
 
-
-	//Push to vector
+	//Push to list
 
 
 	//Remove Variables
-
+	delete 
 }
 
 void userInput::userRecordDelete(BookingList& bookingRecords)
 {
+	//Data Inital
+	Booking* selectedBooking = new Booking();
+	bool matchFound;
+
 	//Show user records
 	viewRecords(bookingRecords);
 
 	//Select Entry
+	takeInput("Owner's Name:", selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
+	takeInput("Boat Name:", selectedBooking->getBookedCraft()->getBoatName());
 
-	
+	//Get matching booking?
+	matchFound = bookingRecords.Contains(*selectedBooking);
 
-	//Remove from vector
+	//If a match is found
+	if (matchFound)
+	{
+		//Remove Booking
+		bookingRecords.RemoveEntry(*selectedBooking);
+
+		//Remove Boat from marina?
 
 
-	//Remove Boat from marina?
-
+	}
 
 	//Remove from memory
-
+	delete selectedBooking;
+	//delete matchFound;
 }
 
 void userInput::viewRecords(BookingList& bookingRecords)

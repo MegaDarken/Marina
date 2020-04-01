@@ -21,6 +21,8 @@ private:
 public:
 	//Common utility
 	static void  takeInput(const char* prompt, char* out);
+	static void  takeInput(const char* prompt, std::string* out);
+	static void  takeInput(const std::string* prompt, std::string* out);
 
 	//Menu
 
