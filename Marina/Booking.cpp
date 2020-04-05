@@ -140,7 +140,7 @@ bool Booking::operator==(const Booking& current)
 	return result;
 }
 
-bool Booking::operator==(const Booking& current)
+bool Booking::operator!=(const Booking& current)
 {
 	bool result = false;
 
