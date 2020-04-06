@@ -1,6 +1,6 @@
 #include "userInput.h"
 
-void userInput::takeInput(const char* prompt, char* returnedInput)
+void userInput::takeInputChar(const char* prompt, char* returnedInput)
 {
 	//Prompt user
 	std::cout << prompt;
@@ -12,14 +12,14 @@ void userInput::takeInput(const char* prompt, char* returnedInput)
 	std::cin.getline(returnedInput,12); //returnedInput;
 }
 
-void userInput::takeInput(const char* prompt, std::string* returnedInput)
+void userInput::takeInputCharString(const char* prompt, std::string* returnedInput)
 {
-	takeInput(prompt, (char*)returnedInput);
+	takeInputChar(prompt, (char*)returnedInput);
 }
 
-void userInput::takeInput(const std::string* prompt, std::string* returnedInput)
+void userInput::takeInputString(const std::string* prompt, std::string* returnedInput)
 {
-	takeInput((char*)prompt, (char*)returnedInput);
+	takeInputChar((char*)prompt, (char*)returnedInput);
 }
 
 //Handle booking
@@ -32,8 +32,8 @@ void userInput::userRecordBooking(BookingList& bookingRecords)
 	Booking* newBooking = new Booking(new Watercraft());
 
 	//Promt user for booking details
-	takeInput("Owner's Name:", newBooking->getBookedCraft()->getOwnerName());//Collect inputs
-	takeInput("Boat Name:", newBooking->getBookedCraft()->getBoatName());
+	takeInputCharString("Owner's Name:", newBooking->getBookedCraft()->getOwnerName());//Collect inputs
+	takeInputCharString("Boat Name:", newBooking->getBookedCraft()->getBoatName());
 	//std::cout << ownerName;
 
 	//Show 
