@@ -12,6 +12,7 @@ const char splitChar = ';';
 //Conversion
 void intToChar(int input, std::string output)
 {
+	//Converts an interger into a string of characters displaying that value
 	int iterations = log10(input);
 	int charIndex = 0;
 
@@ -98,21 +99,21 @@ std::string Booking::getAsString()
 	return outputString;
 }
 
- void Booking::getAsString(std::string outputString)
+ void Booking::getAsString(std::string *outputString)
 {
 	std::string tempString = "";
 
 	//Add parts to string
 	intToChar(this->totalCost, tempString);
-	outputString += tempString;
+	*outputString += tempString;
 
-	outputString += this->bookedCraft->getOwnerName();
-	outputString += this->bookedCraft->getBoatName();
+	*outputString += this->bookedCraft->getOwnerName();
+	*outputString += this->bookedCraft->getBoatName();
 
 	intToChar(this->bookedCraft->getLength(), tempString);
-	outputString += tempString;
+	*outputString += tempString;
 	intToChar(this->bookedCraft->getDraft(), tempString);
-	outputString += tempString;
+	*outputString += tempString;
 	//strcat(outputString, (char*)this->bookedCraft->getLength);
 	//strcat(outputString, (char*)this->bookedCraft->getDraft);
 

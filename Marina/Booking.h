@@ -28,7 +28,7 @@ public:
 	Watercraft* getBookedCraft();
 
 	std::string getAsString();
-	void getAsString(std::string outputString);
+	void getAsString(std::string *outputString);
 
 	//Methods
 	bool validLength();
