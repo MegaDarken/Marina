@@ -1,19 +1,6 @@
 //Data.cpp	 Stores and Handles the program's data.
 #pragma once
 
-#ifndef MARNIA_L
-#include <iostream>
-#include <fstream>
-#include <cstdlib>
-#include <vector>
-#endif // !MARNIA_L
-
-#ifndef MARNIA_H
-#include "List.h"
-#include "Booking.h"
-#include "Watercraft.h"
-#endif // !MARNIA_H
-
 #include "Data.h"
 
 using namespace std;

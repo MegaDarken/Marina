@@ -5,6 +5,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <vector>
+#include <string>
 #endif // !MARNIA_L
 
 #ifndef MARNIA_H
