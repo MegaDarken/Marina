@@ -44,13 +44,16 @@ void userInput::userRecordBooking(BookingList& bookingRecords)
 	//std::cout << ownerName;
 
 	//Show 
-	std::cout << newBooking->getAsString();
+	std::string* outputString = new std::string;
+	newBooking->getAsString(outputString);
+	std::cout << outputString << std::endl;
 
 	//Push to list
-
+	bookingRecords.InsertEntry(*newBooking);
 
 	//Remove Variables
 	delete newBooking;
+	delete outputString;
 }
 
 void userInput::userRecordDelete(BookingList& bookingRecords)
@@ -88,23 +91,26 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 void userInput::viewRecords(BookingList& bookingRecords)
 {
 	//Instantiate output char array
-	char* outputArray = new char;
+	std::string *outputString = new std::string;
 
 	//for each of the vector's elements
-	for (size_t index = 0; index < bookingRecords.GetCount(); index++)
+	for (int index = 0; index < bookingRecords.GetCount(); index++)
 	{
 		//clear array
-		outputArray = new char;
+		outputString = new std::string;
 
 		//get record as string
-		bookingRecords.GetEntry(index)->getAsString(outputArray);
+		bookingRecords.GetEntry(index)->getAsString(outputString);
+
+		//Display index
+		std::cout << index << ':';
 
 		//print record as string
-		std::cout << outputArray << std::endl;
+		std::cout << outputString << std::endl;
 	}
 
 	//Remove the single char array from memory
-	delete outputArray;
+	delete outputString;
 
 	return;
 }
