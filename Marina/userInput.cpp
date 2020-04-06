@@ -32,18 +32,18 @@ void userInput::userRecordBooking(BookingList& bookingRecords)
 	Booking* newBooking = new Booking(new Watercraft());
 
 	//Promt user for booking details
-	takeInputCharString("Owner's Name:", newBooking->getBookedCraft()->getOwnerName());//Collect inputs
-	takeInputCharString("Boat Name:", newBooking->getBookedCraft()->getBoatName());
+	takeInputCharString("Owner's Name:", &newBooking->getBookedCraft()->getOwnerName());//Collect inputs
+	takeInputCharString("Boat Name:", &newBooking->getBookedCraft()->getBoatName());
 	//std::cout << ownerName;
 
 	//Show 
-	newBooking->getAsString();
+	std::cout << newBooking->getAsString();
 
 	//Push to list
 
 
 	//Remove Variables
-	delete 
+	delete newBooking;
 }
 
 void userInput::userRecordDelete(BookingList& bookingRecords)
@@ -56,8 +56,8 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 	viewRecords(bookingRecords);
 
 	//Select Entry
-	takeInput("Owner's Name:", selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
-	takeInput("Boat Name:", selectedBooking->getBookedCraft()->getBoatName());
+	takeInputCharString("Owner's Name:", &selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
+	takeInputCharString("Boat Name:", &selectedBooking->getBookedCraft()->getBoatName());
 
 	//Get matching booking?
 	matchFound = bookingRecords.Contains(*selectedBooking);
