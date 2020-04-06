@@ -76,7 +76,8 @@ void runMenu(void)
 		case '3':
 			cout << "Displaying all records..." << endl;
 			//Displaying all records
-			Data::showBookingRecords();
+			userInput::viewRecords(*Data::getBookingRecords());
+			//Data::showBookingRecords();
 			break;
 		}
 	}
