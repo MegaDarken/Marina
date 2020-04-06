@@ -32,12 +32,17 @@ public:
 
 	//Getters and Setters
 	unsigned getUniqueID();
+	void setUniqueID(unsigned);
 
 	std::string getOwnerName();
+	void setOwnerName(std::string);
 	std::string getBoatName();
+	void setBoatName(std::string);
 
 	int getLength();
+	void setLength(int);
 	int getDraft();
+	void setDraft(int);
 
 	//Equality Operators
 	bool operator==(const Watercraft &t);

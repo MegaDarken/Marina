@@ -60,7 +60,12 @@ Watercraft::~Watercraft()
 //Getters
 unsigned Watercraft::getUniqueID()
 {
-	return uniqueID;
+	return this->uniqueID;
+}
+
+void Watercraft::setUniqueID(unsigned newValue)
+{
+	this->uniqueID = newValue;
 }
 
 std::string Watercraft::getOwnerName()
@@ -68,19 +73,39 @@ std::string Watercraft::getOwnerName()
 	return this->ownerName;
 }
 
+void Watercraft::setOwnerName(std::string newValue)
+{
+	this->ownerName = newValue;
+}
+
 std::string Watercraft::getBoatName()
 {
 	return this->boatName;
 }
 
+void Watercraft::setBoatName(std::string newValue)
+{
+	this->boatName = newValue;
+}
+
 int Watercraft::getLength()
 {
-	return length;
+	return this->length;
+}
+
+void Watercraft::setLength(int newValue)
+{
+	this->length = newValue;
 }
 
 int Watercraft::getDraft()
 {
-	return draft;
+	return this->draft;
+}
+
+void Watercraft::setDraft(int newValue)
+{
+	this->draft = newValue;
 }
 
 //Boolian Operators
