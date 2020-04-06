@@ -14,12 +14,19 @@ void userInput::takeInputChar(const char* prompt, char* returnedInput)
 
 void userInput::takeInputCharString(const char* prompt, std::string* returnedInput)
 {
-	takeInputChar(prompt, (char*)returnedInput);
+	//Prompt user
+	std::cout << prompt;
+
+	//Remove Prompt from input
+	std::cin.clear();
+
+	//Take input
+	std::getline(std::cin, *returnedInput);
 }
 
 void userInput::takeInputString(const std::string* prompt, std::string* returnedInput)
 {
-	takeInputChar((char*)prompt, (char*)returnedInput);
+	takeInputCharString((char*)prompt, returnedInput);
 }
 
 //Handle booking
