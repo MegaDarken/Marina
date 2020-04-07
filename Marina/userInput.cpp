@@ -14,14 +14,22 @@ void userInput::takeInputChar(const char* prompt, char* returnedInput)
 
 void userInput::takeInputCharString(const char* prompt, std::string* returnedInput)
 {
+	//Clear non-digits from input buffer
+	if (std::cin.peek() == '\n')
+	{
+		std::cin.ignore();
+	}
+
 	//Prompt user
-	std::cout << std::endl << prompt;
+	std::cout << prompt;
 
 	//Remove Prompt from input
 	std::cin.clear();
 
 	//Take input
 	std::getline(std::cin, *returnedInput);
+
+	return;
 }
 
 void userInput::takeInputString(const std::string* prompt, std::string* returnedInput)
@@ -44,6 +52,7 @@ void userInput::userRecordBooking(BookingList& bookingRecords)
 
 	takeInputCharString("Owner's Name:", outputString);//Collect inputs
 	newBooking->getBookedCraft()->setOwnerName(*outputString);
+
 	takeInputCharString("Boat Name:", outputString);
 	newBooking->getBookedCraft()->setBoatName(*outputString);
 	//std::cout << ownerName;
