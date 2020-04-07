@@ -15,7 +15,7 @@ void userInput::takeInputChar(const char* prompt, char* returnedInput)
 void userInput::takeInputCharString(const char* prompt, std::string* returnedInput)
 {
 	//Prompt user
-	std::cout << prompt;
+	std::cout << std::endl << prompt;
 
 	//Remove Prompt from input
 	std::cin.clear();
@@ -45,8 +45,8 @@ void userInput::userRecordBooking(BookingList& bookingRecords)
 
 	//Show 
 	std::string* outputString = new std::string;
-	newBooking->getAsString(outputString);
-	std::cout << outputString << std::endl;
+	newBooking->printAsString();
+	std::cout << std::endl;
 
 	//Push to list
 	bookingRecords.InsertEntry(*newBooking);
@@ -99,14 +99,13 @@ void userInput::viewRecords(BookingList& bookingRecords)
 		//clear array
 		outputString = new std::string;
 
-		//get record as string
-		bookingRecords.GetEntry(index)->getAsPrintString(outputString);
 
 		//Display index
 		std::cout << index << ':';
 
 		//print record as string
-		std::cout << outputString << std::endl;
+		bookingRecords.GetEntry(index)->printAsString();
+		std::cout << std::endl;
 	}
 
 	//Remove the single char array from memory
