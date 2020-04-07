@@ -100,7 +100,7 @@ void userInput::viewRecords(BookingList& bookingRecords)
 		outputString = new std::string;
 
 		//get record as string
-		bookingRecords.GetEntry(index)->getAsString(outputString);
+		bookingRecords.GetEntry(index)->getAsPrintString(outputString);
 
 		//Display index
 		std::cout << index << ':';
