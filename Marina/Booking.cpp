@@ -121,25 +121,25 @@ std::string Booking::getAsString()
 	//return outputString;
 }
 
- void Booking::getAsPrintString(std::string* outputString)
+ void Booking::printAsString()
  {
 	 std::string* tempString = new std::string;
 
 	 //Add parts to string
 	 intToChar(this->totalCost, tempString);
-	 *outputString = *outputString + *tempString + ' ';
+	 std::cout << *tempString << ' ';
 
-	 *outputString = *outputString + this->bookedCraft->getOwnerName() + ' ';
-	 *outputString = *outputString + this->bookedCraft->getBoatName() + ' ';
+	 std::cout << this->bookedCraft->getOwnerName() << ' ';
+	 std::cout << this->bookedCraft->getBoatName() << ' ';
 
 	 intToChar(this->bookedCraft->getLength(), tempString);
-	 *outputString = *outputString + *tempString + ' ';
+	 std::cout << *tempString << ' ';
 	 intToChar(this->bookedCraft->getDraft(), tempString);
-	 *outputString = *outputString + *tempString + ' ';
+	 std::cout << *tempString << ' ';
 	 //strcat(outputString, (char*)this->bookedCraft->getLength);
 	 //strcat(outputString, (char*)this->bookedCraft->getDraft);
 
-	 //delete tempString;
+	 delete tempString;
 	 //return outputString;
  }
 

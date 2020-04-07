@@ -29,7 +29,7 @@ public:
 
 	std::string getAsString();
 	void getAsString(std::string *outputString);
-	void getAsPrintString(std::string* outputString);
+	void printAsString();
 
 	//Methods
 	bool validLength();
