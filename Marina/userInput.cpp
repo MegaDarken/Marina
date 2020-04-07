@@ -32,6 +32,8 @@ void userInput::takeInputString(const std::string* prompt, std::string* returned
 //Handle booking
 void userInput::userRecordBooking(BookingList& bookingRecords)
 {
+	std::string* outputString = new std::string;
+
 	//Show user records
 	viewRecords(bookingRecords);
 
@@ -39,12 +41,15 @@ void userInput::userRecordBooking(BookingList& bookingRecords)
 	Booking* newBooking = new Booking(new Watercraft());
 
 	//Promt user for booking details
-	takeInputCharString("Owner's Name:", &newBooking->getBookedCraft()->getOwnerName());//Collect inputs
-	takeInputCharString("Boat Name:", &newBooking->getBookedCraft()->getBoatName());
+
+	takeInputCharString("Owner's Name:", outputString);//Collect inputs
+	newBooking->getBookedCraft()->setOwnerName(*outputString);
+	takeInputCharString("Boat Name:", outputString);
+	newBooking->getBookedCraft()->setBoatName(*outputString);
 	//std::cout << ownerName;
 
 	//Show 
-	std::string* outputString = new std::string;
+	
 	newBooking->printAsString();
 	std::cout << std::endl;
 
