@@ -85,12 +85,16 @@ using namespace std;
             //Input data
             for (size_t index = 0; index < bookingRecords->GetCount(); index++)
             {
+                ////Get Next object
+
+
                 //cast object into file
                 //currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
 
                 bookingRecords->GetEntry(index);//->GetEntry(index).getAsString(outputArray);
 
                 currentFile.write(outputArray, sizeof(outputArray));
+
             }
         }
 
@@ -113,6 +117,9 @@ using namespace std;
         int length = defaultLoadLength;
         int draft = defaultLoadDraft;
 
+        //Clear existing records
+        bookingRecords = new BookingList();
+
         Booking* currentBooking = new Booking();
 
         //Open file
@@ -127,6 +134,9 @@ using namespace std;
             //Input data
             while (!currentFile.eof())
             {
+                ////Get next line/object
+                //currentFile.read();
+
                 //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
                 currentFile.read((char*)cost, sizeof(int));
 
