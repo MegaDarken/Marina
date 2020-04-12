@@ -1,11 +1,12 @@
 #pragma once
-
+//Include(s) 
 #ifndef MARNIA_L
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include <sstream>
 #endif // !MARNIA_L
 
 #ifndef MARNIA_H

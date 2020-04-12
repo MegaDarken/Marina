@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include <sstream>
 #endif // !MARNIA_L
 
 class Watercraft

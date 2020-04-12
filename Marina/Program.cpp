@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include <sstream>
 #endif // !MARNIA_L
 
 #ifndef MARNIA_H
@@ -87,12 +88,12 @@ void runMenu(void)
 		case 's':
 			cout << "Saving Bookings to File..." << endl;
 			//Saveing bookings to file
-
+			Data::saveBookingRecords();
 			break;
 		case 'l':
 			cout << "Loading Bookings from File..." << endl;
 			//Loading bookings from file
-
+			Data::loadBookingRecords();
 			break;
 		}
 	}
