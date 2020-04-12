@@ -117,39 +117,45 @@ using namespace std;
         int length = defaultLoadLength;
         int draft = defaultLoadDraft;
 
-        //Clear existing records
-        bookingRecords = new BookingList();
-
         Booking* currentBooking = new Booking();
 
         //Open file
         ifstream currentFile;
         currentFile.open(fileName);
 
-        //Ensure file is open
-        if (currentFile.is_open() == false)
-            cout << "Error opening file\n" << endl;
-        else
+        //check to see if file exists
+        if (currentFile.good)
         {
-            //Input data
-            while (!currentFile.eof())
+            //file exists, continue
+
+            //Clear existing records
+            bookingRecords = new BookingList();
+
+            //Ensure file is open
+            if (currentFile.is_open() == false)
+                cout << "Error opening file\n" << endl;
+            else
             {
-                ////Get next line/object
-                //currentFile.read();
+                //Input data
+                while (!currentFile.eof())
+                {
+                    ////Get next line/object
+                    //currentFile.read();
 
-                //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
-                currentFile.read((char*)cost, sizeof(int));
+                    //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
+                    currentFile.read((char*)cost, sizeof(int));
 
-                currentFile.read((char*)ownerName, sizeof(char*));
-                currentFile.read((char*)craftName, sizeof(char*));
+                    currentFile.read((char*)ownerName, sizeof(char*));
+                    currentFile.read((char*)craftName, sizeof(char*));
 
-                currentFile.read((char*)length, sizeof(int));
-                currentFile.read((char*)draft, sizeof(int));
+                    currentFile.read((char*)length, sizeof(int));
+                    currentFile.read((char*)draft, sizeof(int));
 
-                currentBooking = new Booking(cost, ownerName, craftName, length, draft);
+                    currentBooking = new Booking(cost, ownerName, craftName, length, draft);
 
-                bookingRecords->InsertEntry(*currentBooking);
+                    bookingRecords->InsertEntry(*currentBooking);
 
+                }
             }
         }
 
