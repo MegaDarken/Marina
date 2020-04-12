@@ -35,6 +35,10 @@ void showMenu(void)
 	cout << "2) delete a record" << endl;
 	cout << "3) display all records (and available marina space)" << endl;
 
+	//Debug options
+	cout << "s) Save Booking Records" << endl;
+	cout << "l) Save Booking Records" << endl;
+
 	cout << ExitMenuCharacter << ") exit the program" << endl;
 };
 
@@ -78,6 +82,17 @@ void runMenu(void)
 			//Displaying all records
 			userInput::viewRecords(*Data::getBookingRecords());
 			//Data::showBookingRecords();
+			break;
+
+		case 's':
+			cout << "Saving Bookings to File..." << endl;
+			//Saveing bookings to file
+
+			break;
+		case 'l':
+			cout << "Loading Bookings from File..." << endl;
+			//Loading bookings from file
+
 			break;
 		}
 	}
