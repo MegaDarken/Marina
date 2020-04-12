@@ -124,7 +124,7 @@ using namespace std;
         currentFile.open(fileName);
 
         //check to see if file exists
-        if (currentFile.good)
+        if (currentFile.good())
         {
             //file exists, continue
 
