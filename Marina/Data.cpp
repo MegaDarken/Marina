@@ -164,7 +164,7 @@ using namespace std;
         {
             //file does not exist
             //Warn user
-            cout << "File chosen does not exist." << end;
+            cout << "File chosen does not exist." << endl;
         }
 
         //Close file
