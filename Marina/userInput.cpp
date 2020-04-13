@@ -80,8 +80,8 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 	viewRecords(bookingRecords);
 
 	//Select Entry
-	takeInputCharString("Owner's Name:", &selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
-	takeInputCharString("Boat Name:", &selectedBooking->getBookedCraft()->getBoatName());
+	takeInputCharString("Owner's Name:", selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
+	takeInputCharString("Boat Name:", selectedBooking->getBookedCraft()->getBoatName());
 
 	//Get matching booking?
 	matchFound = bookingRecords.Contains(*selectedBooking);

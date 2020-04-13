@@ -93,16 +93,16 @@ Watercraft* Booking::getBookedCraft()
 	return bookedCraft;
 }
 
-std::string Booking::getAsString()
-{
-	std::string outputString;
-
-	//Add parts to string
-	outputString += this->bookedCraft->getOwnerName();
-	outputString += this->bookedCraft->getBoatName();
-
-	return outputString;
-}
+//std::string Booking::getAsString()
+//{
+//	std::string outputString;
+//
+//	//Add parts to string
+//	outputString += this->bookedCraft->getOwnerName();
+//	outputString += this->bookedCraft->getBoatName();
+//
+//	return outputString;
+//}
 
  void Booking::getAsString(std::string *outputString)
 {
@@ -112,8 +112,8 @@ std::string Booking::getAsString()
 	intToChar(this->totalCost, tempString);
 	*outputString = *outputString + *tempString;
 
-	*outputString = *outputString + this->bookedCraft->getOwnerName();
-	*outputString = *outputString + this->bookedCraft->getBoatName();
+	*outputString = *outputString + *this->bookedCraft->getOwnerName();
+	*outputString = *outputString + *this->bookedCraft->getBoatName();
 
 	intToChar(this->bookedCraft->getLength(), tempString);
 	*outputString = *outputString + *tempString;
@@ -151,20 +151,20 @@ std::string Booking::getAsString()
  void Booking::getAsFileString(std::string* outputString)
  {
 	 //vars
-	 char* tempChar = new char();
+	 //char* tempChar = new char();
 
 	 //clear output
 	 //outputString = new std::string();
-	 *outputString = "";
+	 outputString = new std::string();
 	 
-	 tempChar = (char*)this->getTotalCost();
-	 *outputString = *outputString + tempChar + AttributeSplitChar;
+	 //tempChar = (char*)this->getTotalCost();
+	 outputString[0] = ((char*)this->getTotalCost()) + AttributeSplitChar;
 
-	 *outputString = *outputString + this->bookedCraft->getOwnerName() + AttributeSplitChar;
-	 *outputString = *outputString + this->bookedCraft->getBoatName() + AttributeSplitChar;
+	 outputString[0] = (*this->bookedCraft->getOwnerName() + AttributeSplitChar);
+	 outputString[0] = (*this->bookedCraft->getBoatName() + AttributeSplitChar);
 
-	 *outputString = *outputString + reinterpret_cast<char*>((char*)this->bookedCraft->getLength()) + AttributeSplitChar;
-	 *outputString = *outputString + reinterpret_cast<char*>((char*)this->bookedCraft->getDraft()) + AttributeSplitChar;
+	 outputString[0] = ((char*)this->bookedCraft->getLength()) + AttributeSplitChar;
+	 outputString[0] = ((char*)this->bookedCraft->getDraft());
  }
 
  void Booking::setFromFileString(std::string* inputString)
