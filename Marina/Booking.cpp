@@ -166,7 +166,7 @@ std::string Booking::getAsString()
 	 
 	 std::vector<std::string> splitString;// = new std::vector<std::string>();
 	 std::string tempString;
-	 char* tempChar = new char;
+	 //char* tempChar = new char;
 
 	 //split string into array
 	 while (std::getline(currentStream, tempString, AttributeSplitChar))
@@ -177,21 +177,21 @@ std::string Booking::getAsString()
 	 
 	 if (splitString.size() == AttributeCount)
 	 {
-		 std::strcpy(tempChar, splitString[0].c_str);
-		 this->bookedCraft->setUniqueID((unsigned int)tempChar);
+		 //std::strcpy(tempChar, splitString[0].c_str());//, splitString[0].size());
+		 this->bookedCraft->setUniqueID((unsigned int)splitString[0].c_str());
 
 		 this->bookedCraft->setOwnerName(splitString[1]);
 		 this->bookedCraft->setBoatName(splitString[2]);
 
-		 std::strcpy(tempChar, splitString[3].c_str);
-		 this->bookedCraft->setLength((int)tempChar);
-		 std::strcpy(tempChar, splitString[4].c_str);
-		 this->bookedCraft->setDraft((int)tempChar);
+		 //std::strcpy(tempChar, splitString[3].c_str());//, splitString[3].size());
+		 this->bookedCraft->setLength((int)splitString[3].c_str());
+		 //std::strcpy(tempChar, splitString[4].c_str());//, splitString[4].size());
+		 this->bookedCraft->setDraft((int)splitString[4].c_str());
 	 }
 
 	 //Delete
 	 //delete splitString;
-	 delete tempChar;
+	 //delete tempChar;
  }
 
 bool Booking::validLength()
