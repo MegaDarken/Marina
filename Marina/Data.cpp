@@ -72,7 +72,8 @@ using namespace std;
     {
         //Vars
         Booking* currentBooking = new Booking();
-        char* outputArray = new char;//output char array
+        //char* outputArray = new char;//output char array
+        std::string* tempString = new std::string();
 
         //Open file
         ofstream currentFile;
@@ -93,7 +94,11 @@ using namespace std;
                 //currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
 
                 //currentFile.write(outputArray, sizeof(outputArray));
-                currentFile.write((char*)& *currentBooking, sizeof(currentBooking));
+
+                currentBooking->getAsFileString(tempString);
+
+                //Convert to 
+                currentFile << tempString;
             }
         }
 
@@ -102,6 +107,7 @@ using namespace std;
 
         //Delete
         delete currentBooking;
+        delete tempString;
     }
 
     void Data::saveBookingRecords()
@@ -113,13 +119,15 @@ using namespace std;
     void Data::loadBookingRecords(const char* fileName)
     {
         //Temp Variables
-        int cost = defaultLoadCost;
+        /*int cost = defaultLoadCost;
         char* ownerName = new char;
         char* craftName = new char;
         int length = defaultLoadLength;
-        int draft = defaultLoadDraft;
+        int draft = defaultLoadDraft;*/
 
         Booking* currentBooking = new Booking();
+
+        char* tempChar = new char;
 
         //Open file
         ifstream currentFile;
@@ -142,7 +150,7 @@ using namespace std;
                 while (!currentFile.eof())
                 {
                     ////Get next line/object
-                    currentFile.read((char*) & *currentBooking, sizeof(*currentBooking));
+                    currentFile.getline(tempChar, sizeof(*currentBooking));
 
                     //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
                     /*currentFile.read((char*)cost, sizeof(int));
@@ -153,7 +161,8 @@ using namespace std;
                     currentFile.read((char*)length, sizeof(int));
                     currentFile.read((char*)draft, sizeof(int));
 
-                    currentBooking = new Booking(cost, ownerName, craftName, length, draft);*/
+                    //currentBooking = new Booking(cost, ownerName, craftName, length, draft);*/
+                    currentBooking->setFromFileString(&string(tempChar));
 
                     bookingRecords->InsertEntry(*currentBooking);
 
@@ -172,11 +181,13 @@ using namespace std;
 
         //Delete Vars
         //delete cost;
-        delete ownerName;
-        delete craftName;
+        //delete ownerName;
+        //delete craftName;
         //delete length;
         //delete draft;
         delete currentBooking;
+
+        delete tempChar;
     }
 
     void Data::loadBookingRecords()
