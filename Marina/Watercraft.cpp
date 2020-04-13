@@ -36,8 +36,8 @@ Watercraft::Watercraft(std::string ownerName, std::string boatName, int lengthVa
 {
 	this->uniqueID = generateNextId();
 
-	this->ownerName = ownerName;
-	this->boatName = boatName;
+	*(this->ownerName) = ownerName;
+	*(this->boatName) = boatName;
 	
 	this->length = lengthValue;
 	this->draft = draftValue;
@@ -73,24 +73,24 @@ void Watercraft::setUniqueID(unsigned newValue)
 	this->uniqueID = newValue;
 }
 
-std::string Watercraft::getOwnerName()
+std::string* Watercraft::getOwnerName()
 {
 	return this->ownerName;
 }
 
 void Watercraft::setOwnerName(std::string newValue)
 {
-	this->ownerName = newValue;
+	*this->ownerName = newValue;
 }
 
-std::string Watercraft::getBoatName()
+std::string* Watercraft::getBoatName()
 {
 	return this->boatName;
 }
 
 void Watercraft::setBoatName(std::string newValue)
 {
-	this->boatName = newValue;
+	*this->boatName = newValue;
 }
 
 int Watercraft::getLength()

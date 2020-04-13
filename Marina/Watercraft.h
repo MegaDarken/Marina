@@ -17,8 +17,8 @@ protected:
 	unsigned uniqueID;//Unique Identifier (For integrity)
 
 	//Names
-	std::string ownerName;
-	std::string boatName;
+	std::string* ownerName;
+	std::string* boatName;
 
 	int length;
 	int draft;
@@ -37,9 +37,9 @@ public:
 	unsigned getUniqueID();
 	void setUniqueID(unsigned);
 
-	std::string getOwnerName();
+	std::string* getOwnerName();
 	void setOwnerName(std::string);
-	std::string getBoatName();
+	std::string* getBoatName();
 	void setBoatName(std::string);
 
 	int getLength();
