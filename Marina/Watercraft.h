@@ -11,8 +11,6 @@
 
 class Watercraft
 {
-	const std::string CraftType = "Watercraft";//For type identification
-
 protected:
 	unsigned uniqueID;//Unique Identifier (For integrity)
 
