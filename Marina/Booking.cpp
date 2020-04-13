@@ -6,7 +6,8 @@ const int MaximumBoatLength = 15;//As defined in brief
 const int MaximumBoatDraft = 5;
 const int PoundsPerMeterPerMonth = 10;
 
-const char splitChar = ';';
+const char AttributeSplitChar = ';';
+const int AttributeCount = 5;
 
 
 //Conversion
@@ -141,6 +142,56 @@ std::string Booking::getAsString()
 
 	 delete tempString;
 	 //return outputString;
+ }
+
+ void Booking::getAsFileString(std::string* outputString)
+ {
+	 //clear output
+	 //outputString = new std::string();
+	 *outputString = "";
+	 
+	 *outputString = *outputString + (char*)this->getTotalCost() + AttributeSplitChar;
+
+	 *outputString = *outputString + this->bookedCraft->getOwnerName() + AttributeSplitChar;
+	 *outputString = *outputString + this->bookedCraft->getBoatName() + AttributeSplitChar;
+
+	 *outputString = *outputString + (char*)this->bookedCraft->getLength() + AttributeSplitChar;
+	 *outputString = *outputString + (char*)this->bookedCraft->getDraft() + AttributeSplitChar;
+ }
+
+ void Booking::setFromFileString(std::string* inputString)
+ {
+	 //Instatiate
+	 std::stringstream currentStream(*inputString);
+	 
+	 std::vector<std::string> splitString;// = new std::vector<std::string>();
+	 std::string tempString;
+	 char* tempChar = new char;
+
+	 //split string into array
+	 while (std::getline(currentStream, tempString, AttributeSplitChar))
+	 {
+		 //std::strcpy(tempChar, tempString);
+		 splitString.push_back(tempString);
+	 }
+	 
+	 if (splitString.size() == AttributeCount)
+	 {
+		 std::strcpy(tempChar, splitString[0].c_str);
+		 this->bookedCraft->setUniqueID((unsigned int)tempChar);
+
+		 this->bookedCraft->setOwnerName(splitString[1]);
+		 this->bookedCraft->setBoatName(splitString[2]);
+
+		 std::strcpy(tempChar, splitString[3].c_str);
+		 this->bookedCraft->setLength((int)tempChar);
+		 std::strcpy(tempChar, splitString[4].c_str);
+		 this->bookedCraft->setDraft((int)tempChar);
+	 }
+
+	 //Delete
+	 //delete splitString;
+	 delete tempChar;
  }
 
 bool Booking::validLength()

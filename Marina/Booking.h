@@ -31,6 +31,9 @@ public:
 	void getAsString(std::string *outputString);
 	void printAsString();
 
+	void getAsFileString(std::string* outputString);
+	void setFromFileString(std::string* inputString);
+
 	//Methods
 	bool validLength();
 	bool validDraft();
