@@ -8,6 +8,8 @@ using namespace std;
 //namespace marina
 //{
     //Constants
+    const char AttributeSplitChar = ';';
+
 
 //Default values
     const char* defaultRecordsFileName = "bookingRecords.txt";
@@ -95,10 +97,22 @@ using namespace std;
 
                 //currentFile.write(outputArray, sizeof(outputArray));
 
-                currentBooking->getAsFileString(tempString);
+                //currentBooking->getAsFileString(tempString);
 
-                //Convert to 
-                currentFile << tempString;
+                //Write 
+                //currentFile << ((char*)currentBooking->getTotalCost());
+                ////currentFile << AttributeSplitChar;
+
+                //Watercraft currentCraft = *currentBooking->getBookedCraft();
+                //currentFile << currentBooking->getBookedCraft()->getOwnerName();// << AttributeSplitChar;
+                ////currentFile << AttributeSplitChar;
+                //currentFile << currentBooking->getBookedCraft()->getBoatName();// << AttributeSplitChar;
+                ////currentFile << AttributeSplitChar;
+
+                //currentFile << ((char*)currentBooking->getBookedCraft()->getLength());// << AttributeSplitChar;
+                ////currentFile << AttributeSplitChar;
+                //currentFile << ((char*)currentBooking->getBookedCraft()->getDraft());
+                currentFile.write((char*)&currentBooking, sizeof(*currentBooking));
             }
         }
 
@@ -127,8 +141,8 @@ using namespace std;
 
         Booking* currentBooking = new Booking();
 
-        char* tempChar = new char;
-
+        char tempChar[50];
+        
         //Open file
         ifstream currentFile;
         currentFile.open(fileName);
@@ -150,7 +164,7 @@ using namespace std;
                 while (!currentFile.eof())
                 {
                     ////Get next line/object
-                    currentFile.getline(tempChar, sizeof(*currentBooking));
+                    currentFile.get((char*) & currentBooking, sizeof(*currentBooking));
 
                     //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
                     /*currentFile.read((char*)cost, sizeof(int));
