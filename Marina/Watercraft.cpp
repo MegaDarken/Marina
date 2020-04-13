@@ -27,6 +27,8 @@ Watercraft::Watercraft()
 {
 	this->uniqueID = generateNextId();
 
+	this->ownerName = new std::string;
+	this->boatName = new std::string;
 
 	this->length = defaultLength;
 	this->draft = defaultDraft;
@@ -55,6 +57,8 @@ Watercraft::Watercraft(Watercraft &object)
 
 Watercraft::~Watercraft()
 {
+	delete ownerName;
+	delete boatName;
 }
 
 //Getters
