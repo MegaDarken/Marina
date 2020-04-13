@@ -49,6 +49,9 @@ private:
 	//Holding Bay
 	 //Second List
 	static WatercraftList* HoldingBayCraftList;
+
+	//Timers
+
 };
 
 //Data::Data()
