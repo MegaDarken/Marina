@@ -32,6 +32,8 @@ public:
 	~Watercraft();//Descructor
 
 	//Getters and Setters
+	std::string getCraftType();
+
 	unsigned getUniqueID();
 	void setUniqueID(unsigned);
 

@@ -58,6 +58,11 @@ Watercraft::~Watercraft()
 }
 
 //Getters
+std::string Watercraft::getCraftType()
+{
+	return this->CraftType;
+}
+
 unsigned Watercraft::getUniqueID()
 {
 	return this->uniqueID;
