@@ -70,8 +70,9 @@ using namespace std;
     //Save To Files
     void Data::saveBookingRecords(const char* fileName)
     {
-        //output char array
-        char* outputArray = new char;
+        //Vars
+        Booking* currentBooking = new Booking();
+        char* outputArray = new char;//output char array
 
         //Open file
         ofstream currentFile;
@@ -86,20 +87,21 @@ using namespace std;
             for (size_t index = 0; index < bookingRecords->GetCount(); index++)
             {
                 ////Get Next object
-
+                currentBooking = bookingRecords->GetEntry(index);//->GetEntry(index).getAsString(outputArray);
 
                 //cast object into file
                 //currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
 
-                bookingRecords->GetEntry(index);//->GetEntry(index).getAsString(outputArray);
-
-                currentFile.write(outputArray, sizeof(outputArray));
-
+                //currentFile.write(outputArray, sizeof(outputArray));
+                currentFile.write((char*)& *currentBooking, sizeof(currentBooking));
             }
         }
 
         //Close file
         currentFile.close();
+
+        //Delete
+        delete currentBooking;
     }
 
     void Data::saveBookingRecords()
@@ -140,10 +142,10 @@ using namespace std;
                 while (!currentFile.eof())
                 {
                     ////Get next line/object
-                    //currentFile.read();
+                    currentFile.read((char*) & *currentBooking, sizeof(*currentBooking));
 
                     //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
-                    currentFile.read((char*)cost, sizeof(int));
+                    /*currentFile.read((char*)cost, sizeof(int));
 
                     currentFile.read((char*)ownerName, sizeof(char*));
                     currentFile.read((char*)craftName, sizeof(char*));
@@ -151,12 +153,18 @@ using namespace std;
                     currentFile.read((char*)length, sizeof(int));
                     currentFile.read((char*)draft, sizeof(int));
 
-                    currentBooking = new Booking(cost, ownerName, craftName, length, draft);
+                    currentBooking = new Booking(cost, ownerName, craftName, length, draft);*/
 
                     bookingRecords->InsertEntry(*currentBooking);
 
                 }
             }
+        }
+        else
+        {
+            //file does not exist
+            //Warn user
+            cout << "File chosen does not exist." << end;
         }
 
         //Close file
