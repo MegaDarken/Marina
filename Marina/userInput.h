@@ -25,6 +25,7 @@ public:
 	static void  takeInputChar(const char* prompt, char* out);
 	static void  takeInputCharString(const char* prompt, std::string* out);
 	static void  takeInputString(const std::string* prompt, std::string* out);
+	static void  takeInputInt(const std::string* prompt, int* out);
 
 	//Menu
 

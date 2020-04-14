@@ -37,6 +37,20 @@ void userInput::takeInputString(const std::string* prompt, std::string* returned
 	takeInputCharString((char*)prompt, returnedInput);
 }
 
+void userInput::takeInputInt(const std::string* prompt, int* returnedInput)
+{
+	//Prompt user
+	std::cout << prompt;
+
+	//Remove Prompt from input
+	std::cin.clear();
+
+	//Take input
+	std::cin >> *returnedInput;
+
+	return;
+}
+
 //Handle booking
 void userInput::userRecordBooking(BookingList& bookingRecords)
 {
@@ -75,13 +89,17 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 	//Data Inital
 	Booking* selectedBooking = new Booking();
 	bool matchFound;
+	int userSelection = -1;
 
 	//Show user records
 	viewRecords(bookingRecords);
 
 	//Select Entry
-	takeInputCharString("Owner's Name:", selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
-	takeInputCharString("Boat Name:", selectedBooking->getBookedCraft()->getBoatName());
+	//takeInputCharString("Owner's Name:", selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
+	//takeInputCharString("Boat Name:", selectedBooking->getBookedCraft()->getBoatName());
+
+
+	selectedBooking = bookingRecords.GetEntry(userSelection);
 
 	//Get matching booking?
 	matchFound = bookingRecords.Contains(*selectedBooking);
