@@ -134,8 +134,8 @@ Watercraft* Booking::getBookedCraft()
 	 intToChar(this->totalCost, tempString);
 	 std::cout << *tempString << ' ';
 
-	 std::cout << this->bookedCraft->getOwnerName() << ' ';
-	 std::cout << this->bookedCraft->getBoatName() << ' ';
+	 std::cout << *(this->bookedCraft->getOwnerName()) << ' ';
+	 std::cout << *(this->bookedCraft->getBoatName()) << ' ';
 
 	 intToChar(this->bookedCraft->getLength(), tempString);
 	 std::cout << *tempString << ' ';
