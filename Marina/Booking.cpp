@@ -12,34 +12,6 @@ const char AttributeSplitChar = ';';
 const int AttributeCount = 5;
 
 
-//Conversion
-void intToChar(int input, char *output)
-{
-	//Converts an interger into a string of characters displaying that value
-	int iterations = log10(input);
-	int charIndex = 0;
-
-	//Establish output as new pointer
-	//output = new char;
-
-	for (int i = iterations; i > 0; i--)
-	{
-		int currentDigit = input;
-		int currentPower = pow(10, iterations);
-
-		currentDigit = currentDigit % (currentPower * 10);
-		currentDigit = currentDigit / currentPower;
-
-		output[charIndex] = (char)(currentDigit + '0');
-
-		//std::cout << "!";//Interation notifier
-
-		charIndex++;
-	}
-
-	//End of char
-	output[charIndex] = '\n';//null char
-}
 
 //Constructor
 Booking::Booking()
@@ -120,15 +92,15 @@ Watercraft* Booking::getBookedCraft()
 	char *tempString = new char;//Is establisment needed here?
 
 	//Add parts to string
-	intToChar(this->totalCost, tempString);
+	userInput::intToChar(this->totalCost, tempString);
 	*outputString = *outputString + *tempString;
 
 	*outputString = *outputString + *this->bookedCraft->getOwnerName();
 	*outputString = *outputString + *this->bookedCraft->getBoatName();
 
-	intToChar(this->bookedCraft->getLength(), tempString);
+	userInput::intToChar(this->bookedCraft->getLength(), tempString);
 	*outputString = *outputString + *tempString;
-	intToChar(this->bookedCraft->getDraft(), tempString);
+	userInput::intToChar(this->bookedCraft->getDraft(), tempString);
 	*outputString = *outputString + *tempString;
 	//strcat(outputString, (char*)this->bookedCraft->getLength);
 	//strcat(outputString, (char*)this->bookedCraft->getDraft);
@@ -142,15 +114,15 @@ Watercraft* Booking::getBookedCraft()
 	 char* tempString = new char;
 
 	 //Add parts to string
-	 intToChar(this->totalCost, tempString);
+	 userInput::intToChar(this->totalCost, tempString);
 	 std::cout << *tempString << ' ';
 
 	 std::cout << *(this->bookedCraft->getOwnerName()) << ' ';
 	 std::cout << *(this->bookedCraft->getBoatName()) << ' ';
 
-	 intToChar(this->bookedCraft->getLength(), tempString);
+	 userInput::intToChar(this->bookedCraft->getLength(), tempString);
 	 std::cout << tempString << ' ';
-	 intToChar(this->bookedCraft->getDraft(), tempString);
+	 userInput::intToChar(this->bookedCraft->getDraft(), tempString);
 	 std::cout << tempString << ' ';
 	 //strcat(outputString, (char*)this->bookedCraft->getLength);
 	 //strcat(outputString, (char*)this->bookedCraft->getDraft);

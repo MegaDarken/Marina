@@ -2,7 +2,7 @@
 
 #include "Watercraft.h"
 
-
+#include "userInput.h"
 
 
 class Booking
@@ -27,7 +27,7 @@ public:
 	int getTotalCost();
 	Watercraft* getBookedCraft();
 
-	std::string getAsString();
+	//std::string getAsString();
 	void getAsString(std::string *outputString);
 	void printAsString();
 
