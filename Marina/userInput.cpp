@@ -26,8 +26,11 @@ void userInput::takeInputCharString(const char* prompt, std::string* returnedInp
 	//Remove Prompt from input
 	std::cin.clear();
 
-	std::cin.ignore(10000,'\n');
-
+	if (std::cin.peek() == '\n')
+	{
+		std::cin.ignore(10000, '\n');
+	}
+	
 	//Take input
 	std::getline(std::cin, *returnedInput);
 
