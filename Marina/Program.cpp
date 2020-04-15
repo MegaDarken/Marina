@@ -23,6 +23,10 @@ using namespace std;
 //Constants
 const char ExitMenuCharacter = '4';
 
+const char RecordBookingCharacter = '1';
+const char DeleteBookingCharacter = '2';
+const char DisplayRecordsCharacter = '3';
+
 const int MarinaLengthMeters = 150;//As defined in brief
 
 //Menu Methods
@@ -68,12 +72,12 @@ void runMenu(void)
 		case ExitMenuCharacter:
 			cout << "Exiting...";
 			break;
-		case '1':
+		case RecordBookingCharacter:
 			cout << "Recording new booking..." << endl;
 			//Recording new booking
 			userInput::userRecordBooking(Data::getBookingRecords());
 			break;
-		case '2':
+		case DeleteBookingCharacter:
 			cout << "Deleting a record..." << endl;
 			//Deleting a record
 			userInput::userRecordDelete(Data::getBookingRecords());
@@ -103,6 +107,10 @@ void runMenu(void)
 
 int main(void)
 {
+	Data::getBookingRecords()->InsertEntry(Booking());
+	Data::getBookingRecords()->InsertEntry(Booking());
+	Data::getBookingRecords()->InsertEntry(Booking());
+
 	runMenu();//Menu is displayed to the user and traverced
 
 	//Pausing Before Closing
