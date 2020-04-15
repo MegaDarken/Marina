@@ -21,9 +21,7 @@ private:
 
 
 public:
-	//Convert
-	static void intToChar(int input, char* output);
-
+	
 	//Common utility
 	static void  takeInputChar(const char* prompt, char* out);
 	static void  takeInputCharString(const char* prompt, std::string* out);

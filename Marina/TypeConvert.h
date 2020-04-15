@@ -3,5 +3,11 @@
 
 class TypeConvert
 {
+
+public:
+
+	static void intToChar(int input, char* output);
+
+
 };
 
