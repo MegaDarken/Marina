@@ -32,10 +32,13 @@ void intToChar(int input, char *output)
 
 		output[charIndex] = (char)(currentDigit + '0');
 
-		std::cout << "!";
+		//std::cout << "!";//Interation notifier
 
 		charIndex++;
 	}
+
+	//End of char
+	output[charIndex] = '\n';//null char
 }
 
 //Constructor
@@ -146,9 +149,9 @@ Watercraft* Booking::getBookedCraft()
 	 std::cout << *(this->bookedCraft->getBoatName()) << ' ';
 
 	 intToChar(this->bookedCraft->getLength(), tempString);
-	 std::cout << *tempString << ' ';
+	 std::cout << tempString << ' ';
 	 intToChar(this->bookedCraft->getDraft(), tempString);
-	 std::cout << *tempString << ' ';
+	 std::cout << tempString << ' ';
 	 //strcat(outputString, (char*)this->bookedCraft->getLength);
 	 //strcat(outputString, (char*)this->bookedCraft->getDraft);
 
