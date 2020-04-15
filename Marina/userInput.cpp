@@ -52,7 +52,7 @@ void userInput::takeInputInt(const char* prompt, int* returnedInput)
 }
 
 //Handle booking
-void userInput::userRecordBooking(BookingList& bookingRecords)
+void userInput::userRecordBooking(BookingList* bookingRecords)
 {
 	std::string* outputString = new std::string;
 
@@ -77,14 +77,14 @@ void userInput::userRecordBooking(BookingList& bookingRecords)
 	std::cout << std::endl;
 
 	//Push to list
-	bookingRecords.InsertEntry(*newBooking);
+	bookingRecords->InsertEntry(*newBooking);
 
 	//Remove Variables
 	delete newBooking;
 	delete outputString;
 }
 
-void userInput::userRecordDelete(BookingList& bookingRecords)
+void userInput::userRecordDelete(BookingList* bookingRecords)
 {
 	//Data Inital
 	Booking* selectedBooking = new Booking();
@@ -99,16 +99,16 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 	//takeInputCharString("Boat Name:", *(selectedBooking->getBookedCraft()->getBoatName()));
 	takeInputInt("Booking Number:", &userSelection);
 
-	selectedBooking = bookingRecords.GetEntry(userSelection);
+	selectedBooking = bookingRecords->GetEntry(userSelection);
 
 	//Get matching booking?
-	matchFound = bookingRecords.Contains(*selectedBooking);
+	matchFound = bookingRecords->Contains(*selectedBooking);
 
 	//If a match is found
 	if (matchFound)
 	{
 		//Remove Booking
-		bookingRecords.RemoveEntry(*selectedBooking);
+		bookingRecords->RemoveEntry(*selectedBooking);
 
 		//Remove Boat from marina?
 
@@ -120,13 +120,15 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 	//delete matchFound;
 }
 
-void userInput::viewRecords(BookingList& bookingRecords)
+void userInput::viewRecords(BookingList* bookingRecords)
 {
+	if (bookingRecords == nullptr) {return;}
+
 	//Instantiate output char array
 	//std::string *outputString = new std::string;
 
 	//for each of the vector's elements
-	for (int index = 0; index < bookingRecords.GetCount(); index++)
+	for (int index = 0; index < bookingRecords->GetCount(); index++)
 	{
 		//clear array
 		//outputString = new std::string;
@@ -136,7 +138,7 @@ void userInput::viewRecords(BookingList& bookingRecords)
 		std::cout << index << ':';
 
 		//print record as string
-		bookingRecords.GetEntry(index)->printAsString();
+		bookingRecords->GetEntry(index)->printAsString();
 		std::cout << std::endl;
 	}
 
