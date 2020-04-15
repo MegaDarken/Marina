@@ -2,6 +2,11 @@
 #include "CppUnitTest.h"
 
 //Project includes
+#include "../Marina/List.h"
+#include "../Marina/Booking.h"
+#include "../Marina/Watercraft.h"
+#include "../Marina/Data.h"
+#include "../Marina/userInput.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
