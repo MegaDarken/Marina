@@ -15,16 +15,18 @@ void userInput::takeInputChar(const char* prompt, char* returnedInput)
 void userInput::takeInputCharString(const char* prompt, std::string* returnedInput)
 {
 	//Clear non-digits from input buffer
-	if (std::cin.peek() == '\n')
+	/*if (std::cin.peek() == '\n')
 	{
 		std::cin.ignore();
-	}
+	}*/
 
 	//Prompt user
 	std::cout << prompt;
 
 	//Remove Prompt from input
 	std::cin.clear();
+
+	std::cin.ignore(10000,'\n');
 
 	//Take input
 	std::getline(std::cin, *returnedInput);
@@ -138,7 +140,14 @@ void userInput::viewRecords(BookingList* bookingRecords)
 		std::cout << index << ':';
 
 		//print record as string
-		bookingRecords->GetEntry(index)->printAsString();
+		if (bookingRecords->GetEntry(index) != nullptr)
+		{
+			bookingRecords->GetEntry(index)->printAsString();
+		}
+		else 
+		{
+			std::cout << "ERR: Booking nullptr!";
+		}
 		std::cout << std::endl;
 	}
 
