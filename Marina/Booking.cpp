@@ -13,11 +13,14 @@ const int AttributeCount = 5;
 
 
 //Conversion
-void intToChar(int input, std::string *output)
+void intToChar(int input, char *output)
 {
 	//Converts an interger into a string of characters displaying that value
 	int iterations = log10(input);
 	int charIndex = 0;
+
+	//Establish output as new pointer
+	output = new char[iterations] ;
 
 	for (int i = iterations; i > 0; i--)
 	{
@@ -27,7 +30,10 @@ void intToChar(int input, std::string *output)
 		currentDigit = currentDigit % (currentPower * 10);
 		currentDigit = currentDigit / currentPower;
 
-		output[charIndex] = ('0' + currentDigit);
+		output[charIndex] = (char)(currentDigit + '0');
+
+		std::cout << "!";
+
 		charIndex++;
 	}
 }
@@ -90,7 +96,7 @@ int Booking::getTotalCost()
 
 Watercraft* Booking::getBookedCraft()
 {
-	return bookedCraft;
+		return bookedCraft;
 }
 
 //std::string Booking::getAsString()
@@ -106,7 +112,7 @@ Watercraft* Booking::getBookedCraft()
 
  void Booking::getAsString(std::string *outputString)
 {
-	std::string *tempString = new std::string;
+	char *tempString = new char;//Is establisment needed here?
 
 	//Add parts to string
 	intToChar(this->totalCost, tempString);
@@ -128,7 +134,7 @@ Watercraft* Booking::getBookedCraft()
 
  void Booking::printAsString()
  {
-	 std::string* tempString = new std::string;
+	 char* tempString = new char;
 
 	 //Add parts to string
 	 intToChar(this->totalCost, tempString);
