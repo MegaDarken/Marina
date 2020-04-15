@@ -69,7 +69,9 @@ Booking::Booking(char ownerName[], char boatName[], int length, int draft)
 	//Create watercraft
 	this->bookedCraft = new Watercraft(ownerName, boatName, length, draft);
 
-	//Calculate cost
+	//Calculate Cost
+	int cost = bookedCraft->getLength();
+	this->totalCost = cost * PoundsPerMeterPerMonth;
 }
 
 Booking::Booking(int cost, std::string ownerName, std::string boatName, int length, int draft)
