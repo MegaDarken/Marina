@@ -20,7 +20,7 @@ void intToChar(int input, char *output)
 	int charIndex = 0;
 
 	//Establish output as new pointer
-	output = new char[iterations] ;
+	//output = new char;
 
 	for (int i = iterations; i > 0; i--)
 	{
