@@ -27,6 +27,9 @@ const char RecordBookingCharacter = '1';
 const char DeleteBookingCharacter = '2';
 const char DisplayRecordsCharacter = '3';
 
+const char SaveRecordsCharacter = 's';
+const char LoadRecordsCharacter = 'l';
+
 const int MarinaLengthMeters = 150;//As defined in brief
 
 //Menu Methods
@@ -82,19 +85,19 @@ void runMenu(void)
 			//Deleting a record
 			userInput::userRecordDelete(Data::getBookingRecords());
 			break;
-		case '3':
+		case DisplayRecordsCharacter:
 			cout << "Displaying all records..." << endl;
 			//Displaying all records
 			userInput::viewRecords(Data::getBookingRecords());
 			//Data::showBookingRecords();
 			break;
 
-		case 's':
+		case SaveRecordsCharacter:
 			cout << "Saving Bookings to File..." << endl;
 			//Saveing bookings to file
 			Data::saveBookingRecords();
 			break;
-		case 'l':
+		case LoadRecordsCharacter:
 			cout << "Loading Bookings from File..." << endl;
 			//Loading bookings from file
 			Data::loadBookingRecords();
@@ -107,10 +110,6 @@ void runMenu(void)
 
 int main(void)
 {
-	Data::getBookingRecords()->InsertEntry(Booking());
-	Data::getBookingRecords()->InsertEntry(Booking());
-	Data::getBookingRecords()->InsertEntry(Booking());
-
 	runMenu();//Menu is displayed to the user and traverced
 
 	//Pausing Before Closing
