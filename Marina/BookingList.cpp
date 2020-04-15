@@ -7,25 +7,32 @@
 BookingList::BookingList()
 {
 	rootEntry = new BookingListEntry;//Start of the list's sequence
+	
+	rootEntry->value = new Booking;
+	rootEntry->nextEntry = new BookingListEntry;
 
 	endEntry = rootEntry;
 	//currentEntry = rootEntry;
 
 	entryCount = 0;
+
+	std::cout << "BookingList instantiated..." << std::endl;
 }
 
 BookingList::~BookingList()
 {
-	rootEntry = nullptr;
+	//rootEntry = nullptr;
 	delete rootEntry;
 	delete endEntry;
 }
 
 void BookingList::InsertEntry(Booking currentBooking)
 {
+	endEntry = new BookingListEntry;//Make Next Entry
+
 	//Once at an Empty Entry
 	endEntry->value = new Booking(currentBooking);//Insert Value
-	endEntry->nextEntry = new BookingListEntry;//Make Next Entry
+	
 
 	//move end to next
 	endEntry = endEntry->nextEntry;
@@ -53,21 +60,26 @@ void BookingList::RemoveEntry(Booking currentBooking)
 		{
 			currentEntry = currentEntry->nextEntry;//Move to next entry
 
-			checkingBooking = currentEntry->nextEntry->value;
-
-			//If the next entry is the one to be removed
-			if (checkingBooking->getBookedCraft() == currentBooking.getBookedCraft())
+			//Does the Booking exist?
+			if (currentEntry->value != nullptr)
 			{
-				BookingListEntry* chosenEntry = currentEntry->nextEntry;
+				checkingBooking = currentEntry->value;
 
-				//skip over the entry
-				currentEntry->nextEntry = chosenEntry->nextEntry;
+				//If the next entry is the one to be removed
+				if (checkingBooking->getBookedCraft() == currentBooking.getBookedCraft())
+				{
+					BookingListEntry* chosenEntry = currentEntry->nextEntry;
 
-				delete chosenEntry;
+					//skip over the entry
+					currentEntry->nextEntry = chosenEntry->nextEntry;
 
-				//De-increment Count
-				entryCount--;
+					delete chosenEntry;
+
+					//De-increment Count
+					entryCount--;
+				}
 			}
+
 		}
 
 	//}
@@ -79,7 +91,7 @@ void BookingList::RemoveEntry(Booking currentBooking)
 Booking* BookingList::GetEntry(int entryIndex)
 {
 	//check index is within bounds
-	if (entryIndex < 0 || entryIndex > entryCount)
+	if (entryIndex < 0 || entryIndex >= entryCount)
 	{
 		return NULL;
 	}
@@ -93,7 +105,8 @@ Booking* BookingList::GetEntry(int entryIndex)
 
 	return (currentEntry->value);//return entry's value
 
-	delete currentEntry;//Used after return
+	currentEntry = nullptr;
+	delete currentEntry;//Used after return(?)
 }
 
 int BookingList::GetCount()
