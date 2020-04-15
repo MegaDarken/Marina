@@ -116,20 +116,20 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 	}
 
 	//Remove from memory
-	delete selectedBooking;
+	//delete selectedBooking;
 	//delete matchFound;
 }
 
 void userInput::viewRecords(BookingList& bookingRecords)
 {
 	//Instantiate output char array
-	std::string *outputString = new std::string;
+	//std::string *outputString = new std::string;
 
 	//for each of the vector's elements
 	for (int index = 0; index < bookingRecords.GetCount(); index++)
 	{
 		//clear array
-		outputString = new std::string;
+		//outputString = new std::string;
 
 
 		//Display index
@@ -141,7 +141,7 @@ void userInput::viewRecords(BookingList& bookingRecords)
 	}
 
 	//Remove the single char array from memory
-	delete outputString;
+	//delete outputString;
 
 	return;
 }
