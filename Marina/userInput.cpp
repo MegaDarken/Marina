@@ -37,7 +37,7 @@ void userInput::takeInputString(const std::string* prompt, std::string* returned
 	takeInputCharString((char*)prompt, returnedInput);
 }
 
-void userInput::takeInputInt(const std::string* prompt, int* returnedInput)
+void userInput::takeInputInt(const char* prompt, int* returnedInput)
 {
 	//Prompt user
 	std::cout << prompt;
@@ -95,9 +95,9 @@ void userInput::userRecordDelete(BookingList& bookingRecords)
 	viewRecords(bookingRecords);
 
 	//Select Entry
-	//takeInputCharString("Owner's Name:", selectedBooking->getBookedCraft()->getOwnerName());//Collect inputs
-	//takeInputCharString("Boat Name:", selectedBooking->getBookedCraft()->getBoatName());
-
+	//takeInputCharString("Owner's Name:", *(selectedBooking->getBookedCraft()->getOwnerName()));//Collect inputs
+	//takeInputCharString("Boat Name:", *(selectedBooking->getBookedCraft()->getBoatName()));
+	takeInputInt("Booking Number:", &userSelection);
 
 	selectedBooking = bookingRecords.GetEntry(userSelection);
 
