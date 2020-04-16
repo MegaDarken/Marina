@@ -25,6 +25,7 @@
     <ClInclude Include="MotorBoat.h" />
     <ClInclude Include="NarrowBoat.h" />
     <ClInclude Include="SailingBoat.h" />
+    <ClInclude Include="TypeConvert.h" />
     <ClInclude Include="userInput.h" />
     <ClInclude Include="Watercraft.h" />
   </ItemGroup>
@@ -36,6 +37,7 @@
     <ClCompile Include="NarrowBoat.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="SailingBoat.cpp" />
+    <ClCompile Include="TypeConvert.cpp" />
     <ClCompile Include="userInput.cpp" />
     <ClCompile Include="Watercraft.cpp" />
     <ClCompile Include="WatercraftList.cpp" />
