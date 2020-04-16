@@ -111,19 +111,25 @@ Watercraft* Booking::getBookedCraft()
 
  void Booking::printAsString()
  {
-	 char* tempString = new char;
+	 char* tempString;// = new char(20);
+	 tempString = new char;
 
 	 //Add parts to string
 	 TypeConvert::intToChar(this->totalCost, tempString);
-	 std::cout << *tempString << ' ';
+	 std::cout << tempString << ' ';
+	 tempString = new char;
 
 	 std::cout << *(this->bookedCraft->getOwnerName()) << ' ';
 	 std::cout << *(this->bookedCraft->getBoatName()) << ' ';
 
 	 TypeConvert::intToChar(this->bookedCraft->getLength(), tempString);
 	 std::cout << tempString << ' ';
+	 tempString = new char;
+
 	 TypeConvert::intToChar(this->bookedCraft->getDraft(), tempString);
 	 std::cout << tempString << ' ';
+	 tempString = new char;
+
 	 //strcat(outputString, (char*)this->bookedCraft->getLength);
 	 //strcat(outputString, (char*)this->bookedCraft->getDraft);
 
