@@ -8,7 +8,7 @@ const int MaximumBoatLength = 15;//As defined in brief
 const int MaximumBoatDraft = 5;
 const int PoundsPerMeterPerMonth = 10;
 
-const char AttributeSplitChar = ';';
+const char BookingAttributeSplitChar = ';';
 const int AttributeCount = 5;
 
 
@@ -141,12 +141,12 @@ Watercraft* Booking::getBookedCraft()
 	 outputString = new std::string();
 	 
 	 //tempChar = (char*)this->getTotalCost();
-	 outputString[0] = ((char*)this->getTotalCost()) + AttributeSplitChar;
+	 outputString[0] = ((char*)this->getTotalCost()) + BookingAttributeSplitChar;
 
-	 outputString[0] = (*this->bookedCraft->getOwnerName() + AttributeSplitChar);
-	 outputString[0] = (*this->bookedCraft->getBoatName() + AttributeSplitChar);
+	 outputString[0] = (*this->bookedCraft->getOwnerName() + BookingAttributeSplitChar);
+	 outputString[0] = (*this->bookedCraft->getBoatName() + BookingAttributeSplitChar);
 
-	 outputString[0] = ((char*)this->bookedCraft->getLength()) + AttributeSplitChar;
+	 outputString[0] = ((char*)this->bookedCraft->getLength()) + BookingAttributeSplitChar;
 	 outputString[0] = ((char*)this->bookedCraft->getDraft());
  }
 
@@ -160,7 +160,7 @@ Watercraft* Booking::getBookedCraft()
 	 //char* tempChar = new char;
 
 	 //split string into array
-	 while (std::getline(currentStream, tempString, AttributeSplitChar))
+	 while (std::getline(currentStream, tempString, BookingAttributeSplitChar))
 	 {
 		 //std::strcpy(tempChar, tempString);
 		 splitString.push_back(tempString);
