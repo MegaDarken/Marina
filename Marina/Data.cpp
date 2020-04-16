@@ -72,6 +72,7 @@ using namespace std;
     //Save To Files
     void Data::saveBookingRecords(const char* fileName)
     {
+
         //Vars
         Booking* currentBooking = new Booking();
         //char* outputArray = new char;//output char array
@@ -84,7 +85,7 @@ using namespace std;
         //ensure file is open
         if (currentFile.is_open() == false)
             cout << "Error opening file\n" << endl;
-        else
+        else if (currentFile.is_open())
         {
             //Input data
             for (size_t index = 0; index < bookingRecords->GetCount(); index++)
