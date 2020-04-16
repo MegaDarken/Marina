@@ -3,10 +3,20 @@
 
 //Project includes
 #include "../Marina/List.h"
+#include "../Marina/WatercraftList.cpp"
+#include "../Marina/BookingList.cpp"
+
 #include "../Marina/Booking.h"
+#include "../Marina/Booking.cpp"
+
 #include "../Marina/Watercraft.h"
+#include "../Marina/Watercraft.cpp"
+
 #include "../Marina/Data.h"
+#include "../Marina/Data.cpp"
+
 #include "../Marina/userInput.h"
+#include "../Marina/userInput.cpp"
 
 #include "../Marina/TypeConvert.h"
 #include "../Marina/TypeConvert.cpp"
@@ -24,6 +34,7 @@ namespace MarinaUnitTest
 			Assert::IsTrue(true);
 		}
 
+		//Convert
 		//Test intToChar
 		TEST_METHOD(TestIntToChar)
 		{
@@ -36,5 +47,30 @@ namespace MarinaUnitTest
 
 			Assert::AreEqual(charOut, result);
 		}
+
+		//Watercraft
+		TEST_METHOD(TestConstructWatercraft)
+		{
+			//Attributes
+			std::string inputOwnerName = "Jane Doe";
+			std::string inputBoatName = "Seawave";
+			int inputLength = 10;
+			int inputDraft = 2;
+
+			Watercraft* testWatercraft = new Watercraft(inputOwnerName, inputBoatName, inputLength, inputDraft);
+
+			Assert::AreEqual(inputOwnerName, *testWatercraft->getOwnerName());
+			Assert::AreEqual(inputBoatName, *testWatercraft->getBoatName());
+			Assert::AreEqual(inputLength, testWatercraft->getLength());
+			Assert::AreEqual(inputDraft, testWatercraft->getDraft());
+
+			//Cleanup
+			delete testWatercraft;
+		}
+
+
+		//Booking
+
+
 	};
 }
