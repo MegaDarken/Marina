@@ -27,6 +27,6 @@ void TypeConvert::intToChar(int input, char* output)
 	}
 
 	//End of char
-	output[charIndex] = '\n';//null char
+	output[charIndex] = NULL;//null char
 }
 

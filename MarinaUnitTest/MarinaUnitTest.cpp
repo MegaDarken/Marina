@@ -27,14 +27,14 @@ namespace MarinaUnitTest
 		//Test intToChar
 		TEST_METHOD(TestIntToChar)
 		{
-			char charOut[] = { '4', '5', '1' };
+			char charOut[] = { '4', '5', '1', NULL };
 			int intIn = 451;
 
 			char* result = new char;
 
 			TypeConvert::intToChar(intIn, result);
 
-			Assert::AreEqual(result, charOut);
+			Assert::AreEqual(charOut, result);
 		}
 	};
 }
