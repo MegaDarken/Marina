@@ -92,15 +92,15 @@ Watercraft* Booking::getBookedCraft()
 	char *tempString = new char;//Is establisment needed here?
 
 	//Add parts to string
-	userInput::intToChar(this->totalCost, tempString);
+	TypeConvert::intToChar(this->totalCost, tempString);
 	*outputString = *outputString + *tempString;
 
 	*outputString = *outputString + *this->bookedCraft->getOwnerName();
 	*outputString = *outputString + *this->bookedCraft->getBoatName();
 
-	userInput::intToChar(this->bookedCraft->getLength(), tempString);
+	TypeConvert::intToChar(this->bookedCraft->getLength(), tempString);
 	*outputString = *outputString + *tempString;
-	userInput::intToChar(this->bookedCraft->getDraft(), tempString);
+	TypeConvert::intToChar(this->bookedCraft->getDraft(), tempString);
 	*outputString = *outputString + *tempString;
 	//strcat(outputString, (char*)this->bookedCraft->getLength);
 	//strcat(outputString, (char*)this->bookedCraft->getDraft);
@@ -114,15 +114,15 @@ Watercraft* Booking::getBookedCraft()
 	 char* tempString = new char;
 
 	 //Add parts to string
-	 userInput::intToChar(this->totalCost, tempString);
+	 TypeConvert::intToChar(this->totalCost, tempString);
 	 std::cout << *tempString << ' ';
 
 	 std::cout << *(this->bookedCraft->getOwnerName()) << ' ';
 	 std::cout << *(this->bookedCraft->getBoatName()) << ' ';
 
-	 userInput::intToChar(this->bookedCraft->getLength(), tempString);
+	 TypeConvert::intToChar(this->bookedCraft->getLength(), tempString);
 	 std::cout << tempString << ' ';
-	 userInput::intToChar(this->bookedCraft->getDraft(), tempString);
+	 TypeConvert::intToChar(this->bookedCraft->getDraft(), tempString);
 	 std::cout << tempString << ' ';
 	 //strcat(outputString, (char*)this->bookedCraft->getLength);
 	 //strcat(outputString, (char*)this->bookedCraft->getDraft);
