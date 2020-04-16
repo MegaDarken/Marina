@@ -40,8 +40,8 @@ Watercraft::Watercraft(std::string ownerName, std::string boatName, int lengthVa
 {
 	this->uniqueID = generateNextId();
 
-	*(this->ownerName) = ownerName;
-	*(this->boatName) = boatName;
+	this->ownerName = new std::string (ownerName);
+	this->boatName = new std::string (boatName);
 	
 	this->length = lengthValue;
 	this->draft = draftValue;
