@@ -11,10 +11,10 @@ void TypeConvert::intToChar(int input, char* output)
 	//Establish output as new pointer
 	//output = new char;
 
-	for (int i = iterations; i > 0; i--)
+	for (int i = iterations; i >= 0; i--)
 	{
 		int currentDigit = input;
-		int currentPower = pow(10, iterations);
+		int currentPower = pow(10, i);
 
 		currentDigit = currentDigit % (currentPower * 10);
 		currentDigit = currentDigit / currentPower;
