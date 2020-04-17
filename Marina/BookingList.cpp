@@ -26,12 +26,12 @@ BookingList::~BookingList()
 	delete endEntry;
 }
 
-void BookingList::InsertEntry(Booking currentBooking)
+void BookingList::InsertEntry(Booking* currentBooking)
 {
 	endEntry = new BookingListEntry;//Make Next Entry
 
 	//Once at an Empty Entry
-	endEntry->value = new Booking(currentBooking);//Insert Value
+	endEntry->value = currentBooking;//Insert Value
 	
 
 	//move end to next
@@ -39,6 +39,11 @@ void BookingList::InsertEntry(Booking currentBooking)
 
 	//Increment Count
 	entryCount++;
+}
+
+void BookingList::InsertEntry(Booking currentBooking)
+{
+	InsertEntry(new Booking(currentBooking));
 }
 
 void BookingList::RemoveEntry(Booking currentBooking)
