@@ -26,8 +26,14 @@ public:
 	void InsertEntry(Watercraft);
 	void RemoveEntry(Watercraft);
 
+	void RemoveEntry(int Index);
+
 	Watercraft* GetEntry(int);
 	int GetCount();
+
+	bool Contains(Watercraft);
+
+	bool VerifyIntegrity();//Checks no values are null or invalid.
 };
 
 //This header file contains the structure of a Linked List of bookings
@@ -53,8 +59,12 @@ public:
 	void InsertEntry(Booking);
 	void RemoveEntry(Booking);
 
+	void RemoveEntry(int Index);
+
 	Booking* GetEntry(int);
 	int GetCount();
 
 	bool Contains(Booking);
+
+	bool VerifyIntegrity();//Checks no values are null or invalid.
 };

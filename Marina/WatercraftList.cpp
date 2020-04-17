@@ -91,3 +91,20 @@ int WatercraftList::GetCount()
 {
 	return entryCount;
 }
+
+bool WatercraftList::Contains(Watercraft currentWatercraft)
+{
+	//Check each entry
+	while (currentEntry->nextEntry != nullptr)
+	{
+		//Does match exist?
+		if (*(currentEntry->value) == currentWatercraft)
+		{
+			//Match found
+			return true;
+		}
+	}
+
+	//No match found
+	return false;
+}
