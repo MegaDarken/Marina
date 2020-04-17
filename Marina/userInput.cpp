@@ -88,7 +88,7 @@ void userInput::userRecordBooking(BookingList* bookingRecords)
 	std::cout << std::endl;
 
 	//Push to list
-	bookingRecords->InsertEntry(*newBooking);
+	bookingRecords->InsertEntry(newBooking);
 
 	//Remove Variables
 	delete newBooking;
@@ -141,10 +141,6 @@ void userInput::viewRecords(BookingList* bookingRecords)
 	//for each of the vector's elements
 	for (int index = 0; index < bookingRecords->GetCount(); index++)
 	{
-		//clear array
-		//outputString = new std::string;
-
-
 		//Display index
 		std::cout << index << ':';
 
