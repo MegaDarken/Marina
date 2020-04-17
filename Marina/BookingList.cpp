@@ -119,12 +119,14 @@ bool BookingList::Contains(Booking currentBooking)
 	//bool matchFound = false;
 	BookingListEntry* currentEntry = rootEntry;//From the start
 
-	while (currentEntry->nextEntry != nullptr)
+	while (currentEntry != nullptr)
 	{
 		if (*(currentEntry->value) == currentBooking)
 		{
 			return true;
 		}
+
+		currentEntry = currentEntry->nextEntry;
 	}
 
 	return false;
