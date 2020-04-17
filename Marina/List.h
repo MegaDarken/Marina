@@ -23,6 +23,7 @@ public:
 	WatercraftList();
 	~WatercraftList();
 
+	void InsertEntry(Watercraft*);
 	void InsertEntry(Watercraft);
 	void RemoveEntry(Watercraft);
 
@@ -56,6 +57,7 @@ public:
 	BookingList();
 	~BookingList();
 
+	void InsertEntry(Booking*);
 	void InsertEntry(Booking);
 	void RemoveEntry(Booking);
 

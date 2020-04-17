@@ -16,7 +16,7 @@ WatercraftList::~WatercraftList()
 {
 }
 
-void WatercraftList::InsertEntry(Watercraft currentCraft)
+void WatercraftList::InsertEntry(Watercraft* currentCraft)
 {
 	currentEntry = rootEntry;//From the start
 
@@ -28,10 +28,15 @@ void WatercraftList::InsertEntry(Watercraft currentCraft)
 
 	//Once at an Empty Entry
 	currentEntry = new WatercraftListEntry;//Make Next Entry
-	currentEntry->value = new Watercraft(currentCraft);//Insert Value
+	currentEntry->value = currentCraft;//Insert Value
 
 	//Increment Count
 	entryCount++;
+}
+
+void WatercraftList::InsertEntry(Watercraft currentCraft)
+{
+	InsertEntry(new Watercraft(currentCraft));
 }
 
 void WatercraftList::RemoveEntry(Watercraft currentCraft)
