@@ -159,7 +159,7 @@ using namespace std;
             //Ensure file is open
             if (currentFile.is_open() == false)
                 cout << "Error opening file\n" << endl;
-            else
+            else if (currentFile.is_open())
             {
                 //Input data
                 while (!currentFile.eof())
