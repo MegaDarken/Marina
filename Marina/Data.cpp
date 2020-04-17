@@ -179,7 +179,7 @@ using namespace std;
                     //currentBooking = new Booking(cost, ownerName, craftName, length, draft);*/
                     currentBooking->setFromFileString(&string(tempChar));
 
-                    bookingRecords->InsertEntry(*currentBooking);
+                    bookingRecords->InsertEntry(currentBooking);
 
                 }
             }
