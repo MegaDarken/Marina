@@ -74,6 +74,44 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 	}
 }
 
+void WatercraftList::RemoveEntry(int Index)
+{
+	//check index is within bounds
+	if (Index < 0 || Index > entryCount)
+	{
+		return;
+	}
+
+	//If root entry
+	if (Index == 0)
+	{
+		//skip over the entry
+		rootEntry = rootEntry->nextEntry;
+	}
+	else
+	{
+		currentEntry = rootEntry;//From the start
+
+		for (int i = 0; i < Index; i++)
+		{
+			currentEntry = currentEntry->nextEntry;//Move to next entry
+		}
+
+		WatercraftListEntry* chosenEntry = currentEntry;
+
+		//skip over the entry
+		currentEntry = currentEntry->nextEntry;
+
+		//Remove entry
+		delete chosenEntry;
+	}
+
+	//De-increment Count
+	entryCount--;
+
+	return;
+}
+
 Watercraft* WatercraftList::GetEntry(int entryIndex)
 {
 	//check index is within bounds
