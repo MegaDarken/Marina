@@ -71,6 +71,26 @@ namespace MarinaUnitTest
 
 		//Booking
 
+		TEST_METHOD(TestConstructBooking)
+		{
+			//Attributes
+			int inputCost = 175;
+			std::string inputOwnerName = "Clements Volta";
+			std::string inputBoatName = "Seawave";
+			int inputLength = 10;
+			int inputDraft = 2;
+
+			Booking* testBooking = new Booking(inputCost, inputOwnerName, inputBoatName, inputLength, inputDraft);
+
+			Assert::AreEqual(inputCost, testBooking->getTotalCost());
+			Assert::AreEqual(inputOwnerName, *testBooking->getBookedCraft()->getOwnerName());
+			Assert::AreEqual(inputBoatName, *testBooking->getBookedCraft()->getBoatName());
+			Assert::AreEqual(inputLength, testBooking->getBookedCraft()->getLength());
+			Assert::AreEqual(inputDraft, testBooking->getBookedCraft()->getDraft());
+
+			//Cleanup
+			delete testBooking;
+		}
 
 	};
 }
