@@ -176,3 +176,20 @@ bool BookingList::Contains(Booking currentBooking)
 
 	return false;
 }
+
+bool BookingList::VerifyIntegrity()
+{
+	BookingListEntry* currentEntry = rootEntry;//From the start
+
+	while (currentEntry != nullptr)
+	{
+		if (*(currentEntry->value) == nullptr)
+		{
+			return true;
+		}
+
+		currentEntry = currentEntry->nextEntry;
+	}
+
+	return false;
+}

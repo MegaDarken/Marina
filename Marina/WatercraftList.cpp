@@ -137,6 +137,8 @@ int WatercraftList::GetCount()
 
 bool WatercraftList::Contains(Watercraft currentWatercraft)
 {
+	currentEntry = rootEntry;//From the start
+
 	//Check each entry
 	while (currentEntry != nullptr)
 	{
@@ -151,5 +153,22 @@ bool WatercraftList::Contains(Watercraft currentWatercraft)
 	}
 
 	//No match found
+	return false;
+}
+
+bool WatercraftList::VerifyIntegrity()
+{
+	currentEntry = rootEntry;//From the start
+
+	while (currentEntry != nullptr)
+	{
+		if (*(currentEntry->value) == nullptr)
+		{
+			return true;
+		}
+
+		currentEntry = currentEntry->nextEntry;
+	}
+
 	return false;
 }
