@@ -34,6 +34,11 @@ public:
 	static void loadBookingRecords();
 	static void loadBookingRecords(const char*);
 
+	//Boat Movement
+	static void moveFrontCraftToHolding();
+	static void moveCraftToHolding(const int);
+	static void moveCraftsToHolding(const int);
+	static void returnCraftsToHolding();
 
 private:
 

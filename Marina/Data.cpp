@@ -142,7 +142,7 @@ using namespace std;
 
         Booking* currentBooking = new Booking();
 
-        char tempChar[50];
+        //char tempChar[50];
         
         //Open file
         ifstream currentFile;
@@ -177,7 +177,7 @@ using namespace std;
                     currentFile.read((char*)draft, sizeof(int));
 
                     //currentBooking = new Booking(cost, ownerName, craftName, length, draft);*/
-                    currentBooking->setFromFileString(&string(tempChar));
+                    //currentBooking->setFromFileString(&string(tempChar));
 
                     bookingRecords->InsertEntry(currentBooking);
 
@@ -202,7 +202,7 @@ using namespace std;
         //delete draft;
         delete currentBooking;
 
-        delete tempChar;
+        //delete tempChar;
     }
 
     void Data::loadBookingRecords()
@@ -214,4 +214,23 @@ using namespace std;
 
 
 
+    //Boat Traversal
+    void moveFrontCraftToHolding()
+    {
+        //
+    }
+    
+    void moveCraftToHolding(const int index)
+    {
+        //
+    }
+    
+    void moveCraftsToHolding(const int count)
+    {
+        //
+    }
 
+    void returnCraftsToHolding()
+    {
+        //Run through entire list
+    }
