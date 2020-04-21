@@ -39,6 +39,34 @@ void WatercraftList::InsertEntry(Watercraft currentCraft)
 	InsertEntry(new Watercraft(currentCraft));
 }
 
+void WatercraftList::InsertEntry(Watercraft* currentCraft, const int index)
+{
+	//check index is within bounds
+	if (index < 0 || index > entryCount)
+	{
+		return;
+	}
+
+	currentEntry = rootEntry;//From the start
+
+	for (int i = 0; i < index; i++)
+	{
+		currentEntry = currentEntry->nextEntry;//Move to next entry
+	}
+
+	//New Entry
+	WatercraftListEntry* newEntry = new WatercraftListEntry;
+	newEntry->value = currentCraft;//Insert Value
+
+	newEntry->nextEntry = currentEntry->nextEntry;//Hold Next entry
+	
+	//Insert Entry
+	currentEntry->nextEntry = newEntry;
+
+	//Increment Count
+	entryCount++;
+}
+
 void WatercraftList::RemoveEntry(Watercraft currentCraft)
 {
 	currentEntry = rootEntry;//From the start

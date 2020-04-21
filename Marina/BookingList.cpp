@@ -46,6 +46,34 @@ void BookingList::InsertEntry(Booking currentBooking)
 	InsertEntry(new Booking(currentBooking));
 }
 
+void BookingList::InsertEntry(Booking* currentCraft, const int index)
+{
+	//check index is within bounds
+	if (index < 0 || index > entryCount)
+	{
+		return;
+	}
+
+	BookingListEntry* currentEntry = rootEntry;//From the start
+
+	for (int i = 0; i < index; i++)
+	{
+		currentEntry = currentEntry->nextEntry;//Move to next entry
+	}
+
+	//New Entry
+	BookingListEntry* newEntry = new BookingListEntry;
+	newEntry->value = currentCraft;//Insert Value
+
+	newEntry->nextEntry = currentEntry->nextEntry;//Hold Next entry
+
+	//Insert Entry
+	currentEntry->nextEntry = newEntry;
+
+	//Increment Count
+	entryCount++;
+}
+
 void BookingList::RemoveEntry(Booking currentBooking)
 {
 	BookingListEntry* currentEntry = rootEntry;//From the start

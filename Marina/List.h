@@ -25,8 +25,9 @@ public:
 
 	void InsertEntry(Watercraft*);
 	void InsertEntry(Watercraft);
-	void RemoveEntry(Watercraft);
+	void InsertEntry(Watercraft*,const int index);
 
+	void RemoveEntry(Watercraft);
 	void RemoveEntry(int Index);
 
 	Watercraft* GetEntry(int);
@@ -59,8 +60,9 @@ public:
 
 	void InsertEntry(Booking*);
 	void InsertEntry(Booking);
-	void RemoveEntry(Booking);
+	void InsertEntry(Booking*,const int index);
 
+	void RemoveEntry(Booking);
 	void RemoveEntry(int Index);
 
 	Booking* GetEntry(int);
