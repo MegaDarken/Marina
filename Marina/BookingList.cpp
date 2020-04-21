@@ -185,11 +185,11 @@ bool BookingList::VerifyIntegrity()
 	{
 		if (*(currentEntry->value) == nullptr)
 		{
-			return true;
+			return false;
 		}
 
 		currentEntry = currentEntry->nextEntry;
 	}
 
-	return false;
+	return true;
 }
