@@ -227,7 +227,12 @@ using namespace std;
     
     void moveCraftsToHolding(const int count)
     {
-        //
+        //Loop through the number of craft count
+        for (int i = 0; i < count; i++)
+        {
+            //Move front craft
+            moveFrontCraftToHolding();
+        }
     }
 
     void returnCraftsToHolding()
