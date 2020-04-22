@@ -20,6 +20,8 @@ using namespace std;
     const int defaultLoadLength = 0;
     const int defaultLoadDraft = 0;
 
+    const int listRootIndex = 0;
+
     //List of Records
     BookingList* Data::bookingRecords = new BookingList();
 
@@ -215,17 +217,20 @@ using namespace std;
 
 
     //Boat Traversal
-    void moveFrontCraftToHolding()
+    void Data::moveFrontCraftToHolding()
+    {
+        //Get Front Craft
+        Watercraft* = MarinaCraftList->GetEntry(listRootIndex);
+
+
+    }
+    
+    void Data::moveCraftToHolding(const int index)
     {
         //
     }
     
-    void moveCraftToHolding(const int index)
-    {
-        //
-    }
-    
-    void moveCraftsToHolding(const int count)
+    void Data::moveCraftsToHolding(const int count)
     {
         //Loop through the number of craft count
         for (int i = 0; i < count; i++)
@@ -235,7 +240,7 @@ using namespace std;
         }
     }
 
-    void returnCraftsToHolding()
+    void Data::returnCraftsToHolding()
     {
         //Run through entire list
     }
