@@ -262,6 +262,9 @@ using namespace std;
     void Data::moveCraftsFromHolding()
     {
         //Run through entire list
-
+        while (HoldingBayCraftList->GetCount() > listRootIndex)
+        {
+            moveBackCraftFromHolding();
+        }
 
     }
