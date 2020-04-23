@@ -220,15 +220,19 @@ using namespace std;
     void Data::moveFrontCraftToHolding()
     {
         //Get Front Craft
-        Watercraft* = MarinaCraftList->GetEntry(listRootIndex);
+        Watercraft* movingCraft = MarinaCraftList->GetEntry(listRootIndex);
 
+        //put in holding
+        HoldingBayCraftList->InsertEntry(movingCraft);
 
+        //Remove Front Craft
+        MarinaCraftList->RemoveEntry(listRootIndex);
     }
     
-    void Data::moveCraftToHolding(const int index)
-    {
-        //
-    }
+    //void Data::moveCraftToHolding(const int index)
+    //{
+    //    //
+    //}
     
     void Data::moveCraftsToHolding(const int count)
     {
@@ -240,7 +244,15 @@ using namespace std;
         }
     }
 
-    void Data::returnCraftsToHolding()
+    void Data::moveBackCraftFromHolding()
+    {
+        // Using Back index
+        int backIndex = (HoldingBayCraftList->GetCount() - 1);
+    }
+
+    void Data::moveCraftsFromHolding()
     {
         //Run through entire list
+
+
     }
