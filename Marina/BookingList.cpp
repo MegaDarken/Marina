@@ -205,6 +205,33 @@ bool BookingList::Contains(Booking currentBooking)
 	return false;
 }
 
+int BookingList::GetIndex(Booking currentBooking)
+{
+	BookingListEntry* currentEntry = rootEntry;//From the start
+
+	//Track the index we are currently on.
+	int currentIndex = 0;
+
+	//Check each entry
+	while (currentEntry != nullptr)
+	{
+		//Does match exist?
+		if (*(currentEntry->value) == currentBooking)
+		{
+			//Match found
+			return currentIndex;
+		}
+
+		currentEntry = currentEntry->nextEntry;
+
+		//Increment index counter
+		currentIndex++;
+	}
+
+	//No match found
+	return -1;
+}
+
 bool BookingList::VerifyIntegrity()
 {
 	BookingListEntry* currentEntry = rootEntry;//From the start

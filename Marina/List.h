@@ -34,6 +34,7 @@ public:
 	int GetCount();
 
 	bool Contains(Watercraft);
+	int GetIndex(Watercraft);
 
 	bool VerifyIntegrity();//Checks no values are null or invalid.
 };
@@ -69,6 +70,7 @@ public:
 	int GetCount();
 
 	bool Contains(Booking);
+	int GetIndex(Booking);
 
 	bool VerifyIntegrity();//Checks no values are null or invalid.
 };

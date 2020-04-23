@@ -184,6 +184,33 @@ bool WatercraftList::Contains(Watercraft currentWatercraft)
 	return false;
 }
 
+int WatercraftList::GetIndex(Watercraft currentWatercraft)
+{
+	currentEntry = rootEntry;//From the start
+
+	//Track the index we are currently on.
+	int currentIndex = 0;
+
+	//Check each entry
+	while (currentEntry != nullptr)
+	{
+		//Does match exist?
+		if (*(currentEntry->value) == currentWatercraft)
+		{
+			//Match found
+			return currentIndex;
+		}
+
+		currentEntry = currentEntry->nextEntry;
+
+		//Increment index counter
+		currentIndex++;
+	}
+
+	//No match found
+	return -1;
+}
+
 bool WatercraftList::VerifyIntegrity()
 {
 	currentEntry = rootEntry;//From the start
