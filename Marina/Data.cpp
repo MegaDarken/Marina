@@ -248,6 +248,15 @@ using namespace std;
     {
         // Using Back index
         int backIndex = (HoldingBayCraftList->GetCount() - 1);
+
+        //Get Back Craft
+        Watercraft* movingCraft = HoldingBayCraftList->GetEntry(backIndex);
+
+        //put at the front of Marina
+        MarinaCraftList->InsertEntry(movingCraft,listRootIndex);
+
+        //Remove Front Craft
+        HoldingBayCraftList->RemoveEntry(backIndex);
     }
 
     void Data::moveCraftsFromHolding()
