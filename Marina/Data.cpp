@@ -22,6 +22,9 @@ using namespace std;
 
     const int listRootIndex = 0;
 
+    const int MarinaLengthMeters = 150;//As defined in brief
+
+
     //List of Records
     BookingList* Data::bookingRecords = new BookingList();
 
@@ -268,3 +271,8 @@ using namespace std;
         }
 
     }
+
+
+    //Checks
+
+    //Check that total length is not exceeded

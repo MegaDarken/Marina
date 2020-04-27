@@ -30,8 +30,6 @@ const char DisplayRecordsCharacter = '3';
 const char SaveRecordsCharacter = 's';
 const char LoadRecordsCharacter = 'l';
 
-const int MarinaLengthMeters = 150;//As defined in brief
-
 //Menu Methods
 void showMenu(void)
 {
