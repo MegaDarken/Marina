@@ -78,10 +78,13 @@ void BookingList::RemoveEntry(Booking currentBooking)
 {
 	BookingListEntry* currentEntry = rootEntry;//From the start
 
-	Booking* checkingBooking = currentEntry->value;
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Booking* checkingBooking = nullptr;// = currentEntry->value;
+
+	checkingBooking = currentEntry->value;
 
 	//for root node
-	if (checkingBooking->getBookedCraft() == currentBooking.getBookedCraft())
+	if (*checkingBooking == currentBooking)//*(currentEntry->value) == currentBooking
 	{
 		//Move rootEntry to next
 		rootEntry = rootEntry->nextEntry;
