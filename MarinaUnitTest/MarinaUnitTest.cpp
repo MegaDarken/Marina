@@ -92,5 +92,47 @@ namespace MarinaUnitTest
 			delete testBooking;
 		}
 
+
+		//List(s)
+		TEST_METHOD(TestWatercraftListAddRemove)
+		{
+
+			//Craft
+			Watercraft* tempInstance = new Watercraft();
+
+			//Setup List
+			WatercraftList* testList = new WatercraftList();
+
+			//Add Instance
+			testList->InsertEntry(tempInstance);
+			testList->InsertEntry(tempInstance);
+
+			testList->RemoveEntry(0);//Remove Instance
+			testList->RemoveEntry(*tempInstance);//Remove Empty
+
+			//Cleanup
+			delete testList;
+		}
+
+		TEST_METHOD(TestBookingListAddRemove)
+		{
+
+			//Booking
+			Booking* tempInstance = new Booking();
+
+			//Setup List
+			BookingList* testList = new BookingList();
+
+			//Add Instance
+			testList->InsertEntry(tempInstance);
+			testList->InsertEntry(tempInstance);
+
+			testList->RemoveEntry(0);//Remove Instance
+			testList->RemoveEntry(*tempInstance);//Remove Empty
+
+			//Cleanup
+			delete testList;
+
+		}
 	};
 }
