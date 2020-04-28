@@ -96,9 +96,14 @@ namespace MarinaUnitTest
 		//List(s)
 		TEST_METHOD(TestWatercraftListAddRemove)
 		{
+			//Attributes
+			std::string inputOwnerName = "Locke Pharel";
+			std::string inputBoatName = "Vickers";
+			int inputLength = 8;
+			int inputDraft = 1;
 
 			//Craft
-			Watercraft* tempInstance = new Watercraft();
+			Watercraft* tempInstance = new Watercraft(inputOwnerName, inputBoatName, inputLength, inputDraft);
 
 			//Setup List
 			WatercraftList* testList = new WatercraftList();
@@ -106,6 +111,9 @@ namespace MarinaUnitTest
 			//Add Instance
 			testList->InsertEntry(tempInstance);
 			testList->InsertEntry(tempInstance);
+
+			Assert::IsTrue(testList->VerifyIntegrity());
+			//Assert::AreEqual(tempInstance, testList->GetEntry(0));
 
 			testList->RemoveEntry(0);//Remove Instance
 			testList->RemoveEntry(*tempInstance);//Remove Empty
@@ -116,9 +124,15 @@ namespace MarinaUnitTest
 
 		TEST_METHOD(TestBookingListAddRemove)
 		{
+			//Attributes
+			int inputCost = 210;
+			std::string inputOwnerName = "Frank Miller";
+			std::string inputBoatName = "Bottles";
+			int inputLength = 11;
+			int inputDraft = 3;
 
 			//Booking
-			Booking* tempInstance = new Booking();
+			Booking* tempInstance = new Booking(inputCost, inputOwnerName, inputBoatName, inputLength, inputDraft);
 
 			//Setup List
 			BookingList* testList = new BookingList();
@@ -127,10 +141,14 @@ namespace MarinaUnitTest
 			testList->InsertEntry(tempInstance);
 			testList->InsertEntry(tempInstance);
 
+			Assert::IsTrue(testList->VerifyIntegrity());
+			//Assert::AreEqual(tempInstance, testList->GetEntry(0));
+
 			testList->RemoveEntry(0);//Remove Instance
 			testList->RemoveEntry(*tempInstance);//Remove Empty
 
 			//Cleanup
+			delete tempInstance;
 			delete testList;
 
 		}
