@@ -24,6 +24,12 @@ Booking::Booking(Watercraft* bookedCraft)
 {
 	//Examine if boat can fit
 
+	//Check and ensure that craft exists
+	if (bookedCraft == nullptr)
+	{
+		bookedCraft = new Watercraft();
+	}
+
 	this->bookedCraft = bookedCraft;
 
 	//Calculate Cost
@@ -34,6 +40,13 @@ Booking::Booking(Watercraft* bookedCraft)
 Booking::Booking(int cost, Watercraft* bookedCraft)
 {
 	//Examine if boat can fit
+
+	//Check and ensure that craft exists
+	if (bookedCraft == nullptr)
+	{
+		bookedCraft = new Watercraft();
+	}
+
 
 	this->totalCost = cost;
 	this->bookedCraft = bookedCraft;
