@@ -43,7 +43,7 @@ void showMenu(void)
 
 	//Debug options
 	cout << "s) Save Booking Records" << endl;
-	cout << "l) Save Booking Records" << endl;
+	cout << "l) Load Booking Records" << endl;
 
 	cout << ExitMenuCharacter << ") exit the program" << endl;
 };
