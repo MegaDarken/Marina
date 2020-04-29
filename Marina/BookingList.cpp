@@ -241,7 +241,7 @@ bool BookingList::VerifyIntegrity()
 
 	while (currentEntry != nullptr)
 	{
-		if (*(currentEntry->value) == nullptr)
+		if ((currentEntry->value) == nullptr)
 		{
 			return false;
 		}
