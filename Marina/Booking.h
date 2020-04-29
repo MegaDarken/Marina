@@ -21,6 +21,7 @@ public:
 	Booking(int cost, Watercraft* bookedCraft);
 	Booking(char ownerName[], char boatName[], int length, int draft);//New craft is created
 	Booking(int cost, std::string ownerName, std::string boatName, int length, int draft);
+	Booking(Booking*);//Copy Init
 	~Booking();
 
 	//Getters and Setters

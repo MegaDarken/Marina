@@ -74,6 +74,14 @@ Booking::Booking(int cost, std::string ownerName, std::string boatName, int leng
 
 }
 
+Booking::Booking(Booking* current)
+{
+	//Transfer Attributes
+	this->bookedCraft = current->getBookedCraft();
+	this->totalCost = current->getTotalCost();
+}
+
+
 Booking::~Booking()
 {
 }
