@@ -108,6 +108,9 @@ void runMenu(void)
 
 int main(void)
 {
+	//Load in Booking Records
+	Data::loadBookingRecords();
+
 	runMenu();//Menu is displayed to the user and traverced
 
 	//Pausing Before Closing
