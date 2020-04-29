@@ -1,6 +1,10 @@
 
 #include "List.h"
 
+const int defaultMaximumLengthMeters = 150;//Max allowed, As defined in brief
+const int defaultMaximumDraftMeters = 5;
+
+const int startingLengthMeters = 0;
 
 WatercraftList::WatercraftList()
 {
@@ -10,6 +14,12 @@ WatercraftList::WatercraftList()
 	currentEntry = rootEntry;
 
 	entryCount = 0;
+
+	//Size related
+	maximumLengthMeters = defaultMaximumLengthMeters;
+	maximumDraft = defaultMaximumDraftMeters;
+
+	currentTotalLength = startingLengthMeters;
 }
 
 WatercraftList::~WatercraftList()
@@ -161,6 +171,11 @@ Watercraft* WatercraftList::GetEntry(int entryIndex)
 int WatercraftList::GetCount()
 {
 	return entryCount;
+}
+
+int WatercraftList::GetCurrentTotalLength()
+{
+	return currentTotalLength;
 }
 
 bool WatercraftList::Contains(Watercraft currentWatercraft)

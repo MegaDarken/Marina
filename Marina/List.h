@@ -19,6 +19,12 @@ private:
 
 	int entryCount;
 
+	//Length And Depth
+	int maximumLengthMeters;
+	int maximumDraft;
+
+	int currentTotalLength;
+
 public:
 	WatercraftList();
 	~WatercraftList();
@@ -31,10 +37,14 @@ public:
 	void RemoveEntry(int Index);
 
 	Watercraft* GetEntry(int);
+	int GetIndex(Watercraft);
+
 	int GetCount();
 
+	int GetCurrentTotalLength();
+
 	bool Contains(Watercraft);
-	int GetIndex(Watercraft);
+	
 
 	bool VerifyIntegrity();//Checks no values are null or invalid.
 };
