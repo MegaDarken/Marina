@@ -232,7 +232,7 @@ int WatercraftList::CalculateTotalLength()
 	int newLength = startingLengthMeters;
 
 	//Set Pointer to Start
-	currentEntry = rootEntry;
+	this->currentEntry = rootEntry;
 
 	//While not at the end
 	while (currentEntry != nullptr)
@@ -241,7 +241,7 @@ int WatercraftList::CalculateTotalLength()
 		if ((currentEntry->value) == nullptr)
 		{
 			//Add current length to total
-			newLength = newLength + currentEntry->value->getLength;
+			newLength = newLength + this->currentEntry->value->getLength();
 		}
 
 		currentEntry = currentEntry->nextEntry;
@@ -249,6 +249,8 @@ int WatercraftList::CalculateTotalLength()
 
 	//set total length to new value
 	this->currentTotalLength = newLength;
+
+	return newLength;//Return total
 }
 
 bool WatercraftList::VerifyIntegrity()
