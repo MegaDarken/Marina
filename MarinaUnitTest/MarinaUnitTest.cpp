@@ -94,6 +94,31 @@ namespace MarinaUnitTest
 
 
 		//List(s)
+		TEST_METHOD(TestWatercraftListAdd)
+		{
+			//Attributes
+			std::string inputOwnerName = "Orville Simmons";
+			std::string inputBoatName = "Toothy";
+			int inputLength = 10;
+			int inputDraft = 4;
+
+			//Craft
+			Watercraft* tempInstance = new Watercraft(inputOwnerName, inputBoatName, inputLength, inputDraft);
+
+			//Setup List
+			WatercraftList* testList = new WatercraftList();
+
+			//Add Instance
+			testList->InsertEntry(tempInstance);
+			//testList->InsertEntry(tempInstance);
+
+			//Assert::IsTrue(testList->VerifyIntegrity());
+			Assert::IsTrue(testList->Contains(*tempInstance));
+
+			//Cleanup
+			delete testList;
+		}
+
 		TEST_METHOD(TestWatercraftListAddRemove)
 		{
 			//Attributes
