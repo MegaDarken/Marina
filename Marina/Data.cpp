@@ -139,13 +139,13 @@ using namespace std;
     void Data::loadBookingRecords(const char* fileName)
     {
         //Temp Variables
-        /*int cost = defaultLoadCost;
+        int cost = defaultLoadCost;
         char* ownerName = new char;
         char* craftName = new char;
         int length = defaultLoadLength;
-        int draft = defaultLoadDraft;*/
+        int draft = defaultLoadDraft;
 
-        Booking* currentBooking = new Booking();
+        //Booking* currentBooking = new Booking();
 
         //char tempChar[50];
         
@@ -169,23 +169,31 @@ using namespace std;
                 //Input data
                 while (!currentFile.eof())
                 {
+                    
+
                     ////Get next line/object
-                    currentFile.get((char*) & currentBooking, sizeof(*currentBooking));
+                    //currentFile.get((char*) & currentBooking, sizeof(*currentBooking));
 
                     //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
-                    /*currentFile.read((char*)cost, sizeof(int));
+                    currentFile.read(reinterpret_cast<char*>(&cost), sizeof(int));
 
-                    currentFile.read((char*)ownerName, sizeof(char*));
-                    currentFile.read((char*)craftName, sizeof(char*));
+                    currentFile.read(reinterpret_cast<char*>(&ownerName), sizeof(ownerName));
+                    currentFile.read(reinterpret_cast<char*>(&craftName), sizeof(craftName));
 
-                    currentFile.read((char*)length, sizeof(int));
-                    currentFile.read((char*)draft, sizeof(int));
+                    currentFile.read((reinterpret_cast<char*>(&length), sizeof(int));
+                    currentFile.read(reinterpret_cast<char*>(&draft), sizeof(int));
 
-                    //currentBooking = new Booking(cost, ownerName, craftName, length, draft);*/
+                    //currentBooking = new Booking(cost, ownerName, craftName, length, draft);
                     //currentBooking->setFromFileString(&string(tempChar));
 
-                    bookingRecords->InsertEntry(currentBooking);
+                    //Intantiate Booking
+                    Booking* currentBooking = new Booking(cost, ownerName, craftName, length, draft);
 
+                    //check that booking is functional
+                    if (currentBooking != nullptr)
+                    {
+                        bookingRecords->InsertEntry(currentBooking);
+                    }
                 }
             }
 
