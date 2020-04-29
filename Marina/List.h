@@ -45,6 +45,7 @@ public:
 
 	bool Contains(Watercraft);
 	
+	int CalculateTotalLength();
 
 	bool VerifyIntegrity();//Checks no values are null or invalid.
 };

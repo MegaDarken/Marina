@@ -226,6 +226,31 @@ int WatercraftList::GetIndex(Watercraft currentWatercraft)
 	return -1;
 }
 
+int WatercraftList::CalculateTotalLength()
+{
+	//Set the new length to Start
+	int newLength = startingLengthMeters;
+
+	//Set Pointer to Start
+	currentEntry = rootEntry;
+
+	//While not at the end
+	while (currentEntry != nullptr)
+	{
+		//Ensure 
+		if ((currentEntry->value) == nullptr)
+		{
+			//Add current length to total
+			newLength = newLength + currentEntry->value->getLength;
+		}
+
+		currentEntry = currentEntry->nextEntry;
+	}
+
+	//set total length to new value
+	this->currentTotalLength = newLength;
+}
+
 bool WatercraftList::VerifyIntegrity()
 {
 	currentEntry = rootEntry;//From the start
