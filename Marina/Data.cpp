@@ -188,6 +188,11 @@ using namespace std;
 
                 }
             }
+
+            //Close file
+            currentFile.close();
+
+            cout << "Bookings Loaded From File..." << endl;
         }
         else
         {
@@ -196,16 +201,13 @@ using namespace std;
             cout << "File chosen does not exist." << endl;
         }
 
-        //Close file
-        currentFile.close();
-
         //Delete Vars
         //delete cost;
         //delete ownerName;
         //delete craftName;
         //delete length;
         //delete draft;
-        delete currentBooking;
+        //delete currentBooking;
 
         //delete tempChar;
     }
