@@ -175,13 +175,13 @@ using namespace std;
                     //currentFile.get((char*) & currentBooking, sizeof(*currentBooking));
 
                     //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
-                    currentFile.read(reinterpret_cast<char*>(&cost), sizeof(int));
+                    currentFile.read(reinterpret_cast<char*>(&cost), sizeof(cost));
 
                     currentFile.read(reinterpret_cast<char*>(&ownerName), sizeof(ownerName));
                     currentFile.read(reinterpret_cast<char*>(&craftName), sizeof(craftName));
 
-                    currentFile.read((reinterpret_cast<char*>(&length), sizeof(int));
-                    currentFile.read(reinterpret_cast<char*>(&draft), sizeof(int));
+                    currentFile.read(reinterpret_cast<char*>(&length), sizeof(length));
+                    currentFile.read(reinterpret_cast<char*>(&draft), sizeof(draft));
 
                     //currentBooking = new Booking(cost, ownerName, craftName, length, draft);
                     //currentBooking->setFromFileString(&string(tempChar));
