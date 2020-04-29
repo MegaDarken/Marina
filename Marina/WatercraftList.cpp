@@ -28,6 +28,14 @@ WatercraftList::~WatercraftList()
 
 void WatercraftList::InsertEntry(Watercraft* currentCraft)
 {
+	//Check that the new length isn't going to exceed the maximum length
+	if (maximumLengthMeters < (currentTotalLength + currentCraft->getLength()))
+	{
+		//Unable to be added
+		return;
+	}
+
+
 	currentEntry = rootEntry;//From the start
 
 	//While the next Entry does not already have a craft
@@ -42,6 +50,8 @@ void WatercraftList::InsertEntry(Watercraft* currentCraft)
 
 	//Increment Count
 	entryCount++;
+
+	CalculateTotalLength();//Length update
 }
 
 void WatercraftList::InsertEntry(Watercraft currentCraft)
@@ -51,6 +61,13 @@ void WatercraftList::InsertEntry(Watercraft currentCraft)
 
 void WatercraftList::InsertEntry(Watercraft* currentCraft, const int index)
 {
+	//Check that the new length isn't going to exceed the maximum length
+	if (maximumLengthMeters < (currentTotalLength + currentCraft->getLength()))
+	{
+		//Unable to be added
+		return;
+	}
+
 	//check index is within bounds
 	if (index < 0 || index > entryCount)
 	{
@@ -75,6 +92,8 @@ void WatercraftList::InsertEntry(Watercraft* currentCraft, const int index)
 
 	//Increment Count
 	entryCount++;
+
+	CalculateTotalLength();//Length update
 }
 
 void WatercraftList::RemoveEntry(Watercraft currentCraft)
@@ -110,6 +129,8 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 		}
 
 	}
+
+	CalculateTotalLength();//Length update
 }
 
 void WatercraftList::RemoveEntry(int Index)
@@ -146,6 +167,8 @@ void WatercraftList::RemoveEntry(int Index)
 
 	//De-increment Count
 	entryCount--;
+
+	CalculateTotalLength();//Length update
 
 	return;
 }
