@@ -63,6 +63,7 @@ void userInput::takeInputInt(const char* prompt, int* returnedInput)
 }
 
 //Handle booking
+///<summary> Get Booking from user and add to list
 void userInput::userRecordBooking(BookingList* bookingRecords)
 {
 	std::string* outputString = new std::string;
@@ -91,10 +92,11 @@ void userInput::userRecordBooking(BookingList* bookingRecords)
 	bookingRecords->InsertEntry(newBooking);
 
 	//Remove Variables
-	delete newBooking;
-	delete outputString;
+	//delete newBooking;
+	//delete outputString;
 }
 
+///<summary> Get Booking selection from user and remove from list
 void userInput::userRecordDelete(BookingList* bookingRecords)
 {
 	//Data Inital
@@ -131,6 +133,7 @@ void userInput::userRecordDelete(BookingList* bookingRecords)
 	//delete matchFound;
 }
 
+///<summary> Displays all booking entries in the list in the console
 void userInput::viewRecords(BookingList* bookingRecords)
 {
 	if (bookingRecords == nullptr) {return;}
@@ -147,7 +150,10 @@ void userInput::viewRecords(BookingList* bookingRecords)
 		//print record as string
 		if (bookingRecords->GetEntry(index) != nullptr)
 		{
-			bookingRecords->GetEntry(index)->printAsString();
+			Booking *current = bookingRecords->GetEntry(index);
+
+			current->printAsString();
+			
 		}
 		else 
 		{
