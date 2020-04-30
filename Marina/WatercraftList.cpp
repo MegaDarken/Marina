@@ -45,8 +45,10 @@ void WatercraftList::InsertEntry(Watercraft* currentCraft)
 	}
 
 	//Once at an Empty Entry
-	currentEntry = new WatercraftListEntry;//Make Next Entry
 	currentEntry->value = currentCraft;//Insert Value
+
+	currentEntry = currentEntry->nextEntry;//Move to next entry
+	currentEntry = new WatercraftListEntry;//Make Next Entry
 
 	//Increment Count
 	entryCount++;
@@ -82,13 +84,16 @@ void WatercraftList::InsertEntry(Watercraft* currentCraft, const int index)
 	}
 
 	//New Entry
-	WatercraftListEntry* newEntry = new WatercraftListEntry;
+	/*WatercraftListEntry* newEntry = new WatercraftListEntry;
 	newEntry->value = currentCraft;//Insert Value
 
-	newEntry->nextEntry = currentEntry->nextEntry;//Hold Next entry
+	newEntry->nextEntry = currentEntry->nextEntry;//Hold Next entry*/
 	
 	//Insert Entry
-	currentEntry->nextEntry = newEntry;
+	currentEntry->value = currentCraft;
+
+	currentEntry = currentEntry->nextEntry;//Move to next entry
+	currentEntry = new WatercraftListEntry;
 
 	//Increment Count
 	entryCount++;
