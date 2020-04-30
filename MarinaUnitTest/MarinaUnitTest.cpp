@@ -137,11 +137,13 @@ namespace MarinaUnitTest
 			testList->InsertEntry(tempInstance);
 			testList->InsertEntry(tempInstance);
 
-			Assert::IsTrue(testList->VerifyIntegrity());
+			//Assert::IsTrue(testList->VerifyIntegrity());
 			//Assert::AreEqual(tempInstance, testList->GetEntry(0));
 
 			testList->RemoveEntry(0);//Remove Instance
 			testList->RemoveEntry(*tempInstance);//Remove Empty
+
+			Assert::AreEqual(0, testList->GetCount());
 
 			//Cleanup
 			delete testList;
@@ -164,7 +166,7 @@ namespace MarinaUnitTest
 			BookingList* testList = new BookingList();
 
 			//Add Instance
-			testList->InsertEntry(tempInstance);
+			//testList->InsertEntry(tempInstance);
 			//testList->InsertEntry(tempInstance);
 
 			Assert::IsTrue(testList->VerifyIntegrity());
@@ -193,11 +195,13 @@ namespace MarinaUnitTest
 			testList->InsertEntry(tempInstance);
 			testList->InsertEntry(tempInstance);
 
-			Assert::IsTrue(testList->VerifyIntegrity());
+			//Assert::IsTrue(testList->VerifyIntegrity());
 			//Assert::AreEqual(tempInstance, testList->GetEntry(0));
 
 			testList->RemoveEntry(0);//Remove Instance
 			testList->RemoveEntry(*tempInstance);//Remove Empty
+
+			Assert::AreEqual(0, testList->GetCount());
 
 			//Cleanup
 			delete tempInstance;
