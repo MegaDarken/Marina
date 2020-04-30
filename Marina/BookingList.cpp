@@ -6,7 +6,7 @@
 
 BookingList::BookingList()
 {
-	rootEntry = new BookingListEntry;//Start of the list's sequence
+	rootEntry = new BookingListEntry();//Start of the list's sequence
 	
 	rootEntry->value = new Booking;
 	rootEntry->nextEntry = new BookingListEntry;
@@ -28,17 +28,19 @@ BookingList::~BookingList()
 
 void BookingList::InsertEntry(Booking* currentBooking)
 {
-	endEntry = new BookingListEntry;//Make Next Entry
-
 	//Once at an Empty Entry
-	endEntry->value = currentBooking;//Insert Value
+	endEntry->value = currentBooking;//Insert Value//~~~~~~~~~~~~~~~~~~~~~HERE IS WHERE END ENTRY BECOMES 0~~~~~~~~~~~~~~~~~~
 	
 
 	//move end to next
 	endEntry = endEntry->nextEntry;
 
+	endEntry = new BookingListEntry();//Make Next Entry
+
 	//Increment Count
 	entryCount++;
+
+	//std::cout << "InsertEntryEnd" << *currentBooking->getBookedCraft()->getBoatName() << std::endl;
 }
 
 void BookingList::InsertEntry(Booking currentBooking)
