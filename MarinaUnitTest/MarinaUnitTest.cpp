@@ -112,7 +112,7 @@ namespace MarinaUnitTest
 			testList->InsertEntry(tempInstance);
 			//testList->InsertEntry(tempInstance);
 
-			//Assert::IsTrue(testList->VerifyIntegrity());
+			Assert::IsTrue(testList->VerifyIntegrity());
 			Assert::IsTrue(testList->Contains(*tempInstance));
 
 			//Cleanup
@@ -142,6 +142,33 @@ namespace MarinaUnitTest
 
 			testList->RemoveEntry(0);//Remove Instance
 			testList->RemoveEntry(*tempInstance);//Remove Empty
+
+			//Cleanup
+			delete testList;
+		}
+
+
+		TEST_METHOD(TestBookingListAdd)
+		{
+			//Attributes
+			int inputCost = 100;
+			std::string inputOwnerName = "Orville Simmons";
+			std::string inputBoatName = "Toothy";
+			int inputLength = 10;
+			int inputDraft = 4;
+
+			//Craft
+			Booking* tempInstance = new Booking(inputCost, inputOwnerName, inputBoatName, inputLength, inputDraft);
+
+			//Setup List
+			BookingList* testList = new BookingList();
+
+			//Add Instance
+			testList->InsertEntry(tempInstance);
+			//testList->InsertEntry(tempInstance);
+
+			Assert::IsTrue(testList->VerifyIntegrity());
+			Assert::IsTrue(testList->Contains(*tempInstance));
 
 			//Cleanup
 			delete testList;
