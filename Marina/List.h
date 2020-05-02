@@ -27,6 +27,7 @@ private:
 
 public:
 	WatercraftList();
+	WatercraftList(int, int);
 	~WatercraftList();
 
 	void InsertEntry(Watercraft*);

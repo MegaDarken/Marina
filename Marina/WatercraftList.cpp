@@ -22,6 +22,23 @@ WatercraftList::WatercraftList()
 	currentTotalLength = startingLengthMeters;
 }
 
+WatercraftList::WatercraftList(int maximumLengthMeters, int maximumDraftMeters)
+{
+	rootEntry = new WatercraftListEntry;//Start of the list's sequence
+
+
+	currentEntry = rootEntry;
+
+	entryCount = 0;
+
+	//Size related
+	this->maximumLengthMeters = maximumLengthMeters;
+	this->maximumDraft = maximumDraftMeters;
+
+	currentTotalLength = startingLengthMeters;
+}
+
+
 WatercraftList::~WatercraftList()
 {
 }
