@@ -23,6 +23,7 @@ using namespace std;
     const int listRootIndex = 0;
 
     const int MarinaLengthMeters = 150;//As defined in brief
+    const int MarinaDraftMeters = 5;
 
 
     //List of Records
@@ -30,11 +31,11 @@ using namespace std;
 
     //Marina Area
      //First List
-    WatercraftList* Data::MarinaCraftList = new WatercraftList();
+    WatercraftList* Data::MarinaCraftList = new WatercraftList(MarinaLengthMeters, MarinaDraftMeters);
 
     //Holding Bay
      //Second List
-    WatercraftList* Data::HoldingBayCraftList = new WatercraftList();
+    WatercraftList* Data::HoldingBayCraftList = new WatercraftList();//If holding needs more space than marina something is seriously wrong 
 
     //Timer(s)
 
@@ -118,7 +119,9 @@ using namespace std;
                 //currentFile << ((char*)currentBooking->getBookedCraft()->getLength());// << AttributeSplitChar;
                 ////currentFile << AttributeSplitChar;
                 //currentFile << ((char*)currentBooking->getBookedCraft()->getDraft());
-                currentFile.write((char*)&currentBooking, sizeof(*currentBooking));
+
+                //currentFile.write((char*)&currentBooking, sizeof(*currentBooking));
+                currentFile << currentBooking->getTotalCost() << currentBooking->getBookedCraft()->getOwnerName() << currentBooking->getBookedCraft()->getBoatName() << currentBooking->getBookedCraft()->getLength() << currentBooking->getBookedCraft()->getDraft() << std::endl;
             }
         }
 
@@ -175,7 +178,7 @@ using namespace std;
                     //currentFile.get((char*) & currentBooking, sizeof(*currentBooking));
 
                     //currentFile.read((char*)& bookingRecords.push_back, sizeof(bookingRecords.begin));//Casting
-                    currentFile.read(reinterpret_cast<char*>(&cost), sizeof(cost));
+                    /*currentFile.read(reinterpret_cast<char*>(&cost), sizeof(cost));
 
                     currentFile.read(reinterpret_cast<char*>(&ownerName), sizeof(ownerName));
                     currentFile.read(reinterpret_cast<char*>(&craftName), sizeof(craftName));
@@ -184,7 +187,9 @@ using namespace std;
                     currentFile.read(reinterpret_cast<char*>(&draft), sizeof(draft));
 
                     //currentBooking = new Booking(cost, ownerName, craftName, length, draft);
-                    //currentBooking->setFromFileString(&string(tempChar));
+                    //currentBooking->setFromFileString(&string(tempChar));*/
+
+                    currentFile >> cost >> ownerName >> craftName >> length >> draft;// >> std::endl;
 
                     //Intantiate Booking
                     Booking* currentBooking = new Booking(cost, ownerName, craftName, length, draft);
