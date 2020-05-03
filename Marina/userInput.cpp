@@ -88,7 +88,7 @@ void userInput::takeInputIntInRange(const char* prompt, int* returnedInput, int 
 
 		if (returnedValue < lowerLimit || returnedValue > upperLimit)
 		{
-			std::cout << "Input outside of range, number be between " << lowerLimit << " and " << upperLimit << "." << endl;
+			std::cout << "Input outside of range, number be between " << lowerLimit << " and " << upperLimit << "." << std::endl;
 		}
 	}
 
