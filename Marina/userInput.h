@@ -27,6 +27,7 @@ public:
 	static void  takeInputCharString(const char* prompt, std::string* out);
 	static void  takeInputString(const std::string* prompt, std::string* out);
 	static void  takeInputInt(const char* prompt, int* out);
+	static void  takeInputIntInRange(const char* prompt, int* out, int upperLimit, int lowerLimit);//Ensures input is within range before returning
 
 	//Menu
 

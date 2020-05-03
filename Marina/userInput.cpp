@@ -62,6 +62,42 @@ void userInput::takeInputInt(const char* prompt, int* returnedInput)
 	return;
 }
 
+void userInput::takeInputIntInRange(const char* prompt, int* returnedInput, int upperLimit, int lowerLimit)
+{
+	//if upper is below lower
+	if (upperLimit < lowerLimit)
+	{
+		std::cerr << "takeInputIntInRange upper less than lower - parameters invalid";
+
+		return;
+	}
+
+	//set value to outside limit
+	int returnedValue = (lowerLimit - 1);
+
+	while (returnedValue < lowerLimit || returnedValue > upperLimit)
+	{
+		//Prompt user
+		std::cout << prompt;
+
+		//Remove Prompt from input
+		std::cin.clear();
+
+		//Take input
+		std::cin >> *returnedInput;
+
+		if (returnedValue < lowerLimit || returnedValue > upperLimit)
+		{
+			std::cout << "Input outside of range, number be between " << lowerLimit << " and " << upperLimit << "." << endl;
+		}
+	}
+
+	//temp value pushed to input pointer
+	*returnedInput = returnedValue;
+
+	return;
+}
+
 //Handle booking
 ///<summary> Get Booking from user and add to list
 void userInput::userRecordBooking(BookingList* bookingRecords)
