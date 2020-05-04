@@ -49,6 +49,8 @@ public:
 	int CalculateTotalLength();
 
 	bool VerifyIntegrity();//Checks no values are null or invalid.
+
+	void PrintList();
 };
 
 //This header file contains the structure of a Linked List of bookings
@@ -85,4 +87,5 @@ public:
 	int GetIndex(Booking);
 
 	bool VerifyIntegrity();//Checks no values are null or invalid.
+
 };

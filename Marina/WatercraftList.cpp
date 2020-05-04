@@ -314,3 +314,21 @@ bool WatercraftList::VerifyIntegrity()
 
 	return true;
 }
+
+void WatercraftList::PrintList()
+{
+	currentEntry = rootEntry;//From the start
+
+	//For each entry
+	while (currentEntry != nullptr)
+	{
+		//If the watercraft exists
+		if ((currentEntry->value) != nullptr)
+		{
+			//Print Watercraft
+			currentEntry->value->printAsString();
+		}
+	}
+
+	return;
+}
