@@ -153,5 +153,5 @@ bool Watercraft::operator!=(const Watercraft &current)
 
 void Watercraft::printAsString()
 {
-	std::cout << this->getUniqueID() << ": " << this->getBoatName() << ", " << this->getOwnerName() << ", Length:" << this->getLength() << ", Draft:" << this->getDraft() << std::endl;
+	std::cout << this->getUniqueID() << ": " << this->getCraftType() << ", " << this->getBoatName() << ", " << this->getOwnerName() << ", Length:" << this->getLength() << ", Draft:" << this->getDraft() << std::endl;
 }
