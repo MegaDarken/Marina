@@ -25,13 +25,15 @@ using namespace std;
     const int MarinaLengthMeters = 150;//As defined in brief
     const int MarinaDraftMeters = 5;
 
+    const int MarinaIndividualLengthMeters = 15;
+
 
     //List of Records
     BookingList* Data::bookingRecords = new BookingList();
 
     //Marina Area
      //First List
-    WatercraftList* Data::MarinaCraftList = new WatercraftList(MarinaLengthMeters, MarinaDraftMeters);
+    WatercraftList* Data::MarinaCraftList = new WatercraftList(MarinaLengthMeters, MarinaDraftMeters, MarinaIndividualLengthMeters);
 
     //Holding Bay
      //Second List
