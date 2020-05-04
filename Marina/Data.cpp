@@ -47,6 +47,16 @@ using namespace std;
         return bookingRecords;
     }
 
+    WatercraftList* Data::getMarinaCraftList()
+    {
+        return MarinaCraftList;
+    }
+    
+    WatercraftList* Data::getHoldingCraftList()
+    {
+        return HoldingBayCraftList
+    }
+
     //Display
     void Data::showBookingRecords()
     {

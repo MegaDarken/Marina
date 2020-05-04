@@ -21,8 +21,10 @@ public:
 	//Data();
 	//~Data();
 
-	//Accessor
+	//Accessor(s)
 	static BookingList* getBookingRecords();
+	static WatercraftList* getMarinaCraftList();
+	static WatercraftList* getHoldingCraftList();
 
 	//Display
 	static void showBookingRecords();
