@@ -30,6 +30,9 @@ const char DisplayRecordsCharacter = '3';
 const char SaveRecordsCharacter = 's';
 const char LoadRecordsCharacter = 'l';
 
+const char ViewMarinaCharacter = 'm';
+const char ViewHoldingCharacter = 'h';
+
 //Menu Methods
 void showMenu(void)
 {
@@ -44,6 +47,9 @@ void showMenu(void)
 	//Debug options
 	cout << "s) Save Booking Records" << endl;
 	cout << "l) Load Booking Records" << endl;
+
+	cout << "m) View Marina craft" << endl;
+	cout << "h) View Holding craft" << endl;
 
 	cout << ExitMenuCharacter << ") exit the program" << endl;
 };
@@ -89,7 +95,7 @@ void runMenu(void)
 			userInput::viewRecords(Data::getBookingRecords());
 			//Data::showBookingRecords();
 			break;
-
+		//Debug options
 		case SaveRecordsCharacter:
 			cout << "Saving Bookings to File..." << endl;
 			//Saveing bookings to file
@@ -100,6 +106,12 @@ void runMenu(void)
 			//Loading bookings from file
 			Data::loadBookingRecords();
 			break;
+		case ViewMarinaCharacter:
+			userInput::viewMarina(Data::getMarinaCraftList());
+			break;
+		case ViewHoldingCharacter:
+			userInput::viewHolding(Data::getHoldingCraftList());
+			break;
 		}
 	}
 }
@@ -109,7 +121,7 @@ void runMenu(void)
 int main(void)
 {
 	//Load in Booking Records
-	Data::loadBookingRecords();
+	//Data::loadBookingRecords();
 
 	runMenu();//Menu is displayed to the user and traverced
 
