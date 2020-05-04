@@ -203,3 +203,29 @@ void userInput::viewRecords(BookingList* bookingRecords)
 
 	return;
 }
+
+void userInput::viewMarina(WatercraftList* currentList)
+{
+	//title
+	std::cout << "Marina:" << std::endl;
+
+	//Print list
+	currentList->PrintList();
+
+	//Show total length
+	std::cout << "Total length: " << currentList->GetCurrentTotalLength() << std::endl;
+
+	std::cout << std::endl;
+}
+
+void userInput::viewHolding(WatercraftList* currentList)
+{
+	//title
+	std::cout << "Holding:" << std::endl;
+
+	//Print list
+	currentList->PrintList();
+	
+
+	std::cout << std::endl;
+}

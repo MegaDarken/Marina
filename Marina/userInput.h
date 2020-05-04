@@ -40,5 +40,7 @@ public:
 	//3) display all records (and available marina space)
 	static void viewRecords(BookingList* bookingRecords);
 
+	static void viewMarina(WatercraftList* currentList);
+	static void viewHolding(WatercraftList* currentList);
 };
 
