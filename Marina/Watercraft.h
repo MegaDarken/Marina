@@ -45,6 +45,8 @@ public:
 	int getDraft();
 	void setDraft(int);
 
+	void printAsString();
+
 	//Equality Operators
 	bool operator==(const Watercraft &t);
 	bool operator!=(const Watercraft &t);
