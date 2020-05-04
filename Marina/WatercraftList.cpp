@@ -4,6 +4,8 @@
 const int defaultMaximumLengthMeters = 150;//Max allowed, As defined in brief
 const int defaultMaximumDraftMeters = 5;
 
+const int defaultMaximumIndividualLengthMeters = 15;
+
 const int startingLengthMeters = 0;
 
 WatercraftList::WatercraftList()
@@ -18,6 +20,8 @@ WatercraftList::WatercraftList()
 	//Size related
 	maximumLengthMeters = defaultMaximumLengthMeters;
 	maximumDraft = defaultMaximumDraftMeters;
+
+	maximumIndividualLengthMeters = defaultMaximumIndividualLengthMeters;
 
 	currentTotalLength = startingLengthMeters;
 }
@@ -52,6 +56,11 @@ void WatercraftList::InsertEntry(Watercraft* currentCraft)
 		return;
 	}
 
+	if (maximumIndividualLengthMeters < currentCraft->getLength())
+	{
+		//Exceeds length
+		return;
+	}
 
 	currentEntry = rootEntry;//From the start
 
@@ -84,6 +93,12 @@ void WatercraftList::InsertEntry(Watercraft* currentCraft, const int index)
 	if (maximumLengthMeters < (currentTotalLength + currentCraft->getLength()))
 	{
 		//Unable to be added
+		return;
+	}
+
+	if (maximumIndividualLengthMeters < currentCraft->getLength())
+	{
+		//Exceeds length
 		return;
 	}
 

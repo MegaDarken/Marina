@@ -23,6 +23,8 @@ private:
 	int maximumLengthMeters;
 	int maximumDraft;
 
+	int maximumIndividualLengthMeters;
+
 	int currentTotalLength;
 
 public:
