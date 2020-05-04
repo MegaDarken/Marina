@@ -12,6 +12,9 @@ WatercraftList::WatercraftList()
 {
 	rootEntry = new WatercraftListEntry;//Start of the list's sequence
 
+	//Ensure not null
+	rootEntry->value = new Watercraft;
+	rootEntry->nextEntry = new WatercraftListEntry;
 
 	currentEntry = rootEntry;
 
