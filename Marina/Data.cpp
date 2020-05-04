@@ -54,7 +54,7 @@ using namespace std;
     
     WatercraftList* Data::getHoldingCraftList()
     {
-        return HoldingBayCraftList
+        return HoldingBayCraftList;
     }
 
     //Display
