@@ -13,6 +13,10 @@
 #include "List.h"
 #include "Booking.h"
 #include "Watercraft.h"
+
+#include "MotorBoat.h"
+#include "NarrowBoat.h"
+#include "SailingBoat.h"
 #endif // !MARNIA_H
 
 #include "Data.h"
