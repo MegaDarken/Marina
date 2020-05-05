@@ -2,7 +2,9 @@
 
 
 
-
+//const std::string CraftTypeMotorBoat = MotorBoat::getCraftType();
+//const std::string CraftTypeNarrowBoat = NarrowBoat::getCraftType();
+//const std::string CraftTypeSailingBoat = SailingBoat::getCraftType();
 
 
 //Taking Input(s)
@@ -102,30 +104,66 @@ void userInput::takeInputIntInRange(const char* prompt, int* returnedInput, int 
 ///<summary> Get Booking from user and add to list
 void userInput::userRecordBooking(BookingList* bookingRecords)
 {
-	std::string* outputString = new std::string;
+	int tempInt = 0;
+	std::string outputString = "";
 
 	//Show user records
 	viewRecords(bookingRecords);
 
-	//Initalise Object
-	Booking* newBooking = new Booking(new Watercraft());
+	//Initalise Object(s)
+	Watercraft* newWatercraft;
+	
+	//Determine watercraft type
+	std::cout << "Select craft type:" << std::endl;//Prompt
+	std::cout << MotorBoat::getCraftType() << std::endl;
+	std::cout << NarrowBoat::getCraftType() << std::endl;
+	std::cout << SailingBoat::getCraftType() << std::endl;
+	takeInputCharString("Watercraft type:", &outputString);//Collect inputs
+
+	if ((outputString) == MotorBoat::getCraftType())
+	{
+		std::cout << "Using MotorBoat..." << std::endl;
+		newWatercraft = new MotorBoat();
+	}
+	else if ((outputString) == NarrowBoat::getCraftType())
+	{
+		std::cout << "Using Narrow Boat..." << std::endl;
+		newWatercraft = new NarrowBoat();
+	}
+	else if ((outputString) == SailingBoat::getCraftType())
+	{
+		std::cout << "Using Sailing Boat..." << std::endl;
+		newWatercraft = new SailingBoat();
+	}
+	else
+	{
+		std::cout << "Craft indeterminate, using generic Watercraft..." << std::endl;
+		newWatercraft = new Watercraft();
+	}
+	std::cout << newWatercraft->getCraftType() << std::endl;
+
+	Booking* newBooking = new Booking(newWatercraft);
 
 	//Promt user for booking details
 
-	takeInputCharString("Owner's Name:", outputString);//Collect inputs
-	newBooking->getBookedCraft()->setOwnerName(*outputString);
+	takeInputCharString("Owner's Name:", &outputString);//Collect inputs
+	newWatercraft->setOwnerName(outputString);
 
-	takeInputCharString("Boat Name:", outputString);
-	newBooking->getBookedCraft()->setBoatName(*outputString);
+	takeInputCharString("Boat Name:", &outputString);
+	newBooking->getBookedCraft()->setBoatName(outputString);
 	//std::cout << ownerName;
+
+	//takeInputIntInRange("Boat Length:", tempInt);
+
 
 	//Show 
 	
 	newBooking->printAsString();
 	std::cout << std::endl;
 
-	//Push to list
+	//Push to list(s)
 	bookingRecords->InsertEntry(newBooking);
+	//Add craft to Marina
 
 	//Remove Variables
 	//delete newBooking;
@@ -159,7 +197,7 @@ void userInput::userRecordDelete(BookingList* bookingRecords)
 		//Remove Booking
 		bookingRecords->RemoveEntry(*selectedBooking);
 
-		//Remove Boat from marina?
+		//Remove Boat from marina
 
 
 	}
