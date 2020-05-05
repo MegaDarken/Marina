@@ -12,9 +12,9 @@ WatercraftList::WatercraftList()
 {
 	rootEntry = new WatercraftListEntry;//Start of the list's sequence
 
-	//Ensure not null
-	rootEntry->value = new Watercraft;
-	rootEntry->nextEntry = new WatercraftListEntry;
+	//Ensure not empty
+	rootEntry->value = nullptr;//new Watercraft;
+	rootEntry->nextEntry = nullptr;//new WatercraftListEntry;
 
 	currentEntry = rootEntry;
 
@@ -34,8 +34,8 @@ WatercraftList::WatercraftList(int maximumLengthMeters, int maximumDraftMeters, 
 	rootEntry = new WatercraftListEntry;//Start of the list's sequence
 
 	//Ensure not null
-	rootEntry->value = new Watercraft;
-	rootEntry->nextEntry = new WatercraftListEntry;
+	rootEntry->value = nullptr;//new Watercraft;
+	rootEntry->nextEntry = nullptr;//new WatercraftListEntry;
 
 
 	currentEntry = rootEntry;
