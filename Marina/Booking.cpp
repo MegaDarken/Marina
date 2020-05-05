@@ -132,31 +132,33 @@ Watercraft* Booking::getBookedCraft()
 
  void Booking::printAsString()
  {
-	 char* tempString;// = new char(20);
-	 tempString = new char;
+	 //char* tempString;// = new char(20);
+	 //tempString = new char;
 
 	 //Add parts to string
-	 TypeConvert::intToChar(this->totalCost, tempString);
-	 std::cout << tempString << ' ';
-	 tempString = new char;
+	 std::cout << this->bookedCraft->getUniqueID() << ": ";
 
-	 std::cout << this->bookedCraft->getCraftType() << ' ';
+	 std::cout << this->bookedCraft->getCraftType() << ", ";
 
-	 std::cout << *(this->bookedCraft->getOwnerName()) << ' ';
-	 std::cout << *(this->bookedCraft->getBoatName()) << ' ';
+	 //TypeConvert::intToChar(this->totalCost, tempString);
+	 std::cout << this->totalCost << ", ";
+	 //tempString = new char;
 
-	 TypeConvert::intToChar(this->bookedCraft->getLength(), tempString);
-	 std::cout << tempString << ' ';
-	 tempString = new char;
+	 std::cout << *(this->bookedCraft->getOwnerName()) << ", ";
+	 std::cout << *(this->bookedCraft->getBoatName()) << ", ";
 
-	 TypeConvert::intToChar(this->bookedCraft->getDraft(), tempString);
-	 std::cout << tempString << ' ';
-	 tempString = new char;
+	 //TypeConvert::intToChar(this->bookedCraft->getLength(), tempString);
+	 std::cout << this->bookedCraft->getLength() << ", ";
+	 //tempString = new char;
+
+	 //TypeConvert::intToChar(this->bookedCraft->getDraft(), tempString);
+	 std::cout << this->bookedCraft->getDraft() << ", ";
+	 //tempString = new char;
 
 	 //strcat(outputString, (char*)this->bookedCraft->getLength);
 	 //strcat(outputString, (char*)this->bookedCraft->getDraft);
 
-	 delete tempString;
+	 //delete tempString;
 	 //return outputString;
  }
 
