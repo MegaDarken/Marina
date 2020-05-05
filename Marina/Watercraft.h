@@ -24,6 +24,8 @@ protected:
 	static int craftIdCounter;
 	int generateNextId();
 public:
+	const std::string CraftType = "Watercraft";
+
 	Watercraft();
 	Watercraft(std::string ownerName, std::string boatName, int length, int draft);
 	Watercraft(Watercraft &obj);//Copy Constructor

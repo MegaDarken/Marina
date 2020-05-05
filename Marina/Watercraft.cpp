@@ -1,13 +1,13 @@
 #include "Watercraft.h"
 
 // Constants
-const std::string CraftType = "Watercraft";//For type identification
+//const std::string CraftType = "Watercraft";//For type identification
 
 //Default Values
 
 
-const int defaultLength = 15;
-const int defaultDraft = 5;
+const int defaultLength = 0;
+const int defaultDraft = 0;
 
 //Initalise Static 
 int  Watercraft::craftIdCounter = 0;
