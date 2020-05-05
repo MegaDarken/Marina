@@ -46,6 +46,10 @@ public:
 
 	int GetCurrentTotalLength();
 
+	int GetMaximumLength();
+	int GetMaximumDraft();
+	int GetMaximumIndividualLength();
+
 	bool Contains(Watercraft);
 	
 	int CalculateTotalLength();

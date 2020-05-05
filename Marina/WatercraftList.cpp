@@ -295,6 +295,21 @@ int WatercraftList::GetIndex(Watercraft currentWatercraft)
 	return -1;
 }
 
+int WatercraftList::GetMaximumLength()
+{
+	return maximumLengthMeters;
+}
+
+int WatercraftList::GetMaximumDraft()
+{
+	return maximumDraft;
+}
+
+int WatercraftList::GetMaximumIndividualLength()
+{
+	return maximumIndividualLengthMeters;
+}
+
 int WatercraftList::CalculateTotalLength()
 {
 	//Set the new length to Start
