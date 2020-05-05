@@ -112,7 +112,7 @@ using namespace std;
                 currentBooking = bookingRecords->GetEntry(index);//->GetEntry(index).getAsString(outputArray);
 
                 //cast object into file
-                //currentFile.write((char*)&bookingRecords[index], sizeof(bookingRecords[index]));
+                //currentFile.write((char*)&bookingRecords[index], sizeof(*bookingRecords[index]));
 
                 //currentFile.write(outputArray, sizeof(outputArray));
 
@@ -202,6 +202,8 @@ using namespace std;
                     //currentBooking->setFromFileString(&string(tempChar));*/
 
                     currentFile >> cost >> ownerName >> craftName >> length >> draft;// >> std::endl;
+
+                    //Deterimine Watercraft type
 
                     //Intantiate Booking
                     Booking* currentBooking = new Booking(cost, ownerName, craftName, length, draft);
@@ -299,6 +301,16 @@ using namespace std;
 
     }
 
+
+    void Data::ejectFrontCraftFromMarina()
+    {
+        //Get Front Craft
+        Watercraft* movingCraft = MarinaCraftList->GetEntry(listRootIndex);
+
+
+        //Remove Front Craft
+        MarinaCraftList->RemoveEntry(listRootIndex);
+    }
 
     //Checks
 

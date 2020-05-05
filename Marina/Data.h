@@ -44,6 +44,8 @@ public:
 	static void moveBackCraftFromHolding();
 	static void moveCraftsFromHolding();
 
+	static void ejectFrontCraftFromMarina();
+
 private:
 
 	//List of Records
