@@ -33,6 +33,10 @@ const char LoadRecordsCharacter = 'l';
 const char ViewMarinaCharacter = 'm';
 const char ViewHoldingCharacter = 'h';
 
+const char DebugMoveMarinaToHoldingCharacter = '>';
+const char DebugMoveHoldingBackCharacter = '<';
+const char DebugMoveMarinaEjectCharacter = '^';
+
 //Menu Methods
 void showMenu(void)
 {
@@ -114,6 +118,20 @@ void runMenu(void)
 			break;
 		case ViewHoldingCharacter:
 			userInput::viewHolding(Data::getHoldingCraftList());
+			break;
+		case DebugMoveMarinaToHoldingCharacter:
+			cout << "DEBUG: moving Marina to Holding..." << endl;
+			int tempInt = 0;
+			userInput::takeInputInt("Crafts number moving:", &tempInt);
+			Data::moveCraftsToHolding(tempInt);
+			break;
+		case DebugMoveHoldingBackCharacter:
+			cout << "DEBUG: returning Holding to Marina..." << endl;
+			Data::moveCraftsFromHolding();
+			break;
+		case DebugMoveMarinaEjectCharacter:
+			cout << "DEBUG: Ejecting craft from Marina..." << endl;
+			Data::ejectFrontCraftFromMarina();
 			break;
 		}
 	}
