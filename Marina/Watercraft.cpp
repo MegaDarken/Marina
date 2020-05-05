@@ -1,7 +1,7 @@
 #include "Watercraft.h"
 
 // Constants
-//const std::string CraftType = "Watercraft";//For type identification
+static const std::string CraftType = "Watercraft";//For type identification
 
 //Default Values
 

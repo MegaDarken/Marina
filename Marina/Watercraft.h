@@ -24,7 +24,6 @@ protected:
 	static int craftIdCounter;
 	int generateNextId();
 public:
-	const std::string CraftType = "Watercraft";
 
 	Watercraft();
 	Watercraft(std::string ownerName, std::string boatName, int length, int draft);
@@ -32,7 +31,7 @@ public:
 	~Watercraft();//Descructor
 
 	//Getters and Setters
-	std::string getCraftType();
+	static std::string getCraftType();
 
 	unsigned getUniqueID();
 	void setUniqueID(unsigned);
