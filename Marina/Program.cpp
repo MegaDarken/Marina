@@ -94,6 +94,9 @@ void runMenu(void)
 			//Displaying all records
 			userInput::viewRecords(Data::getBookingRecords());
 			//Data::showBookingRecords();
+			//Areas of Marina
+			userInput::viewMarina(Data::getMarinaCraftList());
+			userInput::viewHolding(Data::getHoldingCraftList());
 			break;
 		//Debug options
 		case SaveRecordsCharacter:
