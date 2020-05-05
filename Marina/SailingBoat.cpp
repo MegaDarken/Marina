@@ -12,6 +12,16 @@ SailingBoat::SailingBoat(std::string ownerName, std::string boatName, int length
 
 }
 
+SailingBoat::SailingBoat(Watercraft& obj) : Watercraft(obj)
+{
+
+}
+
+SailingBoat::SailingBoat(SailingBoat& obj) :Watercraft(obj)
+{
+
+}
+
 SailingBoat::~SailingBoat()
 {
 }

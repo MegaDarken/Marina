@@ -12,6 +12,17 @@ MotorBoat::MotorBoat(std::string ownerName, std::string boatName, int length, in
 
 }
 
+MotorBoat::MotorBoat(Watercraft& obj) : Watercraft(obj)
+{
+
+}
+
+MotorBoat::MotorBoat(MotorBoat& obj) : Watercraft(obj)
+{
+
+}
+
+
 MotorBoat::~MotorBoat()
 {
 }

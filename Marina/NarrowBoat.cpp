@@ -12,6 +12,16 @@ NarrowBoat::NarrowBoat(std::string ownerName, std::string boatName, int length, 
 
 }
 
+NarrowBoat::NarrowBoat(Watercraft& obj) : Watercraft(obj)
+{
+
+}
+
+NarrowBoat::NarrowBoat(NarrowBoat& obj) : Watercraft(obj)
+{
+
+}
+
 NarrowBoat::~NarrowBoat()
 {
 }
