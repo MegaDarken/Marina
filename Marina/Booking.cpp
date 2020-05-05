@@ -140,6 +140,8 @@ Watercraft* Booking::getBookedCraft()
 	 std::cout << tempString << ' ';
 	 tempString = new char;
 
+	 std::cout << this->bookedCraft->getCraftType() << ' ';
+
 	 std::cout << *(this->bookedCraft->getOwnerName()) << ' ';
 	 std::cout << *(this->bookedCraft->getBoatName()) << ' ';
 
@@ -226,18 +228,24 @@ bool Booking::operator==(const Booking& current)
 {
 	bool result = true;
 
+	//if booking exists
 	if (this->bookedCraft != current.bookedCraft) { result = false; }
 	if (this->totalCost != current.totalCost) { result = false; }
 
 	return result;
+
+	return false;
 }
 
 bool Booking::operator!=(const Booking& current)
 {
 	bool result = false;
 
+	//if booking exists
 	if (this->bookedCraft != current.bookedCraft) { result = true; }
 	if (this->totalCost != current.totalCost) { result = true; }
 
 	return result;
+
+	return true;
 }
