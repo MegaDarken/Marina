@@ -74,6 +74,7 @@ void runMenu(void)
 
 		//Get new user input
 		cin >> userInput;
+		int tempInt = 0;
 
 		switch (userInput)
 		{
@@ -121,7 +122,6 @@ void runMenu(void)
 			break;
 		case DebugMoveMarinaToHoldingCharacter:
 			cout << "DEBUG: moving Marina to Holding..." << endl;
-			int tempInt = 0;
 			userInput::takeInputInt("Crafts number moving:", &tempInt);
 			Data::moveCraftsToHolding(tempInt);
 			break;
