@@ -3,9 +3,10 @@
 class MotorBoat :
 	public Watercraft
 {
-	const std::string CraftType = "MotorBoat";//For type identification
 
 public:
+	const std::string CraftType = "MotorBoat";//For type identification
+
 	MotorBoat();
 	MotorBoat(std::string ownerName, std::string boatName, int length, int draft);
 	~MotorBoat();
