@@ -1,7 +1,7 @@
 #pragma once
 //Should require as little dependancy on other librarys as possible
 
-#include <cstdlib>;
+#include <cstdlib>
 
 class TypeConvert
 {
