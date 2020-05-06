@@ -12,6 +12,16 @@
 #include "../Marina/Watercraft.h"
 #include "../Marina/Watercraft.cpp"
 
+#include "../Marina/MotorBoat.h"
+#include "../Marina/MotorBoat.cpp"
+
+#include "../Marina/NarrowBoat.h"
+#include "../Marina/NarrowBoat.cpp"
+
+#include "../Marina/SailingBoat.h"
+#include "../Marina/SailingBoat.cpp"
+
+
 #include "../Marina/Data.h"
 #include "../Marina/Data.cpp"
 
@@ -207,6 +217,25 @@ namespace MarinaUnitTest
 			delete tempInstance;
 			delete testList;
 
+		}
+
+		TEST_METHOD(TestWatercraftTypeRecall)
+		{
+			Watercraft* testCraft;
+
+			testCraft = new Watercraft();
+			Assert::AreEqual(Watercraft::getCraftType(), testCraft->getCraftType());
+
+			testCraft = new MotorBoat();
+			Assert::AreEqual(MotorBoat::getCraftType(), testCraft->getCraftType());
+
+			testCraft = new NarrowBoat();
+			Assert::AreEqual(NarrowBoat::getCraftType(), testCraft->getCraftType());
+
+			testCraft = new SailingBoat();
+			Assert::AreEqual(SailingBoat::getCraftType(), testCraft->getCraftType());
+
+			delete testCraft;
 		}
 	};
 }
