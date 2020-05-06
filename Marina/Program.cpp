@@ -91,7 +91,7 @@ void runMenu(void)
 		case RecordBookingCharacter:
 			cout << "Recording new booking..." << endl;
 			//Recording new booking
-			userInput::userRecordBooking(Data::getBookingRecords());
+			userInput::userRecordBooking(Data::getBookingRecords(), Data::getMarinaCraftList());
 			break;
 		case DeleteBookingCharacter:
 			cout << "Deleting a record..." << endl;

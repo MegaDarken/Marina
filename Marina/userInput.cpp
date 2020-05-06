@@ -102,7 +102,7 @@ void userInput::takeInputIntInRange(const char* prompt, int* returnedInput, int 
 
 //Handle booking
 ///<summary> Get Booking from user and add to list
-void userInput::userRecordBooking(BookingList* bookingRecords)
+void userInput::userRecordBooking(BookingList* bookingRecords, WatercraftList* marinaList)
 {
 	int tempInt = 0;
 	std::string outputString = "";
@@ -164,6 +164,7 @@ void userInput::userRecordBooking(BookingList* bookingRecords)
 	//Push to list(s)
 	bookingRecords->InsertEntry(newBooking);
 	//Add craft to Marina
+	marinaList->InsertEntry(newWatercraft);
 
 	//Remove Variables
 	//delete newBooking;

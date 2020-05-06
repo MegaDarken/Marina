@@ -35,7 +35,7 @@ public:
 	//Menu
 
 	//1) record a new booking
-	static void userRecordBooking(BookingList* bookingRecords);
+	static void userRecordBooking(BookingList* bookingRecords, WatercraftList* marinaList);
 
 	//2) delete a record
 	static void userRecordDelete(BookingList* bookingRecords);
