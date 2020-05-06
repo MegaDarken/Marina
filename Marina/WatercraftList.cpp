@@ -359,7 +359,7 @@ void WatercraftList::PrintList()
 	currentEntry = rootEntry;//From the start
 
 	//For each entry
-	while (currentEntry->nextEntry != NULL)
+	while (currentEntry != NULL)
 	{
 		//If the watercraft exists
 		if ((currentEntry->value) != NULL)
