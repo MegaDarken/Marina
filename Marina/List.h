@@ -6,7 +6,7 @@
 //This header file contains the structure of a Linked List of watercraft 
 struct WatercraftListEntry
 {
-	Watercraft* value;
+	Watercraft* value = NULL;
 	WatercraftListEntry* nextEntry = NULL;
 };
 
@@ -62,7 +62,7 @@ public:
 //This header file contains the structure of a Linked List of bookings
 struct BookingListEntry
 {
-	Booking* value;
+	Booking* value = NULL;
 	BookingListEntry* nextEntry = NULL;
 };
 
