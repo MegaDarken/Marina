@@ -5,7 +5,7 @@
 void TypeConvert::intToChar(int input, char* output)
 {
 	//Converts an interger into a string of characters displaying that value
-	int iterations = log10(input);
+	int iterations = (int)log10(input);
 	int charIndex = 0;
 
 	//Establish output as new pointer
@@ -14,7 +14,7 @@ void TypeConvert::intToChar(int input, char* output)
 	for (int i = iterations; i >= 0; i--)
 	{
 		int currentDigit = input;
-		int currentPower = pow(10, i);
+		int currentPower = (int)pow(10, i);
 
 		currentDigit = currentDigit % (currentPower * 10);
 		currentDigit = currentDigit / currentPower;
