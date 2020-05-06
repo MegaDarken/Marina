@@ -162,7 +162,7 @@ Watercraft* Booking::getBookedCraft()
 	 //return outputString;
  }
 
- void Booking::getAsFileString(std::string* outputString)
+ /*void Booking::getAsFileString(std::string* outputString)
  {
 	 //vars
 	 //char* tempChar = new char();
@@ -179,7 +179,7 @@ Watercraft* Booking::getBookedCraft()
 
 	 outputString[0] = ((char*)this->bookedCraft->getLength()) + BookingAttributeSplitChar;
 	 outputString[0] = ((char*)this->bookedCraft->getDraft());
- }
+ }*/
 
  void Booking::setFromFileString(std::string* inputString)
  {
