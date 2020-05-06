@@ -1,9 +1,10 @@
 #include "MotorBoat.h"
 
-static const std::string CraftType = "MotorBoat";//For type identification
+static const std::string MotorBoatCraftType = "MotorBoat";//For type identification
+std::string MotorBoat::CraftType = MotorBoatCraftType;
 
 //Constructors
-MotorBoat::MotorBoat()
+MotorBoat::MotorBoat() :Watercraft()
 {
 }
 
@@ -30,5 +31,5 @@ MotorBoat::~MotorBoat()
 //Type Getter
 std::string MotorBoat::getCraftType()
 {
-	return CraftType;
+	return MotorBoat::CraftType;
 }

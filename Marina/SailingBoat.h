@@ -3,6 +3,8 @@
 class SailingBoat :
 	public Watercraft
 {
+protected:
+	static std::string CraftType;
 
 public:
 	

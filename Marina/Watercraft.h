@@ -12,6 +12,8 @@
 class Watercraft
 {
 protected:
+	static std::string CraftType;
+
 	unsigned uniqueID;//Unique Identifier (For integrity)
 
 	//Names
@@ -24,7 +26,6 @@ protected:
 	static int craftIdCounter;
 	int generateNextId();
 public:
-
 	Watercraft();
 	Watercraft(std::string ownerName, std::string boatName, int length, int draft);
 	Watercraft(Watercraft &obj);//Copy Constructor

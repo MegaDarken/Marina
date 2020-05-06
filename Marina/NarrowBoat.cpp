@@ -1,9 +1,10 @@
 #include "NarrowBoat.h"
 
-const std::string CraftType = "NarrowBoat";//For type identification
+const std::string NarrowBoatCraftType = "NarrowBoat";//For type identification
+std::string NarrowBoat::CraftType = NarrowBoatCraftType;
 
 //Constructors
-NarrowBoat::NarrowBoat()
+NarrowBoat::NarrowBoat() :Watercraft()
 {
 }
 
@@ -29,5 +30,5 @@ NarrowBoat::~NarrowBoat()
 //Type Getter
 std::string NarrowBoat::getCraftType()
 {
-	return CraftType;
+	return NarrowBoat::CraftType;
 }
