@@ -104,7 +104,7 @@ void userInput::takeInputIntInRange(const char* prompt, int* returnedInput, int 
 ///<summary> Get Booking from user and add to list
 void userInput::userRecordBooking(BookingList* bookingRecords, WatercraftList* marinaList)
 {
-	int tempInt = 0;
+	int tempInt = -1;
 	std::string outputString = "";
 
 	//Show user records
@@ -153,8 +153,11 @@ void userInput::userRecordBooking(BookingList* bookingRecords, WatercraftList* m
 	newBooking->getBookedCraft()->setBoatName(outputString);
 	//std::cout << ownerName;
 
-	//takeInputIntInRange("Boat Length:", tempInt);
+	takeInputIntInRange("Boat Length:", &tempInt, marinaList->GetMaximumIndividualLength(), 0);
+	newWatercraft->setLength(tempInt);
 
+	takeInputIntInRange("Boat Draft:", &tempInt, marinaList->GetMaximumDraft(), 0);
+	newWatercraft->setDraft(tempInt);
 
 	//Show 
 	
