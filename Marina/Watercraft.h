@@ -11,8 +11,9 @@
 
 class Watercraft
 {
-protected:
+private:
 	static std::string CraftType;
+protected:
 
 	unsigned uniqueID;//Unique Identifier (For integrity)
 
