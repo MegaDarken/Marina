@@ -86,11 +86,11 @@ void userInput::takeInputIntInRange(const char* prompt, int* returnedInput, int 
 		std::cin.clear();
 
 		//Take input
-		std::cin >> *returnedInput;
+		std::cin >> returnedValue;
 
 		if (returnedValue < lowerLimit || returnedValue > upperLimit)
 		{
-			std::cout << "Input outside of range, number be between " << lowerLimit << " and " << upperLimit << "." << std::endl;
+			std::cout << "Input of " << returnedValue << " is outside of range, number must be between " << lowerLimit << " and " << upperLimit << "." << std::endl;
 		}
 	}
 
@@ -202,7 +202,7 @@ void userInput::userRecordDelete(BookingList* bookingRecords)
 		bookingRecords->RemoveEntry(*selectedBooking);
 
 		//Remove Boat from marina
-
+		
 
 	}
 
