@@ -127,11 +127,11 @@ void runMenu(void)
 		case DebugMoveMarinaToHoldingCharacter:
 			cout << "DEBUG: moving Marina to Holding..." << endl;
 			userInput::takeInputInt("Crafts number moving:", &tempInt);
-			Data::moveCraftsToHolding(tempInt);
+			Data::moveBackCraftsToHolding(tempInt);
 			break;
 		case DebugMoveHoldingBackCharacter:
 			cout << "DEBUG: returning Holding to Marina..." << endl;
-			Data::moveCraftsFromHolding();
+			Data::moveCraftsFromHoldingToBack();
 			break;
 		case DebugMoveMarinaEjectCharacter:
 			cout << "DEBUG: Ejecting craft from Marina..." << endl;
