@@ -200,15 +200,15 @@ void WatercraftList::RemoveEntry(int Index)
 	{
 		currentEntry = rootEntry;//From the start
 
-		for (int i = 0; i < Index; i++)
+		for (int i = 1; i < Index; i++)
 		{
 			currentEntry = currentEntry->nextEntry;//Move to next entry
 		}
 
-		WatercraftListEntry* chosenEntry = currentEntry;
+		WatercraftListEntry* chosenEntry = currentEntry->nextEntry;
 
 		//skip over the entry
-		currentEntry = currentEntry->nextEntry;
+		currentEntry->nextEntry = currentEntry->nextEntry->nextEntry;
 
 		//Remove entry
 		delete chosenEntry;
@@ -325,7 +325,7 @@ int WatercraftList::CalculateTotalLength()
 	while (currentEntry != nullptr)
 	{
 		//Ensure 
-		if ((currentEntry->value) != nullptr)
+		if ((currentEntry->value) != NULL)
 		{
 			//Add current length to total
 			newLength = newLength + this->currentEntry->value->getLength();
