@@ -42,13 +42,19 @@ public:
 
 	//Boat Movement
 	static void moveFrontCraftToHolding();
+	static void moveBackCraftToHolding();
 	//static void moveCraftToHolding(const int);
-	static void moveCraftsToHolding(const int);
+	static void moveFrontCraftsToHolding(const int);
+	static void moveBackCraftsToHolding(const int);
 
-	static void moveBackCraftFromHolding();
-	static void moveCraftsFromHolding();
+	static void moveBackCraftFromHoldingToFront();
+	static void moveBackCraftFromHoldingToBack();
+
+	static void moveCraftsFromHoldingToFront();
+	static void moveCraftsFromHoldingToBack();
 
 	static void ejectFrontCraftFromMarina();
+	static void ejectBackCraftFromMarina();
 
 private:
 

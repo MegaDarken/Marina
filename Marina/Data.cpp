@@ -260,13 +260,25 @@ using namespace std;
         //Remove Front Craft
         MarinaCraftList->RemoveEntry(listRootIndex);
     }
+
+    void Data::moveBackCraftToHolding()
+    {
+        //Get Back Craft
+        Watercraft* movingCraft = MarinaCraftList->GetEntry(MarinaCraftList->GetCount());
+
+        //put in holding
+        HoldingBayCraftList->InsertEntry(movingCraft);
+
+        //Remove Back Craft
+        MarinaCraftList->RemoveEntry(MarinaCraftList->GetCount());
+    }
     
     //void Data::moveCraftToHolding(const int index)
     //{
     //    //
     //}
     
-    void Data::moveCraftsToHolding(const int count)
+    void Data::moveFrontCraftsToHolding(const int count)
     {
         //Loop through the number of craft count
         for (int i = 0; i < count; i++)
@@ -276,7 +288,17 @@ using namespace std;
         }
     }
 
-    void Data::moveBackCraftFromHolding()
+    void Data::moveBackCraftsToHolding(const int count)
+    {
+        //Loop through the number of craft count
+        for (int i = 0; i < count; i++)
+        {
+            //Move front craft
+            moveBackCraftToHolding();
+        }
+    }
+
+    void Data::moveBackCraftFromHoldingToFront()
     {
         // Using Back index
         int backIndex = (HoldingBayCraftList->GetCount() - 1);
@@ -291,25 +313,59 @@ using namespace std;
         HoldingBayCraftList->RemoveEntry(backIndex);
     }
 
-    void Data::moveCraftsFromHolding()
+    void Data::moveBackCraftFromHoldingToBack()
+    {
+        // Using Back index
+        int backIndex = (HoldingBayCraftList->GetCount() - 1);
+
+        //Get Back Craft
+        Watercraft* movingCraft = HoldingBayCraftList->GetEntry(backIndex);
+
+        //put at the back of Marina
+        MarinaCraftList->InsertEntry(movingCraft, MarinaCraftList->GetCount());
+
+        //Remove Craft
+        HoldingBayCraftList->RemoveEntry(backIndex);
+    }
+
+    void Data::moveCraftsFromHoldingToFront()
     {
         //Run through entire list
         while (HoldingBayCraftList->GetCount() > listRootIndex)
         {
-            moveBackCraftFromHolding();
+            moveBackCraftFromHoldingToFront();
         }
 
     }
 
+    void Data::moveCraftsFromHoldingToFront()
+    {
+        //Run through entire list
+        while (HoldingBayCraftList->GetCount() > listRootIndex)
+        {
+            moveBackCraftFromHoldingToBack();
+        }
+
+    }
 
     void Data::ejectFrontCraftFromMarina()
     {
         //Get Front Craft
-        Watercraft* movingCraft = MarinaCraftList->GetEntry(listRootIndex);
+        //Watercraft* movingCraft = MarinaCraftList->GetEntry(listRootIndex);
 
 
         //Remove Front Craft
         MarinaCraftList->RemoveEntry(listRootIndex);
+    }
+
+    void Data::ejectBackCraftFromMarina()
+    {
+        //Get Front Craft
+        //Watercraft* movingCraft = MarinaCraftList->GetEntry(listRootIndex);
+
+
+        //Remove Front Craft
+        MarinaCraftList->RemoveEntry(MarinaCraftList->GetCount());
     }
 
     //Checks
