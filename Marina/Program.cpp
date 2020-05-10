@@ -25,7 +25,7 @@
 using namespace std;
 
 //Constants
-const bool DebugMode = 0;
+const bool DebugMode = 1;
 
 const char ExitMenuCharacter = '4';
 
