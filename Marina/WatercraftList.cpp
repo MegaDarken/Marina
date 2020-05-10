@@ -79,11 +79,14 @@ void WatercraftList::InsertEntry(Watercraft* currentCraft)
 		currentEntry = currentEntry->nextEntry;//Move to next entry
 	}
 
+	//currentEntry = new WatercraftListEntry;//Make Next Entry
+
 	//Once at an Empty Entry
 	currentEntry->value = currentCraft;//Insert Value
+	currentEntry->nextEntry = new WatercraftListEntry;
 
-	currentEntry = currentEntry->nextEntry;//Move to next entry
-	currentEntry = new WatercraftListEntry;//Make Next Entry
+	//currentEntry = currentEntry->nextEntry;//Move to next entry
+	//currentEntry = new WatercraftListEntry;//Make Next Entry
 
 	//Increment Count
 	entryCount++;
@@ -322,7 +325,7 @@ int WatercraftList::CalculateTotalLength()
 	while (currentEntry != nullptr)
 	{
 		//Ensure 
-		if ((currentEntry->value) == nullptr)
+		if ((currentEntry->value) != nullptr)
 		{
 			//Add current length to total
 			newLength = newLength + this->currentEntry->value->getLength();
