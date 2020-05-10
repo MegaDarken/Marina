@@ -25,6 +25,8 @@
 using namespace std;
 
 //Constants
+const bool DebugMode = 0;
+
 const char ExitMenuCharacter = '4';
 
 const char RecordBookingCharacter = '1';
@@ -48,16 +50,25 @@ void showMenu(void)
 	cout << "MARINA BERTH BOOKING SYSTEM" << endl;
 
 	//Print out options
-	cout << "1) record a new booking" << endl;
-	cout << "2) delete a record" << endl;
-	cout << "3) display all records (and available marina space)" << endl;
+	cout << RecordBookingCharacter << ") record a new booking" << endl;
+	cout << DeleteBookingCharacter << ") delete a record" << endl;
+	cout << DisplayRecordsCharacter << ") display all records (and available marina space)" << endl;
 
 	//Debug options
-	cout << "s) Save Booking Records" << endl;
-	cout << "l) Load Booking Records" << endl;
+	if (DebugMode)
+	{
+		cout << endl << "DEBUG" << endl;
 
-	cout << "m) View Marina craft" << endl;
-	cout << "h) View Holding craft" << endl;
+		cout << SaveRecordsCharacter << ") Save Booking Records" << endl;
+		cout << LoadRecordsCharacter << ") Load Booking Records" << endl;
+
+		cout << ViewMarinaCharacter << ") View Marina craft" << endl;
+		cout << ViewHoldingCharacter <<") View Holding craft" << endl;
+
+		cout << DebugMoveMarinaToHoldingCharacter << ") Move Marina to holding" << endl;
+		cout << DebugMoveHoldingBackCharacter << ") Return holding to Marina" << endl;
+		cout << DebugMoveMarinaEjectCharacter << ") Eject next craft from Marina" << endl;
+	}
 
 	cout << ExitMenuCharacter << ") exit the program" << endl;
 };
