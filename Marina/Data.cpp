@@ -338,7 +338,7 @@ using namespace std;
 
     }
 
-    void Data::moveCraftsFromHoldingToFront()
+    void Data::moveCraftsFromHoldingToBack()
     {
         //Run through entire list
         while (HoldingBayCraftList->GetCount() > listRootIndex)
