@@ -153,14 +153,18 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 	if (currentEntry->value == &currentCraft)
 	{
 		//Move rootEntry to next
-		rootEntry = rootEntry->nextEntry;
+		rootEntry = currentEntry->nextEntry;
+
+		//delete
+
+		//De-increment Count
+		entryCount--;
 	}
 
 	{
 		//While the next Entry does not contain the object; Continue
 		while (currentEntry->nextEntry != nullptr)//currentEntry->nextEntry->value != currentCraft ||
 		{
-			currentEntry = currentEntry->nextEntry;//Move to next entry
 
 			//If the next entry is the one to be removed
 			if (currentEntry->nextEntry->value == &currentCraft)
@@ -175,6 +179,8 @@ void WatercraftList::RemoveEntry(Watercraft currentCraft)
 				//De-increment Count
 				entryCount--;
 			}
+
+			currentEntry = currentEntry->nextEntry;//Move to next entry
 		}
 
 	}

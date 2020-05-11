@@ -90,6 +90,9 @@ void BookingList::RemoveEntry(Booking currentBooking)
 	{
 		//Move rootEntry to next
 		rootEntry = rootEntry->nextEntry;
+
+		//De-increment Count
+		entryCount--;
 	}
 
 	//{
