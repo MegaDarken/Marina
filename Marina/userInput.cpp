@@ -175,7 +175,7 @@ void userInput::userRecordBooking(BookingList* bookingRecords, WatercraftList* m
 }
 
 ///<summary> Get Booking selection from user and remove from list
-void userInput::userRecordDelete(BookingList* bookingRecords)
+void userInput::userRecordDelete(BookingList* bookingRecords, WatercraftList* marinaList, WatercraftList* holdingList)
 {
 	//Data Inital
 	Booking* selectedBooking = new Booking();
@@ -202,8 +202,8 @@ void userInput::userRecordDelete(BookingList* bookingRecords)
 		bookingRecords->RemoveEntry(*selectedBooking);
 
 		//Remove Boat from marina
-		
-
+		marinaList->RemoveEntry(*selectedBooking->getBookedCraft());
+		holdingList->RemoveEntry(*selectedBooking->getBookedCraft());
 	}
 
 	//Remove from memory

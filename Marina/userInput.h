@@ -18,6 +18,8 @@
 #include "NarrowBoat.h"
 #include "SailingBoat.h"
 #endif // !MARNIA_H
+#include "TypeConvert.h"
+
 class userInput
 {
 private:
@@ -38,7 +40,7 @@ public:
 	static void userRecordBooking(BookingList* bookingRecords, WatercraftList* marinaList);
 
 	//2) delete a record
-	static void userRecordDelete(BookingList* bookingRecords);
+	static void userRecordDelete(BookingList* bookingRecords, WatercraftList* marinaList, WatercraftList* holdingList);
 
 	//3) display all records (and available marina space)
 	static void viewRecords(BookingList* bookingRecords);
